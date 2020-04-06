@@ -1,5 +1,21 @@
 @import "assets/scss/variables";
 
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  outline:    none;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color:           $ironColor;
+  text-decoration: none;
+  cursor:          pointer;
+}
+
 body, html {
   margin:  0;
   padding: 0;
