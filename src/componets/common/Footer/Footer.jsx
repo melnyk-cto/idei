@@ -4,9 +4,9 @@ import React from 'react';
 // styles
 import styles from './Footer.module.scss';
 
-import leedLogo from '../../../assets/images/leedLogo.svg';
-import facebookIcon from '../../../assets/images/facebookIcon.svg';
-import instagramIcon from '../../../assets/images/instagramIcon.svg';
+import leedLogo from '../../../assets/images/leed-logo.svg';
+import facebookIcon from '../../../assets/images/facebook-icon.svg';
+import instagramIcon from '../../../assets/images/instagram-icon.svg';
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
