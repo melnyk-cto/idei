@@ -13,7 +13,7 @@ import trazzo from '../../../assets/images/trazzo-logo.svg'
 // styles
 import styles from './Header.module.scss';
 
-const menus = ['VERTICAL', 'HORIZONTAL', 'COMERCIAL', 'FINANCIAMIENTO', 'RELACION', 'RELACION CON INVERSIONISTAS '];
+const menus = ['NOSOTROS', 'VERTICAL', 'HORIZONTAL', 'COMERCIAL', 'FINANCIAMIENTO', 'RELACION', 'RELACION CON INVERSIONISTAS '];
 export const Header = () => {
 
     const [active, setActive] = useState(false);
