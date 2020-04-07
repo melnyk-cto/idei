@@ -5,7 +5,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 // components
-import { MobileSlider } from "../../common";
+import { SimpleSection, SimpleSlider } from "../../common";
 
 // images
 import republica from '../../../assets/images/home/republica.svg'
@@ -21,9 +21,10 @@ const residentialList = [
 export const Home = () => {
     return (
         <>
-            <section className={styles.simple}>
+            <SimpleSection />
+            <section className={styles.simpleSlider}>
                 <h2>PROYECTOS RECIENTES</h2>
-                <MobileSlider />
+                <SimpleSlider />
                 <div className={styles.description}>
                     <img src={republica} alt='' />
                     <ul className='dashed'>
@@ -46,7 +47,7 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className={styles.simple}>
+            <section className={styles.simpleSlider}>
                 <h2>HISTORIA DE LIDERAZGO</h2>
                 <p>
                     Hemos mantenido nuestra posición de líder durante nuestra trayectoria.<br />
@@ -54,7 +55,7 @@ export const Home = () => {
                     cambiar el paisaje urbano de la ciudad de Monterrey, lo que nos ha convertido en una alternativa
                     sólida y confiable para inversionistas de bienes raíces.
                 </p>
-                <MobileSlider />
+                <SimpleSlider />
                 <div className={styles.description}>
                     <h2>
                         Residential <br />

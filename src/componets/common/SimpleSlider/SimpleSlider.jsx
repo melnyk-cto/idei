@@ -1,42 +1,92 @@
 // core
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+// components
+import { useWindowSize } from "../../../hooks";
 
 // library
 import Swiper from "react-id-swiper";
 
 // image
-import recentImage from "../../../assets/images/home/recent-project-1.png";
+import recentImage1 from "../../../assets/images/home/recent-project-1.png";
+import recentImage3 from "../../../assets/images/home/recent-project-3.png";
 
 // styles
 import 'swiper/swiper.scss'
 import './SimpleSlider.scss';
 
 export const SimpleSlider = () => {
+    const [width] = useWindowSize();
+    console.log(width);
 
-    const [swiper, updateSwiper] = useState(null);
+    const [gallerySwiper, getGallerySwiper] = useState(null);
+    const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
 
-    const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+    const thumbnailSwiperParams = {
+        getSwiper: getThumbnailSwiper,
+        spaceBetween: 33,
+        centeredSlides: true,
+        slidesPerView: 3,
+        touchRatio: 0.2,
+        slideToClickedSlide: true,
+        autoplay: {
+            delay: 20500,
+            disableOnInteraction: false
+        },
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 992px
+            992: {
+                centeredSlides: false,
+                slidesPerView: 3,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            }
+        }
+    };
+    const gallerySwiperParams = {
+        getSwiper: getGallerySwiper,
+        slidesPerView: 1,
+        spaceBetween: 33,
+        effect: 'fade',
+        speed: 1000,
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 992px
+            992: {
+                init: false,
+            }
         }
     };
 
-    const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+    useEffect(() => {
+        if (
+            gallerySwiper !== null &&
+            gallerySwiper.controller &&
+            thumbnailSwiper !== null &&
+            thumbnailSwiper.controller
+        ) {
+            gallerySwiper.controller.control = thumbnailSwiper;
+            thumbnailSwiper.controller.control = gallerySwiper;
         }
-    };
+    }, [gallerySwiper, thumbnailSwiper]);
 
     return (
-        <div className='slider'>
-            <Swiper getSwiper={updateSwiper}>
-                <div className='item'><img src={recentImage} alt='' /></div>
-                <div className='item'><img src={recentImage} alt='' /></div>
-                <div className='item'><img src={recentImage} alt='' /></div>
-                <div className='item'><img src={recentImage} alt='' /></div>
+        <div className='sliderMobile'>
+            <Swiper {...thumbnailSwiperParams}>
+                <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
+                <div className='thumbnail' style={{backgroundImage: `url(${recentImage3})`}} />
+                <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
+                <div className='thumbnail' style={{backgroundImage: `url(${recentImage3})`}} />
             </Swiper>
-            <button onClick={goPrev}>Prev</button>
-            <button onClick={goNext}>Next</button>
+            <Swiper {...gallerySwiperParams}>
+                <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
+                <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
+                <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
+                <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
+            </Swiper>
         </div>
     );
 };
