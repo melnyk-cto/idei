@@ -24,3 +24,21 @@
   }
 }
 
+@media screen and (min-width: 993px) {
+  .sliderMobile {
+    position:  absolute;
+    width:     100%;
+    top:       50%;
+    left:      0;
+    transform: translateY(-50%);
+    .thumbnail {
+      width:         36%;
+      margin-bottom: 6rem;
+      margin-top:    6rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1640px) {
+
+}

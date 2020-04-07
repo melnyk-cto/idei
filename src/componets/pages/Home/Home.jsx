@@ -22,7 +22,7 @@ export const Home = () => {
     return (
         <>
             <SimpleSection />
-            <section className={styles.simpleSlider}>
+            <section className={`${styles.simpleSlider} ${styles.modified}`}>
                 <h2>PROYECTOS RECIENTES</h2>
                 <SimpleSlider />
                 <div className={styles.description}>

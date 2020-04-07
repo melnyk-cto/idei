@@ -1,7 +1,7 @@
 @import "../../../assets/scss/variables";
 
 .simpleSlider {
-  padding:  1.375rem 1rem;
+  padding:  0 1rem;
   position: relative;
   > h2 {
     padding-left: 1.5625rem;
@@ -12,9 +12,12 @@
     text-align: center;
     color:      $carbonic;
     padding:    0 1.25rem;
+    max-width:  39.625rem;
+    margin:     0 auto;
   }
   .description {
     max-width:  34rem;
+    width:      100%;
     margin:     0 auto;
     background: $metal;
     padding:    3rem 1.5rem 2rem 3.5625rem;
@@ -32,6 +35,8 @@
       line-height:    1.25rem;
       letter-spacing: 0.06em;
       margin-bottom:  2rem;
+      max-width:      14rem;
+      width:          100%;
     }
     .link {
       text-align: center;
@@ -41,6 +46,41 @@
         border:  0.0625rem solid $carbonic;
         padding: 0.5rem 1.5rem;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .simpleSlider {
+    margin:     8.5% 0 0 0;
+    > h2, > p {
+      margin-bottom: 2rem;
+    }
+
+    &.modified {
+      > h2 {
+        width:       50%;
+        margin-left: auto;
+        text-align:  left;
+      }
+    }
+    .description {
+      max-width: 22rem;
+      position:  relative;
+      z-index:   1;
+      top:       0;
+      left:      12%;
+      height:    100%;
+      margin:    0;
+    }
+    background: #f8f9fb;
+  }
+}
+
+@media screen and (min-width: 1640px) {
+  .simpleSlider {
+    .description {
+      max-width: 34rem;
     }
   }
 }
