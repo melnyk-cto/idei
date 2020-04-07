@@ -23,7 +23,17 @@ body, html {
 }
 
 html {
-  font-size: 16px;
+  font-size:   16px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+menu, ul {
+  margin:  0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 #root {
