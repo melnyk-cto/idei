@@ -1,6 +1,9 @@
 // core
 import React, { useState, useEffect } from 'react';
 
+// components
+import { useWindowSize } from "../../../hooks";
+
 // library
 import Swiper from "react-id-swiper";
 
@@ -13,6 +16,9 @@ import 'swiper/swiper.scss'
 import './MobileSlider.scss';
 
 export const MobileSlider = () => {
+    const [width] = useWindowSize();
+    console.log(width);
+
     const [gallerySwiper, getGallerySwiper] = useState(null);
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
 
@@ -24,9 +30,21 @@ export const MobileSlider = () => {
         touchRatio: 0.2,
         slideToClickedSlide: true,
         autoplay: {
-            delay: 10000,
+            delay: 20500,
             disableOnInteraction: false
         },
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 992px
+            992: {
+                centeredSlides: false,
+                slidesPerView: 3,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            }
+        }
     };
     const gallerySwiperParams = {
         getSwiper: getGallerySwiper,
@@ -34,6 +52,13 @@ export const MobileSlider = () => {
         spaceBetween: 33,
         effect: 'fade',
         speed: 1000,
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 992px
+            992: {
+                init: false,
+            }
+        }
     };
 
     useEffect(() => {

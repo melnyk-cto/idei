@@ -13,6 +13,11 @@ import republica from '../../../assets/images/home/republica.svg'
 // styles
 import styles from './Home.module.scss';
 
+const residentialList = [
+    '2013 - 2016 Torres Céntrika', '2012 - 2016 Los Castaños Private Residential',
+    '2012 - 2018 Amorada Private Residential', '2012 - 2017 Balcones de las Mitras IV Sector',
+    '2010 - 2014 Catujanes Priv. Residential', '2005 - 2016 Céntrika', '2005 - 2011 Private Aqueduct',
+    '2005 - 2011 Hacienda del Carmen', '2004 - 2005 Villa Sierra', '2005 - 2011 The Provinces', '2003 - 2016 Colinas del Valle', '2003 - 2009 Private Los Pinos'];
 export const Home = () => {
     return (
         <>
@@ -44,7 +49,7 @@ export const Home = () => {
             <section className={styles.simple}>
                 <h2>HISTORIA DE LIDERAZGO</h2>
                 <p>
-                    Hemos mantenido nuestra posición de líder durante nuestra trayectoria.
+                    Hemos mantenido nuestra posición de líder durante nuestra trayectoria.<br />
                     Nuestro origen parte de la visión y experiencia de un selecto grupo de empresarios que han logrado
                     cambiar el paisaje urbano de la ciudad de Monterrey, lo que nos ha convertido en una alternativa
                     sólida y confiable para inversionistas de bienes raíces.
@@ -56,18 +61,9 @@ export const Home = () => {
                         in horizontal developments
                     </h2>
                     <ul>
-                        <li>2013 - 2016 Torres Céntrika</li>
-                        <li>2012 - 2016 Los Castaños Private Residential</li>
-                        <li>2012 - 2018 Amorada Private Residential</li>
-                        <li>2012 - 2017 Balcones de las Mitras IV Sector</li>
-                        <li>2010 - 2014 Catujanes Priv. Residential</li>
-                        <li>2005 - 2016 Céntrika</li>
-                        <li>2005 - 2011 Private Aqueduct</li>
-                        <li>2005 - 2011 Hacienda del Carmen</li>
-                        <li>2004 - 2005 Villa Sierra</li>
-                        <li>2005 - 2011 The Provinces</li>
-                        <li>2003 - 2016 Colinas del Valle</li>
-                        <li>2003 - 2009 Private Los Pinos</li>
+                        {residentialList.map((residential) =>
+                            <li key={residential}>{residential}</li>
+                        )}
                     </ul>
                 </div>
             </section>
