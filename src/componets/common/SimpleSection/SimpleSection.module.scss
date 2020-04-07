@@ -1,0 +1,172 @@
+@import '../../../assets/scss/variables';
+
+.wrapper {
+  width:           100%;
+  background:      url("../../../assets/images/IDEI.svg") no-repeat #F8F9FB center top;
+  background-size: 85%;
+  margin-top:      2rem;
+  padding-bottom:  1rem;
+  .images {
+    width:      100%;
+    max-width:  51.75rem;
+    height:     64.405vw;
+    max-height: 33.5rem;
+    position:   relative;
+    > img {
+      position: absolute;
+      z-index:  0;
+      bottom:   0;
+      left:     0;
+      width:    100%;
+    }
+    .overImg {
+      position:         absolute;
+      z-index:          1;
+      bottom:           0;
+      left:             7.5%;
+      width:            10rem;
+      min-width:        10rem;
+      max-width:        19.5rem;
+      height:           7rem;
+      max-height:       17.3125rem;
+      min-height:       7rem;
+      background-color: #323239;
+      padding:          1rem 0.8rem 1rem 1.5rem;
+      h3 {
+        color:          #F8F9FB;
+        font-size:      1rem;
+        line-height:    1.52;
+        letter-spacing: 0.06em;
+        text-align:     left;
+      }
+      p {
+        text-align:     left;
+        color:          $carbonic;
+        font-size:      0.8rem;
+        line-height:    1.52;
+        font-weight:    bold;
+        letter-spacing: 0.06em;
+      }
+    }
+    .overDiv {
+      display:          none;
+      padding:          0 0.5rem;
+      background-color: #F8F9FB;
+      position:         absolute;
+      z-index:          1;
+      bottom:           79.3%;
+      left:             66.2%;
+      img {
+        width:  9.3125rem;
+        height: 5.125rem;
+      }
+    }
+  }
+  .description {
+    position: relative;
+    width:    85%;
+    margin:   2.25rem auto;
+    span {
+      display:        inline-block;
+      font-size:      0.8rem;
+      line-height:    1.52;
+      letter-spacing: 0.06em;
+      color:          $carbonic;
+      margin-bottom:  2rem;
+    }
+    h3 {
+      font-weight:    bold;
+      font-size:      1.25rem;
+      line-height:    1.52;
+      letter-spacing: 0.06em;
+      color:          $carbonic;
+      margin-bottom:  2rem;
+    }
+    p {
+      font-size:      0.8rem;
+      line-height:    1.52;
+      letter-spacing: 0.06em;
+      color:          #3D454E;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    background:      url("../../../assets/images/IDEI.svg") no-repeat #F8F9FB center center;
+    background-size: 85%;
+    padding:         1rem;
+    .images {
+      order:       2;
+      width:       41%;
+      height:      25.5vw;
+      margin:      1%;
+      display:     flex;
+      align-items: center;
+      .overImg {
+        bottom: -26%;
+        left:   77%;
+      }
+      .overDiv {
+        display: block;
+      }
+    }
+    .description {
+      order:     1;
+      width:     26%;
+      max-width: 31.625rem;
+      margin:    1%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .wrapper {
+    padding: 10rem 1rem;
+    .images {
+      .overDiv {
+        padding: 0.5rem 1rem;
+        img {
+          width:  13.3125rem;
+          height: 9.125rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .wrapper {
+    padding: 20rem 1rem;
+    .images {
+      .overImg {
+        width:  39%;
+        height: 26vw;
+        h3 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+      .overDiv {
+        padding: 1.5rem 2rem;
+        img {
+          width:  21.3125rem;
+          height: 16.125rem;
+        }
+      }
+    }
+    .description {
+      span, p {
+        font-size: 1.125rem;
+      }
+      h3 {
+        font-size: 1.6875rem;
+      }
+    }
+  }
+}
