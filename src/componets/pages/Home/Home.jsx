@@ -16,7 +16,6 @@ import styles from './Home.module.scss';
 export const Home = () => {
     return (
         <>
-            {/*<SimpleSlider />*/}
             <section className={styles.simple}>
                 <h2>PROYECTOS RECIENTES</h2>
                 <MobileSlider />
@@ -40,6 +39,36 @@ export const Home = () => {
                     <div className={styles.link}>
                         <Link to=''>Ver Projecto</Link>
                     </div>
+                </div>
+            </section>
+            <section className={styles.simple}>
+                <h2>HISTORIA DE LIDERAZGO</h2>
+                <p>
+                    Hemos mantenido nuestra posición de líder durante nuestra trayectoria.
+                    Nuestro origen parte de la visión y experiencia de un selecto grupo de empresarios que han logrado
+                    cambiar el paisaje urbano de la ciudad de Monterrey, lo que nos ha convertido en una alternativa
+                    sólida y confiable para inversionistas de bienes raíces.
+                </p>
+                <MobileSlider />
+                <div className={styles.description}>
+                    <h2>
+                        Residential <br />
+                        in horizontal developments
+                    </h2>
+                    <ul>
+                        <li>2013 - 2016 Torres Céntrika</li>
+                        <li>2012 - 2016 Los Castaños Private Residential</li>
+                        <li>2012 - 2018 Amorada Private Residential</li>
+                        <li>2012 - 2017 Balcones de las Mitras IV Sector</li>
+                        <li>2010 - 2014 Catujanes Priv. Residential</li>
+                        <li>2005 - 2016 Céntrika</li>
+                        <li>2005 - 2011 Private Aqueduct</li>
+                        <li>2005 - 2011 Hacienda del Carmen</li>
+                        <li>2004 - 2005 Villa Sierra</li>
+                        <li>2005 - 2011 The Provinces</li>
+                        <li>2003 - 2016 Colinas del Valle</li>
+                        <li>2003 - 2009 Private Los Pinos</li>
+                    </ul>
                 </div>
             </section>
         </>

@@ -2,7 +2,7 @@
 
 .simple {
   padding: 1.375rem 1rem;
-  h2 {
+  > h2 {
     padding-left: 1.5625rem;
     color:        $carbonic;
   }
@@ -11,6 +11,10 @@
     padding:    3rem 3.5625rem 2rem 3.5625rem;
     color:      #f8f9fb;
     font-size:  0.8125rem;
+    > h2 {
+      color:         #f8f9fb;
+      margin-bottom: 2rem;
+    }
     > img {
       width:         5.875rem;
       margin-bottom: 1.5rem;
