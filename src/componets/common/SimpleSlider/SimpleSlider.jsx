@@ -30,9 +30,9 @@ export const SimpleSlider = () => {
         touchRatio: 0.2,
         loop: true,
         slideToClickedSlide: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
         },
         autoplay: {
             delay: 20500,

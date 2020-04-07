@@ -4,16 +4,25 @@ import React, { useState } from 'react';
 // library
 import { Link } from 'react-router-dom';
 
-// images
-import banner from '../../../assets/images/banner.png'
+// assets
+import styles from './Header.module.scss';
 import logo from '../../../assets/images/logo.svg'
+import logoGray from '../../../assets/images/logo-gray.svg'
 import login from '../../../assets/images/login.svg'
 import trazzo from '../../../assets/images/trazzo-logo.svg'
+import espacia from '../../../assets/images/espacia-logo.svg'
+import reeliza from '../../../assets/images/reeliza-logo.svg'
+import investor from '../../../assets/images/inversor-logo.svg'
+import video from '../../../assets/video/video-para home.webm'
 
-// styles
-import styles from './Header.module.scss';
-
-const menus = ['NOSOTROS', 'VERTICAL', 'HORIZONTAL', 'COMERCIAL', 'FINANCIAMIENTO', 'RELACION', 'RELACION CON INVERSIONISTAS '];
+const menus = [
+    {url: '/', label: 'NOSOTROS', image: logoGray},
+    {url: '/', label: 'VERTICAL', image: logoGray},
+    {url: '/', label: 'HORIZONTAL', image: trazzo},
+    {url: '/', label: 'COMERCIAL', image: espacia},
+    {url: '/', label: 'FINANCIAMIENTO', image: reeliza},
+    {url: '/', label: 'RELACION CON INVERSIONISTAS', image: investor},
+];
 export const Header = () => {
 
     const [active, setActive] = useState(false);
@@ -23,20 +32,22 @@ export const Header = () => {
 
     return (
         <header className={styles.header}>
-            <img src={banner} alt='banner' className={styles.banner} />
+            <video className={styles.banner} autoPlay loop>
+                <source src={video} type="video/webm" />
+            </video>
             <div className={styles.menuWrapper}>
                 <div className={styles.logo}>
                     <Link to='/'> <img src={logo} alt='logo' /></Link>
                 </div>
                 <menu className={active ? [styles.menu + ' ' + styles.active] : styles.menu}>
                     <ul>
-                        {menus.map(item => <li key={item}>
-                            <Link to='/'>
-                                {item}
+                        {menus.map(item => <li key={item.label}>
+                            <Link to={item.url}>
+                                {item.label}
                             </Link>
                             <Link to='/' className={styles.menuHover}>
-                                {item}
-                                <img src={trazzo} alt='' />
+                                <img src={item.image} alt='' />
+                                {item.label}
                             </Link>
                         </li>)}
                     </ul>
