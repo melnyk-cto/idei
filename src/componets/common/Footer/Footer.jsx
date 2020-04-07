@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 import leedLogo from '../../../assets/images/leed-logo.svg';
 import facebookIcon from '../../../assets/images/facebook-icon.svg';
 import instagramIcon from '../../../assets/images/instagram-icon.svg';
+import trazzoLogo from '../../../assets/images/trazzo-logo.svg';
+import reelizaLogo from '../../../assets/images/reeliza-logo.svg';
+import espaciaLogo from '../../../assets/images/espacia-logo.svg';
+import logo from '../../../assets/images/logo.svg';
 
 // styles
 import styles from './Footer.module.scss';
@@ -18,15 +22,17 @@ export const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-            <div className={styles.lists}>
+                <div className={styles.lists}>
                     <div className={styles.logo}>
                         <Link to='/'><img src={leedLogo} alt='logo' /></Link>
-                        <h3>Construllendo responsablemente</h3>
-                        <p>
-                            Proyectos con Certificacion LEED por
-                            eficiencia energética, iluminación natural
-                            y ventilación diseñada.
-                        </p>
+                        <div>
+                            <h3>Construllendo responsablemente</h3>
+                            <p>
+                                Proyectos con Certificacion LEED por
+                                eficiencia energética, iluminación natural
+                                y ventilación diseñada.
+                            </p>
+                        </div>
                     </div>
                     <div className={styles.navigation}>
                         <h3>Navegación</h3>
@@ -52,8 +58,15 @@ export const Footer = () => {
                     </div>
                 </div>
                 <div className={styles.partners}>
-
+                    <div className={styles.partnersInner}>
+                        <Link to='/'><img src={trazzoLogo} alt='trazzo' /></Link>
+                        <Link to='/'><img src={espaciaLogo} alt='espacia' /></Link>
+                        <Link to='/'><img src={reelizaLogo} alt='reeliza' /></Link>
+                    </div>
                 </div>
+            </div>
+            <div className={styles.footerBottom}>
+                <Link to='/'><img src={logo} alt='logo' /></Link>
             </div>
         </footer>
     );
