@@ -26,7 +26,7 @@ export const Header = () => {
             <img src={banner} alt='banner' className={styles.banner} />
             <div className={styles.menuWrapper}>
                 <div className={styles.logo}>
-                    <img src={logo} alt='logo' />
+                    <Link to='/'> <img src={logo} alt='logo' /></Link>
                 </div>
                 <menu className={active ? [styles.menu + ' ' + styles.active] : styles.menu}>
                     <ul>
@@ -34,7 +34,7 @@ export const Header = () => {
                             <Link to='/'>
                                 {item}
                             </Link>
-                            <Link to='/' className={styles.hover}>
+                            <Link to='/' className={styles.menuHover}>
                                 {item}
                                 <img src={trazzo} alt='' />
                             </Link>

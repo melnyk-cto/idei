@@ -4,11 +4,14 @@
   .header {
     .menuWrapper .menu ul li:hover a {
       opacity: 0;
-      &.hover {
+      &.menuHover {
         opacity: 1;
         height:  100%;
         padding: 2.5rem 1rem;
       }
+    }
+    .burgerMenu:hover {
+      opacity: .7;
     }
   }
 }
@@ -37,6 +40,7 @@
     display:         flex;
     justify-content: space-between;
     align-items:     flex-start;
+    position:        fixed;
     .menu {
       display:    none;
       position:   fixed;
@@ -55,7 +59,14 @@
         li {
           align-self: stretch;
           position:   relative;
-
+          &:active a {
+            opacity: 0;
+            &.menuHover {
+              opacity: 0.7;
+              height:  100%;
+              padding: 2.5rem 1rem;
+            }
+          }
         }
         a {
           display:         flex;
@@ -70,8 +81,8 @@
           color:           $metal;
           max-width:       12.8rem;
           text-align:      center;
-          transition:      .3s linear;
-          &.hover {
+          margin:          0 auto;
+          &.menuHover {
             position:   absolute;
             padding:    0;
             top:        50%;
@@ -83,6 +94,7 @@
             background: $metal;
             color:      $white;
             opacity:    0;
+            overflow:   hidden;
             img {
               margin-top: .5rem;
               width:      4.375rem;
@@ -113,7 +125,7 @@
     box-shadow:       none;
     border:           none;
     cursor:           pointer;
-    &:hover, &:active {
+    &:active {
       opacity: .7;
     }
     .burgerMenuLines, .burgerMenuLines:after, .burgerMenuLines:before {
