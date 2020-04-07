@@ -1,3 +1,33 @@
-.home {
-  height: 100%;
+@import "../../../assets/scss/variables";
+
+.simple {
+  padding: 1.375rem 1rem;
+  h2 {
+    padding-left: 1.5625rem;
+    color:        $carbonic;
+  }
+  .description {
+    background: $metal;
+    padding:    3rem 3.5625rem 2rem 3.5625rem;
+    color:      #f8f9fb;
+    font-size:  0.8125rem;
+    > img {
+      width:         5.875rem;
+      margin-bottom: 1.5rem;
+    }
+    ul {
+      line-height:    1.25rem;
+      letter-spacing: 0.06em;
+      margin-bottom:  2rem;
+    }
+    .link {
+      text-align: center;
+      a {
+        display: inline-block;
+        color:   #f8f9fb;
+        border:  0.0625rem solid $carbonic;
+        padding: 0.5rem 1.5rem;
+      }
+    }
+  }
 }
