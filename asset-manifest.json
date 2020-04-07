@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/idei/static/css/main.1348bc2b.chunk.css",
+    "main.js": "/idei/static/js/main.c55564d4.chunk.js",
+    "main.js.map": "/idei/static/js/main.c55564d4.chunk.js.map",
+    "runtime-main.js": "/idei/static/js/runtime-main.86ff6c07.js",
+    "runtime-main.js.map": "/idei/static/js/runtime-main.86ff6c07.js.map",
+    "static/js/2.88bab9df.chunk.js": "/idei/static/js/2.88bab9df.chunk.js",
+    "static/js/2.88bab9df.chunk.js.map": "/idei/static/js/2.88bab9df.chunk.js.map",
+    "index.html": "/idei/index.html",
+    "precache-manifest.8a971f2f50a990bbfcfe3c02d6370c73.js": "/idei/precache-manifest.8a971f2f50a990bbfcfe3c02d6370c73.js",
+    "service-worker.js": "/idei/service-worker.js",
+    "static/css/main.1348bc2b.chunk.css.map": "/idei/static/css/main.1348bc2b.chunk.css.map",
+    "static/js/2.88bab9df.chunk.js.LICENSE.txt": "/idei/static/js/2.88bab9df.chunk.js.LICENSE.txt",
+    "static/media/banner.png": "/idei/static/media/banner.ea15d90c.png",
+    "static/media/espacia-logo.svg": "/idei/static/media/espacia-logo.a0277afb.svg",
+    "static/media/facebook-icon.svg": "/idei/static/media/facebook-icon.e8ad2af3.svg",
+    "static/media/instagram-icon.svg": "/idei/static/media/instagram-icon.eac8dc49.svg",
+    "static/media/leed-logo.svg": "/idei/static/media/leed-logo.6397aa15.svg",
+    "static/media/login.svg": "/idei/static/media/login.e3cff33a.svg",
+    "static/media/logo.svg": "/idei/static/media/logo.bc21f080.svg",
+    "static/media/reeliza-logo.svg": "/idei/static/media/reeliza-logo.d9851adc.svg",
+    "static/media/trazzo-logo.svg": "/idei/static/media/trazzo-logo.d51c7d29.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.86ff6c07.js",
+    "static/js/2.88bab9df.chunk.js",
+    "static/css/main.1348bc2b.chunk.css",
+    "static/js/main.c55564d4.chunk.js"
+  ]
+}
