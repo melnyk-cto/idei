@@ -22,13 +22,13 @@ export const SimpleSlider = () => {
     const [gallerySwiper, getGallerySwiper] = useState(null);
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
 
+    console.log(swiper);
     const thumbnailSwiperParams = {
         getSwiper: getThumbnailSwiper,
         spaceBetween: 33,
         centeredSlides: true,
         slidesPerView: 3,
         touchRatio: 0.2,
-        loop: true,
         slideToClickedSlide: true,
         navigation: {
             nextEl: '.swiper-button-next',
@@ -42,8 +42,9 @@ export const SimpleSlider = () => {
         breakpoints: {
             // when window width is >= 992px
             992: {
-                spaceBetween: 100,
+                // spaceBetween: 60,
                 slidesPerView: 'auto',
+                loop: true,
             }
         }
     };
@@ -76,12 +77,12 @@ export const SimpleSlider = () => {
                 <div className='thumbnail' style={{backgroundImage: `url(${recentImage3})`}} />
                 <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
             </Swiper>
-            {width <= 992 && <Swiper {...gallerySwiperParams} getSwiper={updateSwiper}>
+            {width <= 992 && <Swiper  {...gallerySwiperParams} getSwiper={updateSwiper}>
                 <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
                 <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
                 <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
                 <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
-                <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
+                <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
             </Swiper>}
         </div>
     );

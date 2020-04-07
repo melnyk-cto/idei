@@ -83,3 +83,10 @@ p {
 #root {
   height: 100%;
 }
+
+@media screen and (min-width: 1640px) {
+  p {
+    font-size:   1.125rem;
+    line-height: 1.6875rem;
+  }
+}
