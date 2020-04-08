@@ -69,6 +69,13 @@
 }
 
 @media screen and (min-width: 993px) {
+  .wrapperSlider {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    flex-direction:  row-reverse;
+    margin-top:      5rem;
+  }
   .smallSlider {
     width:   47%;
     padding: 0 8% 0 2%;

@@ -1,12 +1,13 @@
 // core
 import React, { useState, useEffect } from 'react';
 
+// library
+import Swiper from "react-id-swiper";
+
 // components
 import { useWindowSize } from "../../../hooks";
+import { SliderDescription } from "./components/SliderDescription/SliderDescription";
 
-// library
-import { Link } from "react-router-dom";
-import Swiper from "react-id-swiper";
 
 // image
 import recentImage1 from "../../../assets/images/home/recent-project-1.jpg";
@@ -16,8 +17,6 @@ import recentImage3 from "../../../assets/images/home/recent-project-3.jpg";
 // styles
 import 'swiper/swiper.scss'
 import './SimpleSlider.scss';
-import styles from './SimpleSlider.module.scss';
-import republica from "../../../assets/images/home/republica.svg";
 
 export const SimpleSlider = () => {
     const [width] = useWindowSize();
@@ -25,8 +24,8 @@ export const SimpleSlider = () => {
     const [swiper, updateSwiper] = useState(null);
     const [gallerySwiper, getGallerySwiper] = useState(null);
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
+    const [descriptionSwiper, getdDescriptionSwiper] = useState(null);
 
-    console.log(swiper);
     const thumbnailSwiperParams = {
         getSwiper: getThumbnailSwiper,
         spaceBetween: 33,
@@ -56,8 +55,17 @@ export const SimpleSlider = () => {
             }
         }
     };
+
     const gallerySwiperParams = {
         getSwiper: getGallerySwiper,
+        slidesPerView: 1,
+        spaceBetween: 33,
+        effect: 'fade',
+        speed: 1000,
+    };
+
+    const descriptionSwiperParams = {
+        getSwiper: getdDescriptionSwiper,
         slidesPerView: 1,
         spaceBetween: 33,
         effect: 'fade',
@@ -94,28 +102,9 @@ export const SimpleSlider = () => {
                     <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
                 </Swiper>}
             </div>
-            <div className={styles.description}>
-                <img src={republica} alt='' />
-                <ul className='dashed'>
-                    <li>236 departamentos de 130 a 832 m2</li>
-                    <li>Amenidades:</li>
-                </ul>
-                <ul className='dashed'>
-                    <li>Alberca con doble carril de nado</li>
-                    <li>Jacuzzi</li>
-                    <li>Gimnasio</li>
-                    <li>Cuarto de Juegos</li>
-                    <li>Salón de eventos</li>
-                    <li>Sala de visitas</li>
-                    <li>
-                        23,200 m2 de áreas verdes,
-                        espejos de aguas y andadores
-                    </li>
-                </ul>
-                <div className={styles.link}>
-                    <Link to=''>Ver Projecto</Link>
-                </div>
-            </div>
+            {/*<Swiper {...descriptionSwiperParams}>*/}
+            <SliderDescription />
+            {/*</Swiper>*/}
         </>
     );
 };

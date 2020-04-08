@@ -1,8 +1,4 @@
-@import "../../../assets/scss/variables";
-
-.wrapperSlider {
-  width: 100%;
-}
+@import "../../../../../assets/scss/variables";
 
 .description {
   max-width:  34rem;
@@ -38,13 +34,6 @@
 }
 
 @media screen and (min-width: 993px) {
-  .wrapperSlider {
-    display:         flex;
-    justify-content: space-between;
-    align-items:     center;
-    flex-direction:  row-reverse;
-    margin-top:      5rem;
-  }
   .description {
     z-index:    1;
     min-height: 28rem;
@@ -68,7 +57,7 @@
           position:        absolute;
           right:           -1rem;
           top:             50%;
-          background:      url("../../../assets/images/arrow-long.svg") center center no-repeat;
+          background:      url("../../../../../assets/images/arrow-long.svg") center center no-repeat;
           background-size: contain;
           width:           3.25rem;
           height:          0.875rem;
