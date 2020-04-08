@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/idei/static/css/main.fd86b7fe.chunk.css",
-    "main.js": "/idei/static/js/main.05ae3137.chunk.js",
-    "main.js.map": "/idei/static/js/main.05ae3137.chunk.js.map",
+    "main.css": "/idei/static/css/main.e006148f.chunk.css",
+    "main.js": "/idei/static/js/main.4567f4c2.chunk.js",
+    "main.js.map": "/idei/static/js/main.4567f4c2.chunk.js.map",
     "runtime-main.js": "/idei/static/js/runtime-main.86ff6c07.js",
     "runtime-main.js.map": "/idei/static/js/runtime-main.86ff6c07.js.map",
     "static/css/2.382c35bb.chunk.css": "/idei/static/css/2.382c35bb.chunk.css",
     "static/js/2.701c74ca.chunk.js": "/idei/static/js/2.701c74ca.chunk.js",
     "static/js/2.701c74ca.chunk.js.map": "/idei/static/js/2.701c74ca.chunk.js.map",
     "index.html": "/idei/index.html",
-    "precache-manifest.492be70b96c0a0bece53c55c43020346.js": "/idei/precache-manifest.492be70b96c0a0bece53c55c43020346.js",
+    "precache-manifest.2020203e14b2ad84335f49ddafa57b39.js": "/idei/precache-manifest.2020203e14b2ad84335f49ddafa57b39.js",
     "service-worker.js": "/idei/service-worker.js",
     "static/css/2.382c35bb.chunk.css.map": "/idei/static/css/2.382c35bb.chunk.css.map",
-    "static/css/main.fd86b7fe.chunk.css.map": "/idei/static/css/main.fd86b7fe.chunk.css.map",
+    "static/css/main.e006148f.chunk.css.map": "/idei/static/css/main.e006148f.chunk.css.map",
     "static/js/2.701c74ca.chunk.js.LICENSE.txt": "/idei/static/js/2.701c74ca.chunk.js.LICENSE.txt",
     "static/media/SimpleSection.module.scss": "/idei/static/media/IDEI.42da850a.svg",
     "static/media/main.scss": "/idei/static/media/TitilliumWeb-Regular.cb54eb2d.ttf",
@@ -45,7 +45,7 @@
     "static/js/runtime-main.86ff6c07.js",
     "static/css/2.382c35bb.chunk.css",
     "static/js/2.701c74ca.chunk.js",
-    "static/css/main.fd86b7fe.chunk.css",
-    "static/js/main.05ae3137.chunk.js"
+    "static/css/main.e006148f.chunk.css",
+    "static/js/main.4567f4c2.chunk.js"
   ]
 }
