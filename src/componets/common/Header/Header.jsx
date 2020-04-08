@@ -14,6 +14,7 @@ import espacia from '../../../assets/images/espacia-logo.svg'
 import reeliza from '../../../assets/images/reeliza-logo.svg'
 import investor from '../../../assets/images/inversor-logo.svg'
 import video from '../../../assets/video/video-para home.webm'
+import banner from '../../../assets/images/home/banner.jpg'
 
 const menus = [
     {url: '/', label: 'NOSOTROS', image: logoGray},
@@ -32,8 +33,9 @@ export const Header = () => {
 
     return (
         <header className={styles.header}>
-            <video className={styles.banner} autoPlay loop>
+            <video className={styles.banner} autoPlay preload loop poster={banner}>
                 <source src={video} type="video/webm" />
+                The video tag is not supported by your browser.
             </video>
             <div className={styles.menuWrapper}>
                 <div className={styles.logo}>
