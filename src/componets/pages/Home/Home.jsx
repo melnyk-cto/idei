@@ -33,6 +33,7 @@ export const Home = () => {
                     </ul>
                     <ul className='dashed'>
                         <li>Alberca con doble carril de nado</li>
+                        <li>Jacuzzi</li>
                         <li>Gimnasio</li>
                         <li>Cuarto de Juegos</li>
                         <li>Salón de eventos</li>

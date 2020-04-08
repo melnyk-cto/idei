@@ -80,6 +80,11 @@
   }
 }
 
-@media screen and (min-width: 1640px) {
-
+@media screen and (min-width: 1440px) {
+  .sliderMobile {
+    .thumbnail {
+      height:     27vw;
+      max-height: 34rem;
+    }
+  }
 }

@@ -78,6 +78,7 @@ p {
   font-size:      0.8125rem;
   line-height:    1.25rem;
   letter-spacing: 0.06em;
+  margin-top:     0;
 }
 
 #root {
@@ -88,9 +89,9 @@ p {
   overflow: hidden;
 }
 
-@media screen and (min-width: 1640px) {
+@media screen and (min-width: 1440px) {
   p {
     font-size:   1.125rem;
-    line-height: 1.6875rem;
+    line-height: 1.4;
   }
 }

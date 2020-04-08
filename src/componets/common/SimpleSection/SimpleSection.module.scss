@@ -7,17 +7,11 @@
   padding-bottom:  1rem;
   margin-top:      2rem;
   .images {
-    width:      100%;
-    max-width:  51.75rem;
-    height:     64.405vw;
-    max-height: 33.5rem;
-    position:   relative;
+    width:     100%;
+    max-width: 51.75rem;
+    position:  relative;
     > img {
-      position: absolute;
-      z-index:  0;
-      bottom:   0;
-      left:     0;
-      width:    100%;
+      max-height: 100%;
     }
     .overImg {
       position:         absolute;
@@ -54,11 +48,10 @@
       background-color: #F8F9FB;
       position:         absolute;
       z-index:          1;
-      bottom:           79.3%;
-      left:             66.2%;
+      bottom:           80.3%;
+      left:             53.2%;
       img {
-        width:  9.3125rem;
-        height: 5.125rem;
+        width: 9.3125rem;
       }
     }
   }
@@ -72,15 +65,15 @@
       line-height:    1.52;
       letter-spacing: 0.06em;
       color:          $carbonic;
-      margin-bottom:  2rem;
+      margin-bottom:  2.4rem;
     }
     h3 {
       font-weight:    bold;
       font-size:      1.25rem;
-      line-height:    1.52;
+      line-height:    1.81;
       letter-spacing: 0.06em;
       color:          $carbonic;
-      margin-bottom:  2rem;
+      margin-bottom:  19%;
     }
     p {
       font-size:      0.8rem;
@@ -93,41 +86,44 @@
 
 @media screen and (min-width: 768px) {
   .wrapper {
+    padding:         12.7% 11.6% 7% 7.2%;
     display:         flex;
     justify-content: center;
     align-items:     center;
-    background:      url("../../../assets/images/IDEI.svg") no-repeat #F8F9FB center center;
+    background:      url("../../../assets/images/IDEI.svg") no-repeat #F8F9FB center bottom;
     background-size: 85%;
-    padding:         1rem;
-    margin-top: 0;
+    margin-top:      0;
     .images {
-      order:       2;
-      width:       41%;
-      height:      25.5vw;
-      margin:      1%;
-      display:     flex;
-      align-items: center;
+      order:      2;
+      max-width:  66%;
+      max-height: 320px;
+      object-fit: contain;
       .overImg {
-        bottom: -26%;
-        left:   77%;
+        bottom: -23.3%;
+        left:   69.1%;
+
       }
       .overDiv {
         display: block;
       }
     }
     .description {
-      order:     1;
-      width:     26%;
-      max-width: 31.625rem;
-      margin:    1%;
+      max-width:     34%;
+
+      order:         1;
+      margin:        0;
+      padding-right: 5%;
     }
   }
 }
 
 @media screen and (min-width: 992px) {
   .wrapper {
-    padding:    10rem 1rem;
     .images {
+      max-height: 100%;
+      > img {
+        width: 81%;
+      }
       .overDiv {
         padding: 0.5rem 1rem;
         img {
@@ -139,15 +135,20 @@
   }
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1440px) {
   .wrapper {
-    padding: 20rem 1rem;
+    padding: 12.7% 11.6% 7% 7.2%;
     .images {
+      width:     100%;
+      max-width: 66%;
       .overImg {
-        width:  39%;
-        height: 26vw;
-        h3 {
-          font-size: 1.5rem;
+        width:   39%;
+        height:  26vw;
+        padding: 4.1rem 1rem 1rem 2.6rem;
+        > h3 {
+          font-size:     1.5rem;
+          margin-bottom: 1.5rem;
+          line-height:   1.7;
         }
         p {
           font-size: 1.5rem;
@@ -162,11 +163,14 @@
       }
     }
     .description {
+      width:     100%;
+      max-width: 34%;
       span, p {
         font-size: 1.125rem;
       }
       h3 {
-        font-size: 1.6875rem;
+        font-size:   1.5rem;
+        line-height: 1.81;
       }
     }
   }

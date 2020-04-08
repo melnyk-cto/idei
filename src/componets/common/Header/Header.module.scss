@@ -8,7 +8,7 @@
   }
 }
 
-@media (any-hover: hover) and (min-width: 1640px) {
+@media (any-hover: hover) and (min-width: 1440px) {
   .header {
     .menuWrapper .menu ul li:hover a {
       opacity: 0;
@@ -47,7 +47,7 @@
     }
   }
   .menuWrapper {
-    max-width:       95%;
+    max-width:       92.7%;
     width:           100%;
     display:         flex;
     justify-content: space-between;
@@ -186,23 +186,23 @@
   }
 }
 
-@media screen and (min-width: 1640px) {
+@media screen and (min-width: 1440px) {
   .header {
     .logo {
       position:   static;
       margin-top: 2.5rem;
-      padding:    1rem 3.125rem 0.6875rem 6.8125rem;
+      padding:    1rem 3.125rem 0 6.8125rem;
     }
     .menuWrapper {
       .menu {
         display:    block;
         background: transparent;
         position:   static;
-        width:      auto;
+        width:      70%;
         ul {
           flex-direction:  row;
-          justify-content: space-between;
           align-items:     flex-start;
+          justify-content: flex-end;
           li {
             &:active a {
               opacity: 0;

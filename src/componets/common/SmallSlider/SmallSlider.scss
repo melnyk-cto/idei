@@ -69,10 +69,10 @@
 
 @media screen and (min-width: 993px) {
   .smallSlider {
-    width:   48%;
+    width:   47%;
     padding: 0 8% 0 2%;
     .thumbnail {
-      height:        9rem;
+      height:        6rem;
       margin-bottom: 6rem;
       margin-top:    6rem;
     }
@@ -93,4 +93,13 @@
   .swiper-button-next, .swiper-button-prev {
     display: block;
   }
+}
+
+@media screen and (min-width: 1440px) {
+  .smallSlider {
+    .thumbnail {
+      height: 9rem;
+    }
+  }
+
 }
