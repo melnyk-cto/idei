@@ -84,6 +84,10 @@ p {
   height: 100%;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 @media screen and (min-width: 1640px) {
   p {
     font-size:   1.125rem;

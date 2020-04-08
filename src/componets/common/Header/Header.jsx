@@ -1,5 +1,5 @@
 // core
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // library
 import { Link } from 'react-router-dom';
@@ -15,6 +15,7 @@ import reeliza from '../../../assets/images/reeliza-logo.svg'
 import investor from '../../../assets/images/inversor-logo.svg'
 import video from '../../../assets/video/video-para home.webm'
 import banner from '../../../assets/images/home/banner.jpg'
+import { useWindowSize } from "../../../hooks";
 
 const menus = [
     {url: '/', label: 'NOSOTROS', image: logoGray},
@@ -25,15 +26,24 @@ const menus = [
     {url: '/', label: 'RELACION CON INVERSIONISTAS', image: investor},
 ];
 export const Header = () => {
-
     const [active, setActive] = useState(false);
+    const [width] = useWindowSize();
+
     const addClass = () => {
         setActive(!active);
     };
 
+    useEffect(() => {
+        if (width <= 1640 && active) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+    }, [width, active]);
+
     return (
         <header className={styles.header}>
-            <video className={styles.banner} autoPlay preload loop poster={banner} muted>
+            <video className={styles.banner} autoPlay loop poster={banner} muted>
                 <source src={video} type='video/webm; codecs="vp8, vorbis"' />
                 The video tag is not supported by your browser.
             </video>
