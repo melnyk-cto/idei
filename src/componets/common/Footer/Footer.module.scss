@@ -32,7 +32,7 @@
   .container {
     width:   100%;
     margin:  0 auto;
-    padding: 1.4375rem 1rem 3rem 1rem;
+    padding: 1.4375rem 1rem 0 1rem;
   }
   .lists {
     display:         flex;
@@ -152,7 +152,8 @@
 @media screen and (min-width: 768px) {
   .footer {
     .container {
-      width: 90%;
+      width:   90%;
+      padding: 8.5% 1rem 3rem 1rem;
     }
     .lists {
       > div {
@@ -201,11 +202,13 @@
 @media screen and (min-width: 992px) {
   .footer {
     .container {
-      width: 80%;
+      width: 90%;
     }
     .lists {
+      flex-wrap: nowrap;
       > div {
-        width: 20%;
+        width:     17%;
+        min-width: 11.25rem;
       }
       h3 {
         text-align: left;
@@ -232,17 +235,17 @@
         }
       }
       .logo {
-        width:          32%;
+        width:          40%;
         order:          4;
         flex-direction: row;
         flex-wrap:      wrap;
         a {
           order: 1;
-          width: 40%;
+          width: 30%;
         }
         > div {
           order: 2;
-          width: 60%;
+          width: 70%;
         }
       }
     }
@@ -257,8 +260,11 @@
 
 @media screen and (min-width: 1440px) {
   .footer {
+    .container {
+      width: 74%;
+    }
     .partners {
-      margin-bottom: 16.25rem;
+      margin-bottom: 10.6rem
     }
   }
 }
