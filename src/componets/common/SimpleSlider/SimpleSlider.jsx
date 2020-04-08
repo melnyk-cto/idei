@@ -8,8 +8,9 @@ import { useWindowSize } from "../../../hooks";
 import Swiper from "react-id-swiper";
 
 // image
-import recentImage1 from "../../../assets/images/home/recent-project-1.png";
-import recentImage3 from "../../../assets/images/home/recent-project-3.png";
+import recentImage1 from "../../../assets/images/home/recent-project-1.jpg";
+import recentImage2 from "../../../assets/images/home/recent-project-2.jpg";
+import recentImage3 from "../../../assets/images/home/recent-project-3.jpg";
 
 // styles
 import 'swiper/swiper.scss'
@@ -35,14 +36,18 @@ export const SimpleSlider = () => {
             prevEl: '.swiper-button-prev'
         },
         autoplay: {
-            delay: 20500,
+            delay: 2500,
             disableOnInteraction: false
         },
         // Responsive breakpoints
         breakpoints: {
             // when window width is >= 992px
             992: {
-                // spaceBetween: 60,
+                slidesPerView: 'auto',
+                loop: true,
+            },
+            1640: {
+                spaceBetween: 160,
                 slidesPerView: 'auto',
                 loop: true,
             }
@@ -72,17 +77,17 @@ export const SimpleSlider = () => {
         <div className='sliderMobile'>
             <Swiper {...thumbnailSwiperParams}>
                 <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
+                <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
                 <div className='thumbnail' style={{backgroundImage: `url(${recentImage3})`}} />
                 <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
-                <div className='thumbnail' style={{backgroundImage: `url(${recentImage3})`}} />
-                <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
+                <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
             </Swiper>
             {width <= 992 && <Swiper  {...gallerySwiperParams} getSwiper={updateSwiper}>
                 <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
+                <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
                 <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
                 <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
-                <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
-                <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
+                <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
             </Swiper>}
         </div>
     );

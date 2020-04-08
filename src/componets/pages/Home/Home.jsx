@@ -5,7 +5,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 // components
-import { SimpleSection, SimpleSlider } from "../../common";
+import { SimpleSection, SimpleSlider, SmallSlider } from "../../common";
 
 // images
 import republica from '../../../assets/images/home/republica.svg'
@@ -55,17 +55,19 @@ export const Home = () => {
                     cambiar el paisaje urbano de la ciudad de Monterrey, lo que nos ha convertido en una alternativa
                     sólida y confiable para inversionistas de bienes raíces.
                 </p>
-                <SimpleSlider />
-                <div className={styles.description}>
-                    <h2>
-                        Residential <br />
-                        in horizontal developments
-                    </h2>
-                    <ul>
-                        {residentialList.map((residential) =>
-                            <li key={residential}>{residential}</li>
-                        )}
-                    </ul>
+                <div className={styles.wrapperSlider}>
+                    <SmallSlider />
+                    <div className={styles.description}>
+                        <h2>
+                            Residential <br />
+                            in horizontal developments
+                        </h2>
+                        <ul>
+                            {residentialList.map((residential) =>
+                                <li key={residential}>{residential}</li>
+                            )}
+                        </ul>
+                    </div>
                 </div>
             </section>
         </>
