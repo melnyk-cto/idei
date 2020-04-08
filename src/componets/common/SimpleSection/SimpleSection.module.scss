@@ -5,6 +5,7 @@
   background:      url("../../../assets/images/IDEI.svg") no-repeat #F8F9FB center top;
   background-size: 85%;
   padding-bottom:  1rem;
+  margin-top:      2rem;
   .images {
     width:      100%;
     max-width:  51.75rem;
@@ -98,6 +99,7 @@
     background:      url("../../../assets/images/IDEI.svg") no-repeat #F8F9FB center center;
     background-size: 85%;
     padding:         1rem;
+    margin-top: 0;
     .images {
       order:       2;
       width:       41%;
@@ -124,7 +126,7 @@
 
 @media screen and (min-width: 992px) {
   .wrapper {
-    padding: 10rem 1rem;
+    padding:    10rem 1rem;
     .images {
       .overDiv {
         padding: 0.5rem 1rem;
