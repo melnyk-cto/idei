@@ -1,0 +1,104 @@
+@import "../../../assets/scss/variables";
+
+.wrapperSlider {
+  width: 100%;
+}
+
+.description {
+  max-width:  34rem;
+  width:      100%;
+  margin:     0 auto;
+  background: $metal;
+  padding:    3rem 1.5rem 2rem 3.5625rem;
+  color:      #f8f9fb;
+  font-size:  0.8125rem;
+  > h2 {
+    color:         #f8f9fb;
+    margin-bottom: 2rem;
+  }
+  > img {
+    width:         5.875rem;
+    margin-bottom: 1.5rem;
+  }
+  ul {
+    line-height:    1.25rem;
+    letter-spacing: 0.06em;
+    margin-bottom:  2rem;
+    width:          100%;
+  }
+  .link {
+    text-align: center;
+    a {
+      display: inline-block;
+      color:   #f8f9fb;
+      border:  0.0625rem solid $carbonic;
+      padding: 0.5rem 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .wrapperSlider {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    flex-direction:  row-reverse;
+    margin-top:      5rem;
+  }
+  .description {
+    z-index:    1;
+    min-height: 28rem;
+    padding:    3rem 1.5rem 2rem 4.5rem;
+    max-width:  32vw;
+    position:   relative;
+    left:       0;
+    top:        0;
+    width:      52%;
+    margin:     0 0 0 auto;
+    height:     auto;
+    transform:  translateY(0);
+    .link {
+      text-align: left;
+      a {
+        border:       none;
+        position:     relative;
+        padding-left: 0;
+        &:after {
+          content:         '';
+          position:        absolute;
+          right:           -1rem;
+          top:             50%;
+          background:      url("../../../assets/images/arrow-long.svg") center center no-repeat;
+          background-size: contain;
+          width:           3.25rem;
+          height:          0.875rem;
+          transform:       translate(100%, -50%);
+
+        }
+        &:hover, &:active {
+          opacity: .7;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .description {
+    font-size: 1.125rem;
+    padding:   4.4rem 2.5rem 2rem 7.4rem;
+    ul {
+      line-height: 1.85;
+    }
+    > img {
+      width:         11rem;
+      margin-bottom: 3.5rem;
+    }
+    .link {
+      margin-top:  14%;
+      font-size:   1.5rem;
+      line-height: 2.3125;
+    }
+  }
+}
+

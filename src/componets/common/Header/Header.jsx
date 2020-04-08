@@ -1,6 +1,10 @@
 // core
 import React, { useState, useEffect } from 'react';
 
+// components
+import { useWindowSize } from "../../../hooks";
+import { routes } from "../../App/routes";
+
 // library
 import { Link } from 'react-router-dom';
 
@@ -15,12 +19,11 @@ import reeliza from '../../../assets/images/reeliza-logo.svg'
 import investor from '../../../assets/images/inversor-logo.svg'
 import video from '../../../assets/video/video-para home.webm'
 import banner from '../../../assets/images/home/banner.jpg'
-import { useWindowSize } from "../../../hooks";
 
 const menus = [
-    {url: '/', label: 'NOSOTROS', image: logoGray},
+    {url: routes.home, label: 'NOSOTROS', image: logoGray},
     {url: '/', label: 'VERTICAL', image: logoGray},
-    {url: '/', label: 'HORIZONTAL', image: trazzo},
+    {url: routes.trazzo, label: 'HORIZONTAL', image: trazzo},
     {url: '/', label: 'COMERCIAL', image: espacia},
     {url: '/', label: 'FINANCIAMIENTO', image: reeliza},
     {url: '/', label: 'RELACION CON INVERSIONISTAS', image: investor},
@@ -57,7 +60,7 @@ export const Header = () => {
                             <Link to={item.url}>
                                 {item.label}
                             </Link>
-                            <Link to='/' className={styles.menuHover}>
+                            <Link to={item.url} className={styles.menuHover}>
                                 <img src={item.image} alt='' />
                                 {item.label}
                             </Link>

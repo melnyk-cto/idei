@@ -32,14 +32,14 @@
     position:   absolute;
     z-index:    1;
     bottom:     0;
-    right:      9%;
+    right:      4.5%;
     width:      6.8125rem;
     height:     4.0625rem;
     &:before {
       content:         '';
       position:        absolute;
       top:             50%;
-      left:            50%;
+      left:            30%;
       transform:       translate(-50%, -50%);
       background:      url("../../../assets/images/arrow.svg") center center no-repeat;
       background-size: contain;
@@ -53,6 +53,7 @@
   .swiper-button-prev {
     transform: translateX(-100%);
     &:before {
+      left:      70%;
       transform: translate(-50%, -50%) rotate(-180deg);
     }
     &:after {
@@ -73,8 +74,8 @@
     padding: 0 8% 0 2%;
     .thumbnail {
       height:        6rem;
-      margin-bottom: 6rem;
       margin-top:    6rem;
+      margin-bottom: 11rem;
     }
     .singleSlide {
       position:  absolute;
@@ -88,6 +89,9 @@
         height:        18vw;
         margin-bottom: 1.3125rem;
       }
+    }
+    .swiper-button-next, .swiper-button-prev {
+      display: block;
     }
   }
   .swiper-button-next, .swiper-button-prev {
