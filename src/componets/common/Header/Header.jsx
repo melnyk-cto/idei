@@ -33,8 +33,8 @@ export const Header = () => {
 
     return (
         <header className={styles.header}>
-            <video className={styles.banner} autoPlay preload loop poster={banner}>
-                <source src={video} type="video/webm" />
+            <video className={styles.banner} autoPlay preload loop poster={banner} muted>
+                <source src={video} type='video/webm; codecs="vp8, vorbis"' />
                 The video tag is not supported by your browser.
             </video>
             <div className={styles.menuWrapper}>
