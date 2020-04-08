@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ebf1803f1b80cf33c1af8094868b49a4",
+    "revision": "338952319d9efed8faba9bd6ed42a6a9",
     "url": "/idei/index.html"
   },
   {
-    "revision": "2c08a605d7a9645e71e7",
+    "revision": "689249c7065a69167772",
     "url": "/idei/static/css/2.382c35bb.chunk.css"
   },
   {
-    "revision": "a9dabb93c3aed887bed3",
+    "revision": "b1a0f1f42fe76b508baf",
     "url": "/idei/static/css/main.32db3381.chunk.css"
   },
   {
-    "revision": "2c08a605d7a9645e71e7",
-    "url": "/idei/static/js/2.8ca8b1b3.chunk.js"
+    "revision": "689249c7065a69167772",
+    "url": "/idei/static/js/2.a4ec5da3.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/idei/static/js/2.8ca8b1b3.chunk.js.LICENSE.txt"
+    "url": "/idei/static/js/2.a4ec5da3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a9dabb93c3aed887bed3",
-    "url": "/idei/static/js/main.dc262844.chunk.js"
+    "revision": "b1a0f1f42fe76b508baf",
+    "url": "/idei/static/js/main.992cab30.chunk.js"
   },
   {
     "revision": "1e326c465e1d048a03a6",
@@ -50,6 +50,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "192123819a801d69b81b9d6a5ce34c33",
     "url": "/idei/static/media/arrow.19212381.svg"
+  },
+  {
+    "revision": "c3e52f40be497963e0070f0a07e72820",
+    "url": "/idei/static/media/banner.c3e52f40.jpg"
   },
   {
     "revision": "a0277afb8605250ed47ca8018e4398ca",

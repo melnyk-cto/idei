@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/idei/static/css/main.32db3381.chunk.css",
-    "main.js": "/idei/static/js/main.dc262844.chunk.js",
-    "main.js.map": "/idei/static/js/main.dc262844.chunk.js.map",
+    "main.js": "/idei/static/js/main.992cab30.chunk.js",
+    "main.js.map": "/idei/static/js/main.992cab30.chunk.js.map",
     "runtime-main.js": "/idei/static/js/runtime-main.86ff6c07.js",
     "runtime-main.js.map": "/idei/static/js/runtime-main.86ff6c07.js.map",
     "static/css/2.382c35bb.chunk.css": "/idei/static/css/2.382c35bb.chunk.css",
-    "static/js/2.8ca8b1b3.chunk.js": "/idei/static/js/2.8ca8b1b3.chunk.js",
-    "static/js/2.8ca8b1b3.chunk.js.map": "/idei/static/js/2.8ca8b1b3.chunk.js.map",
+    "static/js/2.a4ec5da3.chunk.js": "/idei/static/js/2.a4ec5da3.chunk.js",
+    "static/js/2.a4ec5da3.chunk.js.map": "/idei/static/js/2.a4ec5da3.chunk.js.map",
     "index.html": "/idei/index.html",
-    "precache-manifest.ab963c93e924fd45cf9909aca5ba3bcc.js": "/idei/precache-manifest.ab963c93e924fd45cf9909aca5ba3bcc.js",
+    "precache-manifest.5f8dc319aa8dfb5be18e872f6b360bac.js": "/idei/precache-manifest.5f8dc319aa8dfb5be18e872f6b360bac.js",
     "service-worker.js": "/idei/service-worker.js",
     "static/css/2.382c35bb.chunk.css.map": "/idei/static/css/2.382c35bb.chunk.css.map",
     "static/css/main.32db3381.chunk.css.map": "/idei/static/css/main.32db3381.chunk.css.map",
-    "static/js/2.8ca8b1b3.chunk.js.LICENSE.txt": "/idei/static/js/2.8ca8b1b3.chunk.js.LICENSE.txt",
+    "static/js/2.a4ec5da3.chunk.js.LICENSE.txt": "/idei/static/js/2.a4ec5da3.chunk.js.LICENSE.txt",
     "static/media/SimpleSection.module.scss": "/idei/static/media/IDEI.42da850a.svg",
     "static/media/main.scss": "/idei/static/media/TitilliumWeb-Regular.cb54eb2d.ttf",
     "static/media/Home.module.scss": "/idei/static/media/arrow-long.e8e93124.svg",
     "static/media/SmallSlider.scss": "/idei/static/media/arrow.19212381.svg",
+    "static/media/banner.jpg": "/idei/static/media/banner.c3e52f40.jpg",
     "static/media/espacia-logo.svg": "/idei/static/media/espacia-logo.a0277afb.svg",
     "static/media/facebook-icon.svg": "/idei/static/media/facebook-icon.e8ad2af3.svg",
     "static/media/historia-1.jpg": "/idei/static/media/historia-1.1997686c.jpg",
@@ -43,8 +44,8 @@
   "entrypoints": [
     "static/js/runtime-main.86ff6c07.js",
     "static/css/2.382c35bb.chunk.css",
-    "static/js/2.8ca8b1b3.chunk.js",
+    "static/js/2.a4ec5da3.chunk.js",
     "static/css/main.32db3381.chunk.css",
-    "static/js/main.dc262844.chunk.js"
+    "static/js/main.992cab30.chunk.js"
   ]
 }
