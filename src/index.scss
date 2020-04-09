@@ -98,13 +98,16 @@ p {
 }
 
 .link {
-  text-align: center;
   a {
     display: inline-block;
     color:   #f8f9fb;
     border:  0.0625rem solid $carbonic;
     padding: 0.5rem 1.5rem;
   }
+}
+
+.tc {
+  text-align: center;
 }
 
 @media screen and (min-width: 993px) {
@@ -115,7 +118,6 @@ p {
     display: block;
   }
   .link {
-    text-align: left;
     a {
       border:       none;
       position:     relative;

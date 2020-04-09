@@ -11,8 +11,8 @@
       background-color: $white;
       position:         absolute;
       z-index:          1;
-      top:              23%;
-      left:             59%;
+      top:              22%;
+      left:             60%;
       width:            58%;
     }
   }
@@ -71,15 +71,15 @@
   display:         flex;
   flex-direction:  column;
   justify-content: space-between;
-  padding:         0 1rem;
+  padding:         0 1rem 2em 1rem;
 }
 
 @media screen and (min-width: 768px) {
   .trazzo {
     display:         flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items:     center;
-    padding:         5%;
+    padding:         12rem 3% 2.2% 7.4%;
     .images {
       width: 40%;
       .overDiv {
@@ -87,10 +87,9 @@
       }
     }
     .description {
-      width:           36%;
-      margin:          0;
-      flex-direction:  column;
-      justify-content: flex-start;
+      margin-right: 0;
+      margin-left:  8%;
+      width:        50%;
       img {
         width: 46%;
         order: 1;
@@ -121,7 +120,8 @@
 @media screen and (min-width: 992px) {
   .trazzo {
     .description {
-      width: 23%;
+      width:       25rem;
+      margin-left: 16%;
     }
   }
   .amorada {
@@ -137,6 +137,7 @@
 
 @media screen and (min-width: 1440px) {
   .trazzo {
+    padding: 10.5rem 3% 2.2% 7.4%;
     .description {
       h3 {
         margin-top: 4.75rem;
@@ -145,7 +146,7 @@
         margin-top: 3.25rem;
       }
       .link {
-        margin-top: 3.75rem;
+        margin-top: 1.75rem;
       }
     }
   }

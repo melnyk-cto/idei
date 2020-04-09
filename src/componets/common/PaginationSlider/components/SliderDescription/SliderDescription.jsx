@@ -17,7 +17,7 @@ export const SliderDescription = () => {
                 La gran vista panorámica que se aprecia desde , se suma al placer de vivir al poniente de la ciudad de
                 Monterrey
             </p>
-            <div className='link'>
+            <div className='link tc'>
                 <Link to=''>Ver Projecto</Link>
             </div>
         </>

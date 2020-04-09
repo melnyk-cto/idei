@@ -48,7 +48,7 @@
     flex-direction: column;
     text-align:     left;
     background:     #f8f9fb;
-    padding:        4.8% 18% 7.7% 8%;
+    padding:        4.8% 18% 1.7% 8%;
     position:       relative;
     &:before {
       content:         '';
@@ -71,16 +71,7 @@
       letter-spacing: 1.4px;
       &.active {
         position: relative;
-        &:before {
-          content:    '';
-          position:   absolute;
-          right:      -5rem;
-          top:        50%;
-          transform:  translate(100%, -50%);
-          width:      90px;
-          height:     4px;
-          background: $carbonic;
-        }
+        color:    $black;
       }
     }
   }
@@ -94,6 +85,21 @@
     }
   }
   .pagination {
-    padding: 4.8% 29% 7.7% 8%;
+    padding: 4.8% 29% 1.7% 8%;
+    li {
+      &.active {
+        position: relative;
+        &:before {
+          content:    '';
+          position:   absolute;
+          right:      -3rem;
+          top:        50%;
+          transform:  translate(100%, -50%);
+          width:      90px;
+          height:     4px;
+          background: $carbonic;
+        }
+      }
+    }
   }
 }
