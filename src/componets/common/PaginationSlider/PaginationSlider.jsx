@@ -16,7 +16,7 @@ import styles from "./components/SliderDescription/SliderDescription.module.scss
 import { SliderDescription } from "./components/SliderDescription/SliderDescription";
 
 const listTitle = [0, 1, 2, 3, 4];
-const names = ['BALCONES DE LAS MITRAS', 'LOS CASTAÑOS', 'CÉNTRIKA PLATINUM', 'TORRE CÉNTRIKA ELITE',
+const names = ['AMORADA', 'BALCONES DE LAS MITRAS', 'LOS CASTAÑOS', 'CÉNTRIKA PLATINUM', 'TORRE CÉNTRIKA ELITE',
     'ESTANCIAS TORONTO PRIVADAS DEL CANADÁ', 'ESTANCIAS MONTREAL PRIVADAS DEL CANADÁ', 'ESTANCIAS VALLE DE PLATA'];
 export const PaginationSlider = () => {
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);

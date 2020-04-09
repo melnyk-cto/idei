@@ -22,15 +22,6 @@
     margin-bottom:  2rem;
     width:          100%;
   }
-  .link {
-    text-align: center;
-    a {
-      display: inline-block;
-      color:   #f8f9fb;
-      border:  0.0625rem solid $carbonic;
-      padding: 0.5rem 1.5rem;
-    }
-  }
 }
 
 
@@ -46,29 +37,7 @@
     height:     30rem;
     min-height: 28rem;
     padding:    3rem 1.5rem 2rem 4.5rem;
-    .link {
-      text-align: left;
-      a {
-        border:       none;
-        position:     relative;
-        padding-left: 0;
-        &:after {
-          content:         '';
-          position:        absolute;
-          right:           -1rem;
-          top:             50%;
-          background:      url("../../../../../assets/images/arrow-long.svg") center center no-repeat;
-          background-size: contain;
-          width:           3.25rem;
-          height:          0.875rem;
-          transform:       translate(100%, -50%);
 
-        }
-        &:hover, &:active {
-          opacity: .7;
-        }
-      }
-    }
   }
 }
 

@@ -29,7 +29,7 @@ export const SliderDescription = () => {
                     espejos de aguas y andadores
                 </li>
             </ul>
-            <div className={styles.link}>
+            <div className='link'>
                 <Link to=''>Ver Projecto</Link>
             </div>
         </>

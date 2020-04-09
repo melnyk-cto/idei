@@ -14,7 +14,7 @@
     margin-bottom: 2rem;
     margin-top:    2rem;
     &.swiper-slide-active {
-      box-shadow: 0 1.875rem 3.75rem rgba(0, 0, 0, 0.25);
+      //box-shadow: 0 1.875rem 3.75rem rgba(0, 0, 0, 0.25);
     }
     &:not(.swiper-slide-active) {
       opacity: .4;
@@ -29,7 +29,12 @@
 
 @media screen and (min-width: 993px) {
   .sliderPagination {
-    width: 50%;
+    position:  absolute;
+    z-index:   2;
+    right:     7.7%;
+    top:       48%;
+    transform: translateY(-50%);
+    width:     42.4%;
     .thumbnail {
       width:         36%;
       margin-top:    6rem;
@@ -38,20 +43,44 @@
     }
   }
   .pagination {
-    width:          50%;
+    width:          58%;
     display:        flex;
     flex-direction: column;
     text-align:     left;
     background:     #f8f9fb;
-    padding:        5% 7%;
+    padding:        4.8% 18% 7.7% 8%;
+    position:       relative;
+    &:before {
+      content:         '';
+      position:        absolute;
+      z-index:         -1;
+      left:            0;
+      top:             0;
+      background:      url("../../../assets/images/trazzo-logo.svg") 6rem center no-repeat;
+      opacity:         .05;
+      background-size: contain;
+      width:           100%;
+      height:          100%;
+    }
     li {
-      cursor:        pointer;
-      font-size:     1.5rem;
-      line-height:   2.3125rem;
-      color:         $carbonic;
-      margin-bottom: 3rem;
+      cursor:         pointer;
+      font-size:      1.5rem;
+      line-height:    2.3125rem;
+      color:          $carbonic;
+      margin-bottom:  3.2rem;
+      letter-spacing: 1.4px;
       &.active {
-        color: red;
+        position: relative;
+        &:before {
+          content:    '';
+          position:   absolute;
+          right:      -5rem;
+          top:        50%;
+          transform:  translate(100%, -50%);
+          width:      90px;
+          height:     4px;
+          background: $carbonic;
+        }
       }
     }
   }
@@ -60,8 +89,11 @@
 @media screen and (min-width: 1440px) {
   .sliderPagination {
     .thumbnail {
-      height:     50vw;
-      max-height: 34rem;
+      height:     32vw;
+      max-height: 40rem;
     }
+  }
+  .pagination {
+    padding: 4.8% 29% 7.7% 8%;
   }
 }
