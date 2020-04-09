@@ -5,9 +5,6 @@ import React, { useState, useEffect } from 'react';
 import { useWindowSize } from "../../../hooks";
 import { routes } from "../../App/routes";
 
-// library
-import { Link } from 'react-router-dom';
-
 // assets
 import styles from './Header.module.scss';
 import logo from '../../../assets/images/logo.svg'
@@ -52,18 +49,18 @@ export const Header = () => {
             </video>
             <div className={styles.menuWrapper}>
                 <div className={styles.logo}>
-                    <Link to='/'> <img src={logo} alt='logo' /></Link>
+                    <a href='/'> <img src={logo} alt='logo' /></a>
                 </div>
                 <menu className={active ? [styles.menu + ' ' + styles.active] : styles.menu}>
                     <ul>
                         {menus.map(item => <li key={item.label}>
-                            <Link to={item.url}>
+                            <a href={item.url}>
                                 {item.label}
-                            </Link>
-                            <Link to={item.url} className={styles.menuHover}>
+                            </a>
+                            <a href={item.url} className={styles.menuHover}>
                                 <img src={item.image} alt='' />
                                 {item.label}
-                            </Link>
+                            </a>
                         </li>)}
                     </ul>
                 </menu>
