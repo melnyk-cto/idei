@@ -4,10 +4,6 @@ import React, { useState, useEffect } from 'react';
 // library
 import Swiper from "react-id-swiper";
 
-// components
-import { SliderDescription } from "./components/SliderDescription/SliderDescription";
-
-
 // image
 import recentImage1 from "../../../assets/images/home/recent-project-1.jpg";
 import recentImage2 from "../../../assets/images/home/recent-project-2.jpg";
@@ -15,15 +11,18 @@ import recentImage3 from "../../../assets/images/home/recent-project-3.jpg";
 
 // styles
 import 'swiper/swiper.scss'
-import './SimpleSlider.scss';
+import './PaginationSlider.scss';
 import styles from "./components/SliderDescription/SliderDescription.module.scss";
+import { SliderDescription } from "./components/SliderDescription/SliderDescription";
 
 const listTitle = [0, 1, 2, 3, 4];
-export const SimpleSlider = () => {
-
+const names = ['BALCONES DE LAS MITRAS', 'LOS CASTAÑOS', 'CÉNTRIKA PLATINUM', 'TORRE CÉNTRIKA ELITE',
+    'ESTANCIAS TORONTO PRIVADAS DEL CANADÁ', 'ESTANCIAS MONTREAL PRIVADAS DEL CANADÁ', 'ESTANCIAS VALLE DE PLATA'];
+export const PaginationSlider = () => {
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
     const [gallerySwiper, getGallerySwiper] = useState(null);
     const [descriptionSwiper, getdDescriptionSwiper] = useState(null);
+    const [active, setActive] = useState(0);
 
     const thumbnailSwiperParams = {
         getSwiper: getThumbnailSwiper,
@@ -32,20 +31,16 @@ export const SimpleSlider = () => {
         slidesPerView: 3,
         touchRatio: 0.2,
         slideToClickedSlide: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        },
         autoplay: {
-            delay: 2500,
+            delay: 20500,
             disableOnInteraction: false
         },
         // Responsive breakpoints
         breakpoints: {
             // when window width is >= 992px
-            1440: {
+            992: {
                 spaceBetween: 160,
-                slidesPerView: 'auto',
+                slidesPerView: 1,
                 // loop: true,
             }
         }
@@ -55,13 +50,16 @@ export const SimpleSlider = () => {
         getSwiper: getGallerySwiper,
         slidesPerView: 1,
         spaceBetween: 33,
-        effect: 'fade',
-        speed: 1000,
     };
 
     const descriptionSwiperParams = {
         getSwiper: getdDescriptionSwiper,
         slidesPerView: 1,
+    };
+
+    const goToSlide = (number) => {
+        thumbnailSwiper.slideTo(number);
+        setActive(number);
     };
 
     useEffect(() => {
@@ -76,9 +74,16 @@ export const SimpleSlider = () => {
         }
     }, [gallerySwiper, thumbnailSwiper, descriptionSwiper]);
 
+
     return (
         <>
-            <div className='sliderMobile'>
+            <ul className='pagination only-desktop'>
+                {names.map((name, index) =>
+                    <li key={name} onClick={() => goToSlide(index)}
+                        className={index === active ? 'active' : ''}>{name}</li>
+                )}
+            </ul>
+            <div className='sliderPagination'>
                 <Swiper {...thumbnailSwiperParams}>
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
@@ -104,7 +109,6 @@ export const SimpleSlider = () => {
                         </div>)}
                 </Swiper>
             </div>
-
         </>
     );
 };

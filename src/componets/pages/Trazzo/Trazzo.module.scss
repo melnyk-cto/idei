@@ -66,6 +66,14 @@
   }
 }
 
+.amorada {
+  position:        relative;
+  display:         flex;
+  flex-direction:  column;
+  justify-content: space-between;
+  padding:         0 7%;
+}
+
 @media screen and (min-width: 768px) {
   .trazzo {
     display:         flex;
@@ -115,6 +123,13 @@
     .description {
       width: 23%;
     }
+  }
+  .amorada {
+    position:        relative;
+    display:         flex;
+    flex-direction:  row;
+    justify-content: space-between;
+    padding:         0 7%;
   }
 }
 
