@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1df50e76e09d34670aa029e2879ebb6c",
+    "revision": "0262e71e63ca38f6f9c75048438dd038",
     "url": "/idei/index.html"
   },
   {
-    "revision": "a67a17d7d83c9e2f0212",
+    "revision": "115cee9eb1c6227d1a7e",
     "url": "/idei/static/css/2.382c35bb.chunk.css"
   },
   {
-    "revision": "784ad424ee0f2aedbfee",
-    "url": "/idei/static/css/main.51adabf5.chunk.css"
+    "revision": "849bad42ef1831e776c0",
+    "url": "/idei/static/css/main.417f3591.chunk.css"
   },
   {
-    "revision": "a67a17d7d83c9e2f0212",
-    "url": "/idei/static/js/2.701c74ca.chunk.js"
+    "revision": "115cee9eb1c6227d1a7e",
+    "url": "/idei/static/js/2.cf766477.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/idei/static/js/2.701c74ca.chunk.js.LICENSE.txt"
+    "url": "/idei/static/js/2.cf766477.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "784ad424ee0f2aedbfee",
-    "url": "/idei/static/js/main.4567f4c2.chunk.js"
+    "revision": "849bad42ef1831e776c0",
+    "url": "/idei/static/js/main.19c3dc11.chunk.js"
   },
   {
     "revision": "1e326c465e1d048a03a6",
@@ -116,8 +116,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/idei/static/media/recent-project-3.8f728e44.jpg"
   },
   {
+    "revision": "a474cd3de3fe2ea580451461de0fe9a0",
+    "url": "/idei/static/media/recent-project.a474cd3d.jpg"
+  },
+  {
     "revision": "d9851adc70233c30c1b6faa4471a023c",
     "url": "/idei/static/media/reeliza-logo.d9851adc.svg"
+  },
+  {
+    "revision": "8e33b5f0f765156ca9ab3b7dbd64015b",
+    "url": "/idei/static/media/republica-trazzo-page.8e33b5f0.jpg"
   },
   {
     "revision": "d672db124c2418459cabffce473acfdc",
@@ -130,6 +138,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "bd1fed93e2db47fc03cde3e9a8c10c92",
     "url": "/idei/static/media/tif-saqqara.bd1fed93.jpg"
+  },
+  {
+    "revision": "21446e12e3d0fb6ea5b2421c54ef017a",
+    "url": "/idei/static/media/trazzo-logo-green.21446e12.svg"
   },
   {
     "revision": "d51c7d299158de3c81a0c56320188705",
