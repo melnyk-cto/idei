@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0262e71e63ca38f6f9c75048438dd038",
+    "revision": "1877a46500edfcc04ece95aab8d94e9c",
     "url": "/idei/index.html"
   },
   {
-    "revision": "115cee9eb1c6227d1a7e",
+    "revision": "f4ebd525a72e1fcdbe57",
     "url": "/idei/static/css/2.382c35bb.chunk.css"
   },
   {
-    "revision": "849bad42ef1831e776c0",
-    "url": "/idei/static/css/main.417f3591.chunk.css"
+    "revision": "5fc1bd08f5d1c3c1e543",
+    "url": "/idei/static/css/main.3c6f4130.chunk.css"
   },
   {
-    "revision": "115cee9eb1c6227d1a7e",
-    "url": "/idei/static/js/2.cf766477.chunk.js"
+    "revision": "f4ebd525a72e1fcdbe57",
+    "url": "/idei/static/js/2.86fba4e7.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/idei/static/js/2.cf766477.chunk.js.LICENSE.txt"
+    "url": "/idei/static/js/2.86fba4e7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "849bad42ef1831e776c0",
-    "url": "/idei/static/js/main.19c3dc11.chunk.js"
+    "revision": "5fc1bd08f5d1c3c1e543",
+    "url": "/idei/static/js/main.09f9c9f1.chunk.js"
   },
   {
     "revision": "1e326c465e1d048a03a6",
