@@ -11,7 +11,7 @@ import republica from "../../../../../assets/images/home/republica.svg";
 
 export const SliderDescription = () => {
     return (
-        <div className={styles.description}>
+        <>
             <img src={republica} alt='' />
             <ul className='dashed'>
                 <li>236 departamentos de 130 a 832 m2</li>
@@ -32,6 +32,6 @@ export const SliderDescription = () => {
             <div className={styles.link}>
                 <Link to=''>Ver Projecto</Link>
             </div>
-        </div>
+        </>
     );
 };

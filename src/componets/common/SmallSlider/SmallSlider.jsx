@@ -14,10 +14,14 @@ import image1 from "../../../assets/images/home/historia-1.jpg";
 import image2 from "../../../assets/images/home/historia-2.jpg";
 import image3 from "../../../assets/images/home/historia-3.jpg";
 import image4 from "../../../assets/images/home/historia-4.jpg";
+import styles from "./components/SliderDescription/SliderDescription.module.scss";
 
+const listTitle = [0, 1, 2, 3, 4];
 export const SmallSlider = () => {
     const [gallerySwiper, getGallerySwiper] = useState(null);
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
+    const [descriptionSwiper, getdDescriptionSwiper] = useState(null);
+
 
     const thumbnailSwiperParams = {
         getSwiper: getThumbnailSwiper,
@@ -37,7 +41,7 @@ export const SmallSlider = () => {
         // Responsive breakpoints
         breakpoints: {
             // when window width is >= 1640px
-            1640: {
+            1440: {
                 spaceBetween: 100,
             },
         }
@@ -50,17 +54,22 @@ export const SmallSlider = () => {
         speed: 1000,
     };
 
+    const descriptionSwiperParams = {
+        getSwiper: getdDescriptionSwiper,
+        slidesPerView: 1,
+    };
+
     useEffect(() => {
         if (
-            gallerySwiper !== null &&
-            gallerySwiper.controller &&
-            thumbnailSwiper !== null &&
-            thumbnailSwiper.controller
+            gallerySwiper !== null && gallerySwiper.controller &&
+            thumbnailSwiper !== null && thumbnailSwiper.controller
+            && descriptionSwiper !== null && descriptionSwiper.controller
         ) {
             gallerySwiper.controller.control = thumbnailSwiper;
-            thumbnailSwiper.controller.control = gallerySwiper;
+            descriptionSwiper.controller.control = thumbnailSwiper;
+            thumbnailSwiper.controller.control = [descriptionSwiper, gallerySwiper];
         }
-    }, [gallerySwiper, thumbnailSwiper]);
+    }, [gallerySwiper, thumbnailSwiper, descriptionSwiper]);
 
     return (
         <div className='wrapperSlider'>
@@ -84,7 +93,14 @@ export const SmallSlider = () => {
                     </Swiper>
                 </div>
             </div>
-            <SliderDescription />
+            <div className={styles.description}>
+                <Swiper {...descriptionSwiperParams}>
+                    {listTitle.map(title =>
+                        <div key={title}>
+                            <SliderDescription title={title} />
+                        </div>)}
+                </Swiper>
+            </div>
         </div>
     );
 };

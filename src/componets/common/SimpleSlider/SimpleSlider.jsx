@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react';
 import Swiper from "react-id-swiper";
 
 // components
-import { useWindowSize } from "../../../hooks";
 import { SliderDescription } from "./components/SliderDescription/SliderDescription";
 
 
@@ -17,13 +16,13 @@ import recentImage3 from "../../../assets/images/home/recent-project-3.jpg";
 // styles
 import 'swiper/swiper.scss'
 import './SimpleSlider.scss';
+import styles from "./components/SliderDescription/SliderDescription.module.scss";
 
+const listTitle = [0, 1, 2, 3, 4];
 export const SimpleSlider = () => {
-    const [width] = useWindowSize();
 
-    const [swiper, updateSwiper] = useState(null);
-    const [gallerySwiper, getGallerySwiper] = useState(null);
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
+    const [gallerySwiper, getGallerySwiper] = useState(null);
     const [descriptionSwiper, getdDescriptionSwiper] = useState(null);
 
     const thumbnailSwiperParams = {
@@ -38,20 +37,16 @@ export const SimpleSlider = () => {
             prevEl: '.swiper-button-prev'
         },
         autoplay: {
-            delay: 2500,
+            delay: 20500,
             disableOnInteraction: false
         },
         // Responsive breakpoints
         breakpoints: {
             // when window width is >= 992px
-            992: {
-                slidesPerView: 'auto',
-                loop: true,
-            },
             1440: {
                 spaceBetween: 160,
                 slidesPerView: 'auto',
-                loop: true,
+                // loop: true,
             }
         }
     };
@@ -67,22 +62,19 @@ export const SimpleSlider = () => {
     const descriptionSwiperParams = {
         getSwiper: getdDescriptionSwiper,
         slidesPerView: 1,
-        spaceBetween: 33,
-        effect: 'fade',
-        speed: 1000,
     };
 
     useEffect(() => {
         if (
-            gallerySwiper !== null &&
-            gallerySwiper.controller &&
-            thumbnailSwiper !== null &&
-            thumbnailSwiper.controller
+            gallerySwiper !== null && gallerySwiper.controller &&
+            thumbnailSwiper !== null && thumbnailSwiper.controller
+            && descriptionSwiper !== null && descriptionSwiper.controller
         ) {
             gallerySwiper.controller.control = thumbnailSwiper;
-            thumbnailSwiper.controller.control = gallerySwiper;
+            descriptionSwiper.controller.control = thumbnailSwiper;
+            thumbnailSwiper.controller.control = [descriptionSwiper, gallerySwiper];
         }
-    }, [gallerySwiper, thumbnailSwiper]);
+    }, [gallerySwiper, thumbnailSwiper, descriptionSwiper]);
 
     return (
         <>
@@ -94,17 +86,25 @@ export const SimpleSlider = () => {
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
                 </Swiper>
-                {width <= 992 && <Swiper  {...gallerySwiperParams} getSwiper={updateSwiper}>
-                    <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
-                    <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
-                    <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
-                    <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
-                    <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
-                </Swiper>}
+                <div className='only-mobile'>
+                    <Swiper  {...gallerySwiperParams}>
+                        <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
+                        <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
+                        <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
+                        <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
+                        <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
+                    </Swiper>
+                </div>
             </div>
-            {/*<Swiper {...descriptionSwiperParams}>*/}
-            <SliderDescription />
-            {/*</Swiper>*/}
+            <div className={styles.description}>
+                <Swiper {...descriptionSwiperParams}>
+                    {listTitle.map(title =>
+                        <div key={title}>
+                            <SliderDescription />
+                        </div>)}
+                </Swiper>
+            </div>
+
         </>
     );
 };

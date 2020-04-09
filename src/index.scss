@@ -89,6 +89,17 @@ p {
   overflow: hidden;
 }
 
+.only-mobile {
+  display: block;
+}
+
+@media screen and (min-width: 993px) {
+  .only-mobile {
+    display: none;
+  }
+
+}
+
 @media screen and (min-width: 1440px) {
   p {
     font-size:   1.125rem;
