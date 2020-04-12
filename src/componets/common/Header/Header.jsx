@@ -14,8 +14,6 @@ import trazzo from '../../../assets/images/trazzo-logo.svg'
 import espacia from '../../../assets/images/espacia-logo.svg'
 import reeliza from '../../../assets/images/reeliza-logo.svg'
 import investor from '../../../assets/images/inversor-logo.svg'
-import video from '../../../assets/video/video-para home.webm'
-import banner from '../../../assets/images/home/banner.jpg'
 
 const menus = [
     {url: routes.home, label: 'NOSOTROS', image: logoGray},
@@ -43,11 +41,6 @@ export const Header = () => {
 
     return (
         <header className={styles.header}>
-            {window.location.pathname === '/idei' &&
-            <video className={styles.banner} autoPlay loop poster={banner} muted>
-                <source src={video} type='video/webm; codecs="vp8, vorbis"' />
-                The video tag is not supported by your browser.
-            </video>}
             <div className={styles.menuWrapper}>
                 <div className={styles.logo}>
                     <a href='/'> <img src={logo} alt='logo' /></a>

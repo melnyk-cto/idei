@@ -111,6 +111,13 @@ p {
 }
 
 @media screen and (min-width: 993px) {
+  section {
+    height: 100vh;
+  }
+  body {
+    overflow: hidden;
+  }
+
   .only-mobile {
     display: none;
   }
@@ -151,4 +158,11 @@ p {
     font-size:   1.5rem;
     line-height: 2.3125;
   }
+}
+
+// need remove
+button {
+  visibility: hidden;
+  height:     0;
+  opacity:    0;
 }
