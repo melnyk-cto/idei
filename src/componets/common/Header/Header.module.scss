@@ -11,9 +11,7 @@
 @media (any-hover: hover) and (min-width: 1440px) {
   .header {
     .menuWrapper .menu ul li:hover a {
-      opacity: 0;
       &.menuHover {
-        opacity: 1;
         height:  100%;
         padding: 1rem;
       }
@@ -44,9 +42,9 @@
     justify-content: space-between;
     align-items:     flex-start;
     position:        fixed;
-    top:        0;
-    left:       0;
-    z-index:    10;
+    top:             0;
+    left:            0;
+    z-index:         10;
     .menu {
       display:    none;
       position:   fixed;
@@ -101,10 +99,9 @@
             left:            0;
             background:      transparent;
             color:           $metal;
-            opacity:         1;
             overflow:        visible;
             padding:         0 0 2rem 0;
-            transition:      0s;
+            transition:      0.3s ease-out;
             img {
               margin-bottom: .5rem;
               width:         3rem;
@@ -210,7 +207,6 @@
             &.menuHover {
               position:   absolute;
               overflow:   hidden;
-              opacity:    0;
               height:     0;
               padding:    0;
               top:        50%;
@@ -218,9 +214,10 @@
               background: $metal;
               color:      $white;
               img {
-                max-width: 7rem;
-                width:     100%;
-                height:    3rem;
+                min-width:  100px;
+                max-width:  100px;
+                min-height: 48px;
+                max-height: 48px;
               }
             }
           }

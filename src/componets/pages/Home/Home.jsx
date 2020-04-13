@@ -12,7 +12,7 @@ import video from "../../../assets/video/video-para home.webm";
 
 let index = 0;
 let lastTime = 0;
-const animationDuration = 1200;
+const animationDuration = 1500;
 export const Home = () => {
     const [width] = useWindowSize();
 
