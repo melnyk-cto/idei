@@ -60,25 +60,24 @@ export const Home = () => {
     }, [width]);
 
 
+    const scrollTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
     return (
         <>
-            <video className={styles.banner} autoPlay loop poster={banner} muted>
+            <video onLoadedData={() => scrollTop()} className={styles.banner} autoPlay loop poster={banner} muted>
                 <source src={video} type='video/webm; codecs="vp8, vorbis"' />
                 The video tag is not supported by your browser.
             </video>
             <SimpleSection activeSection={activeSection} />
             <section className={styles.simpleSlider} ref={el => sections = el}>
-                <h2>PROYECTOS RECIENTES</h2>
-                <SimpleSlider />
+                <SimpleSlider activeSection={activeSection} />
             </section>
             <section className={`${styles.simpleSlider} ${styles.modified}`}>
-                <h2>HISTORIA DE LIDERAZGO</h2>
-                <p> Hemos mantenido nuestra posición de líder durante nuestra trayectoria.</p>
-                <p>
-                    Nuestro origen parte de la visión y experiencia de un selecto grupo de empresarios que han logrado
-                    cambiar el paisaje urbano de la ciudad de Monterrey, lo que nos ha convertido en una alternativa
-                    sólida y confiable para inversionistas de bienes raíces.
-                </p>
                 <SmallSlider />
             </section>
             {/*control button*/}

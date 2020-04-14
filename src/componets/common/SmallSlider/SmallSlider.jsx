@@ -72,35 +72,44 @@ export const SmallSlider = () => {
     }, [gallerySwiper, thumbnailSwiper, descriptionSwiper]);
 
     return (
-        <div className='wrapperSlider'>
-            <div className='smallSlider'>
-                <div className='mainSlides'>
-                    <Swiper {...thumbnailSwiperParams}>
-                        <div className='thumbnail' style={{backgroundImage: `url(${image1})`}} />
-                        <div className='thumbnail' style={{backgroundImage: `url(${image2})`}} />
-                        <div className='thumbnail' style={{backgroundImage: `url(${image3})`}} />
-                        <div className='thumbnail' style={{backgroundImage: `url(${image4})`}} />
-                        <div className='thumbnail' style={{backgroundImage: `url(${image1})`}} />
-                    </Swiper>
+        <>
+            <h2>HISTORIA DE LIDERAZGO</h2>
+            <p> Hemos mantenido nuestra posición de líder durante nuestra trayectoria.</p>
+            <p>
+                Nuestro origen parte de la visión y experiencia de un selecto grupo de empresarios que han logrado
+                cambiar el paisaje urbano de la ciudad de Monterrey, lo que nos ha convertido en una alternativa
+                sólida y confiable para inversionistas de bienes raíces.
+            </p>
+            <div className='wrapperSlider'>
+                <div className='smallSlider'>
+                    <div className='mainSlides'>
+                        <Swiper {...thumbnailSwiperParams}>
+                            <div className='thumbnail' style={{backgroundImage: `url(${image1})`}} />
+                            <div className='thumbnail' style={{backgroundImage: `url(${image2})`}} />
+                            <div className='thumbnail' style={{backgroundImage: `url(${image3})`}} />
+                            <div className='thumbnail' style={{backgroundImage: `url(${image4})`}} />
+                            <div className='thumbnail' style={{backgroundImage: `url(${image1})`}} />
+                        </Swiper>
+                    </div>
+                    <div className='singleSlide'>
+                        <Swiper  {...gallerySwiperParams}>
+                            <div className='gallery' style={{backgroundImage: `url(${image1})`}} />
+                            <div className='gallery' style={{backgroundImage: `url(${image2})`}} />
+                            <div className='gallery' style={{backgroundImage: `url(${image3})`}} />
+                            <div className='gallery' style={{backgroundImage: `url(${image4})`}} />
+                            <div className='gallery' style={{backgroundImage: `url(${image1})`}} />
+                        </Swiper>
+                    </div>
                 </div>
-                <div className='singleSlide'>
-                    <Swiper  {...gallerySwiperParams}>
-                        <div className='gallery' style={{backgroundImage: `url(${image1})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${image2})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${image3})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${image4})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${image1})`}} />
+                <div className={styles.description}>
+                    <Swiper {...descriptionSwiperParams}>
+                        {listTitle.map(title =>
+                            <div key={title}>
+                                <SliderDescription title={title} />
+                            </div>)}
                     </Swiper>
                 </div>
             </div>
-            <div className={styles.description}>
-                <Swiper {...descriptionSwiperParams}>
-                    {listTitle.map(title =>
-                        <div key={title}>
-                            <SliderDescription title={title} />
-                        </div>)}
-                </Swiper>
-            </div>
-        </div>
+        </>
     );
 };

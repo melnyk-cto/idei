@@ -36,16 +36,18 @@
 }
 
 @media screen and (min-width: 993px) {
+  * {
+    transition: all 1s ease-in-out;
+  }
   .simpleSlider {
-    padding: 17% 0 7% 0;
+    padding: 10% 0 7% 0;
     > h2 {
-      width:       53%;
+      width:       49%;
       margin-left: auto;
       text-align:  left;
       font-size:   2.25rem;
       line-height: 3.4375rem;
     }
-
     &.modified {
       background: $white;
       &.simpleSlider {

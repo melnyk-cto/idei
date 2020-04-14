@@ -1,12 +1,13 @@
 // core
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // library
 import Swiper from "react-id-swiper";
+import { Power3, TimelineLite } from 'gsap'
 
 // components
 import { SliderDescription } from "./components/SliderDescription/SliderDescription";
-
+import { useWindowSize } from "../../../hooks";
 
 // image
 import recentImage1 from "../../../assets/images/home/recent-project-1.jpg";
@@ -18,8 +19,11 @@ import 'swiper/swiper.scss'
 import './SimpleSlider.scss';
 import styles from "./components/SliderDescription/SliderDescription.module.scss";
 
+// const delay = 0;
+// const duration = 1;
 const listTitle = [0, 1, 2, 3, 4];
-export const SimpleSlider = () => {
+export const SimpleSlider = ({activeSection}) => {
+    const [width] = useWindowSize();
 
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
     const [gallerySwiper, getGallerySwiper] = useState(null);
@@ -43,7 +47,7 @@ export const SimpleSlider = () => {
         // Responsive breakpoints
         breakpoints: {
             // when window width is >= 992px
-            1440: {
+            1200: {
                 spaceBetween: 160,
                 slidesPerView: 'auto',
                 // loop: true,
@@ -76,10 +80,36 @@ export const SimpleSlider = () => {
         }
     }, [gallerySwiper, thumbnailSwiper, descriptionSwiper]);
 
+
+    // animation
+    let title = useRef(null);
+    let description = useRef(null);
+    // let slides = useRef(null);
+
+    const t1 = new TimelineLite();
+    // const t2 = new TimelineLite();
+
+    useEffect(() => {
+        // if (width > 992) {
+        // if (activeSection === 2) {
+        // t1.to(title, duration, {opacity: 1, ease: Power3.easeInOut, delay: delay / 2});
+        // t2.to(description, duration, {
+        //     minHeight: '28rem',
+        //     height: '30rem',
+        //     opacity: 1,
+        //     ease: Power3.easeInOut,
+        //     delay: delay / 2
+        // });
+        // t2.to(slides, duration, {opacity: 1, ease: Power3.easeInOut, delay: delay / 2});
+        // }
+
+        // }
+    }, [activeSection, width, t1]);
     return (
         <>
+            <h2 ref={el => title = el}>PROYECTOS RECIENTES</h2>
             <div className='sliderMobile'>
-                <Swiper {...thumbnailSwiperParams}>
+                <Swiper {...thumbnailSwiperParams} >
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage3})`}} />
@@ -96,11 +126,11 @@ export const SimpleSlider = () => {
                     </Swiper>
                 </div>
             </div>
-            <div className={styles.description}>
+            <div className={styles.description} ref={el => description = el}>
                 <Swiper {...descriptionSwiperParams}>
                     {listTitle.map(title =>
                         <div key={title}>
-                            <SliderDescription />
+                            <SliderDescription activeSection={activeSection} />
                         </div>)}
                 </Swiper>
             </div>
