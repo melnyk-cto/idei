@@ -11,7 +11,9 @@
 @media (any-hover: hover) and (min-width: 1440px) {
   .header {
     .menuWrapper .menu ul li:hover a {
+      opacity: 0;
       &.menuHover {
+        opacity: 1;
         height:  100%;
         padding: 1rem;
       }

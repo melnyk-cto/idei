@@ -10,6 +10,9 @@
     width:     100%;
     max-width: 51.75rem;
     position:  relative;
+    .cover {
+      display: none;
+    }
     > img {
       max-height: 100%;
     }
@@ -51,7 +54,8 @@
       bottom:           80.3%;
       left:             64.2%;
       img {
-        width: 9.3125rem;
+        width:   9.3125rem;
+        opacity: 0;
       }
     }
   }
@@ -101,7 +105,6 @@
       .overImg {
         bottom: -23.3%;
         left:   83.4%;
-
       }
       .overDiv {
         display: block;
@@ -141,7 +144,7 @@
 
 @media screen and (min-width: 1440px) {
   .wrapper {
-    padding: 12.7% 15.6% 7% 2%;
+    padding: 17.7% 15.6% 7% 2%;
     .images {
       max-width: 66%;
       .overImg {
@@ -175,6 +178,44 @@
         font-size:   1.5rem;
         line-height: 1.81;
       }
+    }
+  }
+}
+
+
+// animations
+@media screen and (min-width: 992px) {
+  * {
+    transition: all 1s ease-in-out;
+  }
+  .wrapper {
+    background-position-x: -200px;
+    .images {
+      > img:first-child {
+        opacity: 0;
+      }
+      .cover {
+        display:         block;
+        position:        absolute;
+        z-index:         1;
+        left:            0;
+        top:             0;
+        width:           100%;
+        object-fit:      cover;
+        object-position: top;
+        height:          0;
+      }
+      .overImg {
+        transform: translateX(300%);
+        h3, p {
+          opacity:   0;
+          transform: translateY(30px);
+        }
+      }
+    }
+    .description {
+      opacity:   0;
+      transform: translateY(60px);
     }
   }
 }

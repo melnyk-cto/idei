@@ -1,5 +1,5 @@
 // core
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // components
 import { SimpleSection, SimpleSlider, SmallSlider } from "../../common";
@@ -15,34 +15,31 @@ let lastTime = 0;
 const animationDuration = 1500;
 export const Home = () => {
     const [width] = useWindowSize();
-
     let sections = useRef(null);
+    const [activeSection, setActiveSection] = useState(0);
+    const [allSections, setAllSections] = useState(sections);
 
-    // Go To Prev Section
-    const prevClick = () => {
-        if (index < 1) return;
-        index--;
-        const numberSections = sections.parentElement.childNodes;
+    // Go To  Section
+    const goToSection = (minmax, operation) => {
 
+        if (operation === '--') {
+            if (index < minmax) return;
+            index--;
+        } else if (operation === '++') {
+            if (index > 3) return;
+            index++;
+        }
+
+        const numberSections = allSections.parentElement.childNodes;
         numberSections.forEach((section, i) => {
             if (i === index) section.scrollIntoView({behavior: 'smooth'});
         });
+
+        setActiveSection(index);
     };
-
-    // Go To Next Section
-    const nextClick = () => {
-        if (index > 3) return;
-        index++;
-        const numberSections = sections.parentElement.childNodes;
-
-        numberSections.forEach((section, i) => {
-            if (i === index) section.scrollIntoView({behavior: 'smooth'});
-        });
-    };
-
 
     useEffect(() => {
-
+        setAllSections(sections);
         if (width > 992) {
             // Tracking mouse wheel event
             window.addEventListener('wheel', (event) => {
@@ -54,14 +51,12 @@ export const Home = () => {
                     return;
                 }
 
-                if (delta < 0) nextClick();
-                if (delta > 0) prevClick();
+                if (delta < 0) goToSection(3, '++');
+                if (delta > 0) goToSection(1, '--');
 
                 lastTime = currentTime;
-
             }, {passive: false});
         }
-
     }, [width]);
 
 
@@ -71,7 +66,7 @@ export const Home = () => {
                 <source src={video} type='video/webm; codecs="vp8, vorbis"' />
                 The video tag is not supported by your browser.
             </video>
-            <SimpleSection />
+            <SimpleSection activeSection={activeSection} />
             <section className={styles.simpleSlider} ref={el => sections = el}>
                 <h2>PROYECTOS RECIENTES</h2>
                 <SimpleSlider />
@@ -86,9 +81,8 @@ export const Home = () => {
                 </p>
                 <SmallSlider />
             </section>
-            {/*control */}
-            <button type='button' onClick={() => prevClick()}>prev</button>
-            <button type='button' className='next' onClick={() => nextClick()}>next</button>
+            {/*control button*/}
+            <button type='button' onClick={() => goToSection()} />
         </>
     );
 };
