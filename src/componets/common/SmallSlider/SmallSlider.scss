@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (min-width: 993px) {
+@media screen and (min-width: 992px) {
   .wrapperSlider {
     display:         flex;
     justify-content: space-between;
@@ -110,6 +110,26 @@
   .smallSlider {
     .thumbnail {
       height: 9rem;
+    }
+  }
+
+}
+
+
+// animation
+@media screen and (min-width: 992px) {
+  .wrapperSlider {
+    min-height: 34vw;
+  }
+  .smallSlider {
+    .mainSlides {
+      transform: translateX(200px);
+      opacity:   0;
+    }
+    .singleSlide {
+      opacity:  0;
+      overflow: hidden;
+      height:   0;
     }
   }
 

@@ -78,7 +78,7 @@ export const Home = () => {
                 <SimpleSlider activeSection={activeSection} />
             </section>
             <section className={`${styles.simpleSlider} ${styles.modified}`}>
-                <SmallSlider />
+                <SmallSlider activeSection={activeSection} />
             </section>
             {/*control button*/}
             <button type='button' className='button' onClick={() => goToSection()} />

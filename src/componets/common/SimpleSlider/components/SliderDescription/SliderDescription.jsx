@@ -26,15 +26,27 @@ export const SliderDescription = ({activeSection}) => {
     const t1 = new TimelineLite();
 
     useEffect(() => {
-        // if (width > 992) {
-        // if (activeSection === 2) {
-        t1.to(firstList, duration, {opacity: 1, ease: Expo.easeInOut})
-            .to(secondList, duration, {opacity: 1, y: 0, ease: Expo.easeInOut, delay: duration / 4}, `-=${duration}`)
-            .to(link, duration, {opacity: 1, x: 0, ease: Expo.easeInOut}, `-=${duration}`)
+        if (width > 992) {
+            if (activeSection === 2) {
+                t1.to(firstList, duration, {opacity: 1, ease: Expo.easeInOut})
+                    .to(secondList, duration, {
+                        opacity: 1,
+                        y: 0,
+                        ease: Expo.easeInOut,
+                        delay: duration / 4
+                    }, `-=${duration}`)
+                    .to(link, duration, {opacity: 1, x: 0, ease: Expo.easeInOut}, `-=${duration}`)
+            } else {
+                t1.to(firstList, duration, {opacity: 0, ease: Expo.easeInOut})
+                    .to(secondList, duration, {
+                        opacity: 0,
+                        y: 60,
+                        ease: Expo.easeInOut,
+                    }, `-=${duration}`)
+                    .to(link, duration, {opacity: 0, x: -120, ease: Expo.easeInOut}, `-=${duration}`)
 
-
-        // }
-        // }
+            }
+        }
     }, [activeSection, width, t1]);
     return (
         <div className={styles.inner}>

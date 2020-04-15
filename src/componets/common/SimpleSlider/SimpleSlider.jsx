@@ -123,7 +123,7 @@ export const SimpleSlider = ({activeSection}) => {
     }, [activeSection, width, t1]);
     return (
         <>
-            <h2 ref={el => title = el}>PROYECTOS RECIENTES</h2>
+            <h2 className={styles.title} ref={el => title = el}>PROYECTOS RECIENTES</h2>
             <div className='simpleSliderInner' ref={el => slides = el}>
                 <Swiper {...thumbnailSwiperParams} >
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
