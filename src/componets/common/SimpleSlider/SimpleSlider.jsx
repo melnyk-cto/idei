@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // library
 import Swiper from "react-id-swiper";
-import { Power3, TimelineLite } from 'gsap'
+import { TimelineLite, Expo } from 'gsap'
 
 // components
 import { SliderDescription } from "./components/SliderDescription/SliderDescription";
@@ -17,10 +17,9 @@ import recentImage3 from "../../../assets/images/home/recent-project-3.jpg";
 // styles
 import 'swiper/swiper.scss'
 import './SimpleSlider.scss';
-import styles from "./components/SliderDescription/SliderDescription.module.scss";
+import styles from "./SimpleSlider.module.scss";
 
-// const delay = 0;
-// const duration = 1;
+const duration = 2;
 const listTitle = [0, 1, 2, 3, 4];
 export const SimpleSlider = ({activeSection}) => {
     const [width] = useWindowSize();
@@ -36,6 +35,7 @@ export const SimpleSlider = ({activeSection}) => {
         slidesPerView: 3,
         touchRatio: 0.2,
         slideToClickedSlide: true,
+        speed: 600,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
@@ -48,9 +48,8 @@ export const SimpleSlider = ({activeSection}) => {
         breakpoints: {
             // when window width is >= 992px
             1200: {
-                spaceBetween: 160,
+                spaceBetween: 60,
                 slidesPerView: 'auto',
-                // loop: true,
             }
         }
     };
@@ -59,14 +58,14 @@ export const SimpleSlider = ({activeSection}) => {
         getSwiper: getGallerySwiper,
         slidesPerView: 1,
         spaceBetween: 33,
-        effect: 'fade',
-        speed: 1000,
     };
+
 
     const descriptionSwiperParams = {
         getSwiper: getdDescriptionSwiper,
         slidesPerView: 1,
     };
+
 
     useEffect(() => {
         if (
@@ -78,37 +77,54 @@ export const SimpleSlider = ({activeSection}) => {
             descriptionSwiper.controller.control = thumbnailSwiper;
             thumbnailSwiper.controller.control = [descriptionSwiper, gallerySwiper];
         }
+
+
     }, [gallerySwiper, thumbnailSwiper, descriptionSwiper]);
 
 
     // animation
     let title = useRef(null);
+    let slides = useRef(null);
     let description = useRef(null);
-    // let slides = useRef(null);
-
     const t1 = new TimelineLite();
-    // const t2 = new TimelineLite();
 
     useEffect(() => {
-        // if (width > 992) {
-        // if (activeSection === 2) {
-        // t1.to(title, duration, {opacity: 1, ease: Power3.easeInOut, delay: delay / 2});
-        // t2.to(description, duration, {
-        //     minHeight: '28rem',
-        //     height: '30rem',
-        //     opacity: 1,
-        //     ease: Power3.easeInOut,
-        //     delay: delay / 2
-        // });
-        // t2.to(slides, duration, {opacity: 1, ease: Power3.easeInOut, delay: delay / 2});
-        // }
+        if (width > 992) {
+            if (activeSection === 2) {
+                t1.to(title, duration, {opacity: 1, ease: Expo.easeInOut})
+                    .to(slides, duration, {opacity: 1, ease: Expo.easeInOut}, `-=${duration}`);
+                if (width < 1400) {
+                    t1.to(description, duration, {
+                        opacity: 1,
+                        minHeight: '28rem',
+                        height: '30rem',
+                        ease: Expo.easeInOut
+                    }, `-=${duration}`)
+                } else {
+                    t1.to(description, duration, {
+                        opacity: 1,
+                        minHeight: '28rem',
+                        height: '46rem',
+                        ease: Expo.easeInOut
+                    }, `-=${duration}`)
+                }
+            } else {
+                t1.to(title, duration, {opacity: 0, ease: Expo.easeInOut})
+                    .to(slides, duration, {opacity: 0, ease: Expo.easeInOut}, `-=${duration}`)
+                    .to(description, duration, {
+                        opacity: 0,
+                        minHeight: 0,
+                        height: 0,
+                        ease: Expo.easeInOut
+                    }, `-=${duration}`)
 
-        // }
+            }
+        }
     }, [activeSection, width, t1]);
     return (
         <>
             <h2 ref={el => title = el}>PROYECTOS RECIENTES</h2>
-            <div className='sliderMobile'>
+            <div className='simpleSliderInner' ref={el => slides = el}>
                 <Swiper {...thumbnailSwiperParams} >
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />

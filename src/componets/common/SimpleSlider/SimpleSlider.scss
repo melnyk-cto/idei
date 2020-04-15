@@ -1,6 +1,9 @@
 @import "../../../assets/scss/variables";
 
-.sliderMobile {
+.simpleSliderInner {
+  * {
+    transition: .6s ease-in-out;
+  }
   .thumbnail, .gallery {
     background-repeat:   no-repeat;
     background-position: center center;
@@ -15,7 +18,8 @@
       box-shadow: 0 1.875rem 3.75rem rgba(0, 0, 0, 0.25);
     }
     &:not(.swiper-slide-active) {
-      opacity: .4;
+      opacity:   .4;
+      transform: scale(0.7);
     }
   }
   .gallery {
@@ -68,7 +72,7 @@
 }
 
 @media screen and (min-width: 993px) {
-  .sliderMobile {
+  .simpleSliderInner {
     .thumbnail {
       width:         36%;
       margin-top:    6rem;
@@ -81,7 +85,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .sliderMobile {
+  .simpleSliderInner {
     .thumbnail {
       height:     27vw;
       max-height: 34rem;
@@ -91,10 +95,8 @@
 
 
 //animations
-//@media screen and (min-width: 993px) {
-//  .sliderMobile {
-//    .thumbnail {
-//      //opacity: 0;
-//    }
-//  }
-//}
+@media screen and (min-width: 992px) {
+  .simpleSliderInner {
+    opacity: 0;
+  }
+}

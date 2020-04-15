@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 
 // library
-import { gsap, Expo, TimelineLite } from 'gsap'
+import { gsap, TimelineLite, Expo } from 'gsap'
 
 // images
 import tifRepublica from '../../../assets/images/tif-republica.jpg';
@@ -17,6 +17,7 @@ export const SimpleSection = ({activeSection}) => {
     const [width] = useWindowSize();
 
     // animation
+    gsap.registerPlugin();
     let smallImage = useRef(null);
     let image = useRef(null);
     let logoImage = useRef(null);
@@ -29,7 +30,6 @@ export const SimpleSection = ({activeSection}) => {
 
     useEffect(() => {
         if (width > 992) {
-            gsap.registerPlugin();
             if (activeSection === 1) {
                 t1.to(smallImage, duration, {opacity: 1, ease: Expo.easeInOut})
                     .to(image, duration, {height: '98%', ease: Expo.easeInOut}, `-=${duration}`)
