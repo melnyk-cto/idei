@@ -35,10 +35,7 @@
   }
 }
 
-@media screen and (min-width: 993px) {
-  * {
-    transition: all 1s ease-in-out;
-  }
+@media screen and (min-width: 992px) {
   .simpleSlider {
     padding: 10% 0 7% 0;
     > h2 {

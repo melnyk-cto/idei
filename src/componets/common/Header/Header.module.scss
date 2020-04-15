@@ -103,7 +103,7 @@
             color:           $metal;
             overflow:        visible;
             padding:         0 0 2rem 0;
-            transition:      0.3s ease-out;
+            transition:      0.3s ease-in-out;
             img {
               margin-bottom: .5rem;
               width:         3rem;
@@ -134,7 +134,7 @@
     height:           2rem;
     border-radius:    50%;
     background-color: transparent;
-    transition:       0.4s;
+    transition:       0.4s ease-in-out;
     box-shadow:       none;
     border:           none;
     cursor:           pointer;
@@ -147,7 +147,7 @@
       height:           0.1875rem;
       background-color: $metal;
       right:            0;
-      transition:       .4s;
+      transition:       .4s ease-in-out;
     }
     .burgerMenuLines {
       width: 75%;

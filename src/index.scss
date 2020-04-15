@@ -4,7 +4,6 @@
 *, *:after, *:before {
   box-sizing: border-box;
   outline:    none;
-  transition: 0.3s linear;
 }
 
 img {
@@ -27,7 +26,6 @@ body, html {
   margin:     0;
   padding:    0;
   height:     100%;
-  transition: 0s linear;
 }
 
 html {
@@ -160,8 +158,9 @@ p {
   }
 }
 
-// need remove
-button {
+
+// for Section Slide
+.button {
   visibility: hidden;
   height:     0;
   opacity:    0;

@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 
 // library
-import { Power3, TimelineLite } from 'gsap'
+import { gsap, Expo, TimelineLite } from 'gsap'
 
 // images
 import tifRepublica from '../../../assets/images/tif-republica.jpg';
@@ -12,48 +12,53 @@ import tifSaqqara from '../../../assets/images/tif-saqqara.jpg';
 import styles from './SimpleSection.module.scss';
 import { useWindowSize } from "../../../hooks";
 
-const delay = 0;
-const duration = 1;
+const duration = 2;
 export const SimpleSection = ({activeSection}) => {
     const [width] = useWindowSize();
 
     // animation
     let smallImage = useRef(null);
+    let image = useRef(null);
+    let logoImage = useRef(null);
     let overImg = useRef(null);
     let overImgTitle = useRef(null);
     let overImgText = useRef(null);
     let description = useRef(null);
-    let image = useRef(null);
-    let logoImage = useRef(null);
 
     const t1 = new TimelineLite();
-    const t2 = new TimelineLite();
-    const t3 = new TimelineLite();
-    const t4 = new TimelineLite();
-    const t5 = new TimelineLite();
 
     useEffect(() => {
         if (width > 992) {
+            gsap.registerPlugin();
             if (activeSection === 1) {
-                t4.to(image, duration, {height: '98%', ease: Power3.easeInOut, delay: 0});
-                t1.to(smallImage, duration, {opacity: 1, ease: Power3.easeInOut, delay: delay / 2});
-                t2.to(overImg, duration, {x: 0, ease: Power3.easeOut, delay: delay / 2})
-                    .to(overImgTitle, duration, {opacity: 1, y: 0, ease: Power3.easeInOut, delay: delay / 2})
-                    .to(overImgText, duration, {opacity: 1, y: 0, ease: Power3.easeInOut, delay: delay / 3});
-                t3.to(description, duration, {opacity: 1, y: 0, ease: Power3.easeInOut, delay: delay / 2});
-                t5.to(logoImage, duration, {backgroundPositionX: '0', ease: Power3.easeInOut, delay: delay / 2})
+                t1.to(smallImage, duration, {opacity: 1, ease: Expo.easeInOut})
+                    .to(image, duration, {height: '98%', ease: Expo.easeInOut}, `-=${duration}`)
+                    .to(logoImage, duration, {backgroundPositionX: '0', ease: Expo.easeInOut}, `-=${duration}`)
+                    .to(overImg, duration, {x: 0, ease: Expo.easeInOut}, `-=${duration}`)
+                    .to(description, duration, {opacity: 1, y: 0, ease: Expo.easeInOut}, `-=${duration}`)
+                    .to(overImgTitle, duration, {
+                        opacity: 1,
+                        y: 0,
+                        ease: Expo.easeInOut,
+                        delay: duration / 4
+                    }, `-=${duration}`)
+                    .to(overImgText, duration, {opacity: 1, y: 0, ease: Expo.easeInOut}, `-=${duration}`)
             } else {
-                t1.to(smallImage, duration, {opacity: 0, ease: Power3.easeInOut, delay: delay / 2});
-                t2.to(overImg, duration, {x: '300%', ease: Power3.easeInOut, delay: delay / 2})
-                    .to(overImgTitle, duration, {opacity: 0, y: 30, ease: Power3.easeInOut, delay: delay / 2})
-                    .to(overImgText, duration, {opacity: 0, y: 30, ease: Power3.easeInOut, delay: delay / 2});
-                t3.to(description, duration, {opacity: 0, y: 60, ease: Power3.easeInOut, delay: delay / 2});
-                t4.to(image, duration, {height: '0%', ease: Power3.easeInOut, delay: delay / 2});
-                t5.to(logoImage, duration, {backgroundPositionX: -200, ease: Power3.easeInOut, delay: delay / 2})
+                t1.to(smallImage, duration, {opacity: 0, ease: Expo.easeInOut})
+                    .to(image, duration, {height: '0%', ease: Expo.easeInOut}, `-=${duration}`)
+                    .to(logoImage, duration, {backgroundPositionX: -400, ease: Expo.easeInOut}, `-=${duration}`)
+                    .to(overImg, duration, {x: 400, ease: Expo.easeInOut}, `-=${duration}`)
+                    .to(description, duration, {opacity: 0, y: 60, ease: Expo.easeInOut}, `-=${duration}`)
+                    .to(overImgTitle, duration, {
+                        opacity: 0,
+                        y: 30,
+                        ease: Expo.easeInOut,
+                        delay: duration / 4
+                    }, `-=${duration}`)
+                    .to(overImgText, duration, {opacity: 0, y: 30, ease: Expo.easeInOut}, `-=${duration}`)
             }
         }
-
-    }, [width, activeSection, t1, t2, t3, t4, t5]);
+    }, [width, activeSection, t1]);
 
     return (
         <section className={styles.wrapper} ref={el => logoImage = el}>

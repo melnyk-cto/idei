@@ -81,7 +81,7 @@ export const Home = () => {
                 <SmallSlider />
             </section>
             {/*control button*/}
-            <button type='button' onClick={() => goToSection()} />
+            <button type='button' className='button' onClick={() => goToSection()} />
         </>
     );
 };

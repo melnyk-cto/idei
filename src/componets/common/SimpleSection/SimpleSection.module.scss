@@ -185,11 +185,8 @@
 
 // animations
 @media screen and (min-width: 992px) {
-  * {
-    transition: all 1s ease-in-out;
-  }
   .wrapper {
-    background-position-x: -200px;
+    background-position-x: -400px;
     .images {
       > img:first-child {
         opacity: 0;
@@ -206,7 +203,7 @@
         height:          0;
       }
       .overImg {
-        transform: translateX(300%);
+        transform: translateX(400px);
         h3, p {
           opacity:   0;
           transform: translateY(30px);
