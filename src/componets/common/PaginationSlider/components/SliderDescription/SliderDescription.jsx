@@ -27,7 +27,7 @@ export const SliderDescription = ({activeSection}) => {
                         opacity: 1,
                         y: 0,
                         ease: Expo.easeInOut,
-                        delay: duration / 4
+                        delay: duration / 8
                     }, `-=${duration}`)
                     .to(link, duration, {opacity: 1, x: 0, ease: Expo.easeInOut}, `-=${duration}`)
             } else {
