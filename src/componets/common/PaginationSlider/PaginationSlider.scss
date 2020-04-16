@@ -103,3 +103,15 @@
     }
   }
 }
+
+
+//animations
+@media screen and (min-width: 1200px) {
+  .pagination-list {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  .sliderPagination {
+    opacity: 0;
+  }
+}

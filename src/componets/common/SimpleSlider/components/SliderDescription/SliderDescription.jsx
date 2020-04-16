@@ -21,8 +21,6 @@ export const SliderDescription = ({activeSection}) => {
     let firstList = useRef(null);
     let secondList = useRef(null);
     let link = useRef(null);
-
-
     const t1 = new TimelineLite();
 
     useEffect(() => {
