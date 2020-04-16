@@ -24,7 +24,7 @@ export const SliderDescription = ({activeSection}) => {
     const t1 = new TimelineLite();
 
     useEffect(() => {
-        if (width > 992) {
+        if (width > 1200) {
             if (activeSection === 3) {
                 t1.to(title, duration, {opacity: 1, y: 0, ease: Expo.easeInOut})
                     .to(listItem, duration, {opacity: 1, ease: Expo.easeInOut, delay: duration / 4}, `-=${duration}`)

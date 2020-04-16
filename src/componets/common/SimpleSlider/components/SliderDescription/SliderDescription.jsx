@@ -26,7 +26,7 @@ export const SliderDescription = ({activeSection}) => {
     const t1 = new TimelineLite();
 
     useEffect(() => {
-        if (width > 992) {
+        if (width > 1200) {
             if (activeSection === 2) {
                 t1.to(firstList, duration, {opacity: 1, ease: Expo.easeInOut})
                     .to(secondList, duration, {

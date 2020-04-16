@@ -89,7 +89,7 @@ export const SimpleSlider = ({activeSection}) => {
     const t1 = new TimelineLite();
 
     useEffect(() => {
-        if (width > 992) {
+        if (width > 1200) {
             if (activeSection === 2) {
                 t1.to(title, duration, {opacity: 1, ease: Expo.easeInOut})
                     .to(slides, duration, {opacity: 1, ease: Expo.easeInOut}, `-=${duration}`);

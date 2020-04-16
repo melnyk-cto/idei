@@ -40,7 +40,7 @@ export const Home = () => {
 
     useEffect(() => {
         setAllSections(sections);
-        if (width > 992) {
+        if (width > 1200) {
             // Tracking mouse wheel event
             window.addEventListener('wheel', (event) => {
                 const delta = event.wheelDelta;

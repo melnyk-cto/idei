@@ -109,13 +109,6 @@ p {
 }
 
 @media screen and (min-width: 992px) {
-  section {
-    //height: 100vh;
-  }
-  body {
-    overflow: hidden;
-  }
-
   .only-mobile {
     display: none;
   }
@@ -158,10 +151,17 @@ p {
   }
 }
 
-
 // for Section Slide
 .button {
   visibility: hidden;
   height:     0;
   opacity:    0;
+}
+
+
+// animations
+@media screen and (min-width: 1200px) {
+  body {
+    overflow: hidden;
+  }
 }
