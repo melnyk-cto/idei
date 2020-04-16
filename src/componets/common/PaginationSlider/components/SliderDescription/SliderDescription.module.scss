@@ -1,6 +1,9 @@
 @import "../../../../../assets/scss/variables";
 
 .description {
+  * {
+    transition: all 0.6s ease-in-out !important;
+  }
   max-width:  34rem;
   min-width:  18rem;
   width:      100%;

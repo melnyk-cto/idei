@@ -1,6 +1,9 @@
 @import "../../../assets/scss/variables";
 
 .sliderPagination {
+  * {
+    transition: all 0.6s ease-in-out !important;
+  }
   width: 100%;
   .thumbnail, .gallery {
     background-repeat:   no-repeat;
@@ -69,6 +72,9 @@
       color:          $carbonic;
       margin-bottom:  3.2rem;
       letter-spacing: 1.4px;
+      &:hover, &:active {
+        opacity: .7 !important;
+      }
       &.active {
         position: relative;
         color:    $black;
