@@ -191,7 +191,8 @@
     }
     .menuWrapper {
       .menu {
-        display:    block;
+        opacity:    1;
+        visibility: visible;
         background: transparent;
         position:   static;
         width:      70%;

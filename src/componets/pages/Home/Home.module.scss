@@ -5,7 +5,7 @@
   width:           100%;
   object-fit:      cover;
   object-position: top;
-  height:          100vh;
+  height:          auto;
 }
 
 .simpleSlider {
@@ -32,6 +32,9 @@
   }
   .modified {
     background: $white;
+  }
+  .banner {
+    height: 100vh;
   }
 }
 

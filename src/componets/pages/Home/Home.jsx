@@ -8,7 +8,7 @@ import { useWindowSize } from "../../../hooks";
 // styles
 import styles from './Home.module.scss';
 import banner from "../../../assets/images/home/banner.jpg";
-import video from "../../../assets/video/video-para home.webm";
+import video from "../../../assets/video/video-para home.mp4";
 
 let index = 0;
 let lastTime = 0;
@@ -70,7 +70,7 @@ export const Home = () => {
     return (
         <>
             <video onLoadedData={() => scrollTop()} className={styles.banner} autoPlay loop poster={banner} muted>
-                <source src={video} type='video/webm; codecs="vp8, vorbis"' />
+                <source src={video} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
                 The video tag is not supported by your browser.
             </video>
             <SimpleSection activeSection={activeSection} />
