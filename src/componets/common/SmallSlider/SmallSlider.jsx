@@ -35,12 +35,13 @@ export const SmallSlider = ({activeSection}) => {
         slidesPerView: 3,
         touchRatio: 0.2,
         slideToClickedSlide: true,
+        speed: 600,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
         },
         autoplay: {
-            delay: 20500,
+            delay: 2500,
             disableOnInteraction: false
         },
         // Responsive breakpoints
@@ -55,8 +56,6 @@ export const SmallSlider = ({activeSection}) => {
         getSwiper: getGallerySwiper,
         slidesPerView: 1,
         spaceBetween: 33,
-        effect: 'fade',
-        speed: 1000,
     };
 
     const descriptionSwiperParams = {

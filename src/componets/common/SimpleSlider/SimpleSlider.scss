@@ -2,7 +2,7 @@
 
 .simpleSliderInner {
   * {
-    transition: .6s ease-in-out;
+    transition: .6s cubic-bezier(.87, 0, .13, 1);
   }
   .thumbnail, .gallery {
     background-repeat:   no-repeat;
@@ -19,7 +19,7 @@
     }
     &:not(.swiper-slide-active) {
       opacity:   .4;
-      transform: scale(0.7);
+      transform: scale(1);
     }
   }
   .gallery {
@@ -77,6 +77,9 @@
       width:         36%;
       margin-top:    6rem;
       margin-bottom: 9.5rem;
+      &:not(.swiper-slide-active) {
+        transform: scale(0.7);
+      }
     }
     .swiper-button-next, .swiper-button-prev {
       display: block;
