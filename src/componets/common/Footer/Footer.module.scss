@@ -13,6 +13,13 @@
         opacity:   .6;
       }
     }
+    .footerBottom a:hover {
+      transform: translateY(-15px);
+      img {
+        transform: scale(1);
+        opacity:   1;
+      }
+    }
   }
 }
 
@@ -128,6 +135,9 @@
       img {
         max-width: 8.437rem;
         width:     90%;
+      }
+      &:active {
+        transform: translateY(-10px);
       }
     }
   }
