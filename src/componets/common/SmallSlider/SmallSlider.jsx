@@ -13,18 +13,16 @@ import { useWindowSize } from "../../../hooks";
 import 'swiper/swiper.scss'
 import './SmallSlider.scss';
 import styles from "./SmallSlider.module.scss";
-import image1 from "../../../assets/images/home/slider/residencial-en-desarrollos-horizontales.png";
-import image2 from "../../../assets/images/home/slider/corporativo-y-servicios.png";
-import image3 from "../../../assets/images/home/slider/residencial-en-desarrollos-verticales.png";
-import image4 from "../../../assets/images/home/slider/turístico.png";
-import image5 from "../../../assets/images/home/slider/proyectos-de-usos-mixtos.png";
-import image6 from "../../../assets/images/home/slider/desarrollos-en-el-extranjero.png";
-import image7 from "../../../assets/images/home/slider/comercial.png";
+import image1 from "../../../assets/images/home/slider/image1.png";
+import image2 from "../../../assets/images/home/slider/image2.png";
+import image3 from "../../../assets/images/home/slider/image3.png";
+import image4 from "../../../assets/images/home/slider/image4.png";
+import image5 from "../../../assets/images/home/slider/image5.png";
+import image6 from "../../../assets/images/home/slider/image6.png";
+import image7 from "../../../assets/images/home/slider/image7.png";
 
 const images = [image1, image2, image3, image4, image5, image6, image7];
 const duration = 2;
-const listTitle = [1, 2, 3, 4, 5, 6, 7];
-
 const descriptionLit = [
     [
         'Residencial en desarrollos horizontales',
@@ -109,8 +107,8 @@ export const SmallSlider = ({activeSection}) => {
     useEffect(() => {
         if (
             gallerySwiper !== null && gallerySwiper.controller &&
-            thumbnailSwiper !== null && thumbnailSwiper.controller
-            && descriptionSwiper !== null && descriptionSwiper.controller
+            thumbnailSwiper !== null && thumbnailSwiper.controller &&
+            descriptionSwiper !== null && descriptionSwiper.controller
         ) {
             gallerySwiper.controller.control = thumbnailSwiper;
             descriptionSwiper.controller.control = thumbnailSwiper;
@@ -192,13 +190,13 @@ export const SmallSlider = ({activeSection}) => {
                     <div className='mainSlides' ref={el => slides = el}>
                         <Swiper {...thumbnailSwiperParams}>
                             {images.map(image =>
-                                <div className='thumbnail' style={{backgroundImage: `url(${image})`}} />)}
+                                <div key={image} className='thumbnail' style={{backgroundImage: `url(${image})`}} />)}
                         </Swiper>
                     </div>
                     <div className='singleSlide' ref={el => image = el}>
                         <Swiper  {...gallerySwiperParams}>
                             {images.map(image =>
-                                <div className='gallery' style={{backgroundImage: `url(${image})`}} />)}
+                                <div key={image} className='gallery' style={{backgroundImage: `url(${image})`}} />)}
                         </Swiper>
                     </div>
                 </div>
