@@ -69,10 +69,17 @@ export const Home = () => {
 
     return (
         <>
-            <video onLoadedData={() => scrollTop()} className={styles.banner} autoPlay loop poster={banner} muted>
-                <source src={video} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-                The video tag is not supported by your browser.
-            </video>
+            <div className={styles.bannerWrapper}>
+                <video onLoadedData={() => scrollTop()} className={styles.banner} autoPlay loop poster={banner} muted>
+                    {width > 768 && <source src={video} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />}
+                    The video tag is not supported by your browser.
+                </video>
+                {width < 768 &&
+                <div className={styles.bannerText}>
+                    Con nuestro liderazgo y calidad en desarrollos inmobiliarios, hoy
+                    somos la empresa más sobresaliente en el norte del país.
+                </div>}
+            </div>
             <SimpleSection activeSection={activeSection} />
             <section className={styles.simpleSlider} ref={el => sections = el}>
                 <SimpleSlider activeSection={activeSection} />

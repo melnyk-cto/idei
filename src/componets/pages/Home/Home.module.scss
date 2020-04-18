@@ -1,11 +1,26 @@
 @import "../../../assets/scss/variables";
 
-.banner {
-  position:        relative;
-  width:           100%;
-  object-fit:      cover;
-  object-position: top;
-  height:          auto;
+.bannerWrapper {
+  position: relative;
+  .banner {
+    position:        relative;
+    width:           100%;
+    object-fit:      cover;
+    object-position: top;
+    height:          100vh;
+  }
+  .bannerText {
+    position:         absolute;
+    left:             50%;
+    bottom:           6.25rem;
+    transform:        translateX(-50%);
+    width:            20.8125rem;
+    background-color: white;
+    padding:          1.875rem 0.6875rem 1.75rem 0.6875rem;
+    font-size:        0.8125rem;
+    line-height:      1.25rem;
+    text-align:       center;
+  }
 }
 
 .simpleSlider {
@@ -33,8 +48,10 @@
   .modified {
     background: $white;
   }
-  .banner {
-    height: 100vh;
+  .bannerWrapper {
+    .bannerText {
+      display: none;
+    }
   }
 }
 
