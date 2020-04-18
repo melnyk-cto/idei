@@ -13,13 +13,56 @@ import { useWindowSize } from "../../../hooks";
 import 'swiper/swiper.scss'
 import './SmallSlider.scss';
 import styles from "./SmallSlider.module.scss";
-import image1 from "../../../assets/images/home/historia-1.jpg";
-import image2 from "../../../assets/images/home/historia-2.jpg";
-import image3 from "../../../assets/images/home/historia-3.jpg";
-import image4 from "../../../assets/images/home/historia-4.jpg";
+import image1 from "../../../assets/images/home/slider/residencial-en-desarrollos-horizontales.png";
+import image2 from "../../../assets/images/home/slider/corporativo-y-servicios.png";
+import image3 from "../../../assets/images/home/slider/residencial-en-desarrollos-verticales.png";
+import image4 from "../../../assets/images/home/slider/turístico.png";
+import image5 from "../../../assets/images/home/slider/proyectos-de-usos-mixtos.png";
+import image6 from "../../../assets/images/home/slider/desarrollos-en-el-extranjero.png";
+import image7 from "../../../assets/images/home/slider/comercial.png";
 
+const images = [image1, image2, image3, image4, image5, image6, image7];
 const duration = 2;
-const listTitle = [0, 1, 2, 3, 4];
+const listTitle = [1, 2, 3, 4, 5, 6, 7];
+
+const descriptionLit = [
+    [
+        'Residencial en desarrollos horizontales',
+        '2013 - 2016 Torres Céntrika', '2012 - 2016 Los Castaños Privada Residencial', '2012 - 2018 Amorada Privada Residencial', '2012 - 2017 Balcones de las Mitras IV Sector', '2005 - 2018 Palmas Diamante y Valbonne Priv. Res.', '2011 - 2016 Balcones Departamentos', '2010 - 2014 Catujanes Priv. Residencial',
+        '2005 - 2016 Céntrika', '2005 - 2011 Privada Acueducto', '2005 - 2011 Hacienda del Carmen', '2004 - 2005 Villa Sierra', '2005 - 2011 Las Provincias', '2003 - 2016 Colinas del Valle', '2003 - 2009 Privada los Pinos'
+    ],
+    [
+        'Corporativo y servicios',
+        '2013 - 2015 KOI earth offices', '2013 – 2021 Saqqara offices', '2010 - 2012 VAO Oficinas 2', '2007 - 2009 VAO Oficinas', '2007 - 2008 Céntrika Oficinas', '1996 - 1998 Edificio Plaza Internacional',
+        '1986 - 1988 Torre Quimmco', '1994 - 1996 Torre ING', '1983 - 1985 Torre Abaco', '1981 - 1983 Torre Alta', '2005 – 2007 Altus Oficinas'
+    ],
+    [
+        'Residencial en desarrollos verticales',
+        '2010 - 2012 Cova 2 Departamentos', '2010 - 2012 Eva exclusive vivant', '2010 - 2015 Atria Vertical Living', '2008 - 2009 Cova Departamentos',
+        '2001 - 2003 Altus Residencial', '1998 -1999 Torre del Campestre', '1984 - 1985 Torre Cristal'
+    ],
+    [
+        'Turístico',
+        '1994 - 1995 Hotel Quinta Real Monterrey',
+        '2014 – 2019 Azul Cancún Living'
+    ],
+    [
+        'Proyectos de usos mixtos',
+        '2013 - 2017 Saqqara Residences', '2013 - 2016 KOI Sky Residences', '2010 - 2012 Liu Residences East',
+        '2009 - 2011 Liu Residences West', '1998 - 2000 Torre Avalanz'
+    ],
+    [
+        'Desarrollos en el extranjero',
+        '2002 - 2003 Las Ventanas, Isla del Padre', '1993 Patio Homes Development', '1994 Parc Royale', '1995 – 1997 Yorktown', '1994 La Tour Fountaine', '2000 – 2005 Marina Village', '1997 – 2000 Homewood', '1992 - 1997 Petropark', '1992 - 1998 La Maison at Lakeside', '1990 - 2002 Interbelt North Business Center',
+        '1990 - 2000 Lake Cove Seabrook', '1994 – 1997 Central Green', '1976 Centro Comercial Westheimer and Fountainview', '1976 Centro Comercial 8333 Southwest Freeway', '1982 Centro Comercial Meadow Park', '1985 Edificio Richmond 6300', '1980 - 1984 Champions Place', '1979 – 1985 Westlake Place', '1979 - 1989 Thimberhills Subdivision'
+    ],
+    [
+        'Comercial',
+        '2005 - 2006 Gran Patio Céntrika', '2005 - 2006 Plaza Comercial Los Pinos',
+        '2000 - 2001 Plaza Brisas'
+    ],
+];
+
 export const SmallSlider = ({activeSection}) => {
     const [width] = useWindowSize();
 
@@ -148,28 +191,22 @@ export const SmallSlider = ({activeSection}) => {
                 <div className='smallSlider'>
                     <div className='mainSlides' ref={el => slides = el}>
                         <Swiper {...thumbnailSwiperParams}>
-                            <div className='thumbnail' style={{backgroundImage: `url(${image1})`}} />
-                            <div className='thumbnail' style={{backgroundImage: `url(${image2})`}} />
-                            <div className='thumbnail' style={{backgroundImage: `url(${image3})`}} />
-                            <div className='thumbnail' style={{backgroundImage: `url(${image4})`}} />
-                            <div className='thumbnail' style={{backgroundImage: `url(${image1})`}} />
+                            {images.map(image =>
+                                <div className='thumbnail' style={{backgroundImage: `url(${image})`}} />)}
                         </Swiper>
                     </div>
                     <div className='singleSlide' ref={el => image = el}>
                         <Swiper  {...gallerySwiperParams}>
-                            <div className='gallery' style={{backgroundImage: `url(${image1})`}} />
-                            <div className='gallery' style={{backgroundImage: `url(${image2})`}} />
-                            <div className='gallery' style={{backgroundImage: `url(${image3})`}} />
-                            <div className='gallery' style={{backgroundImage: `url(${image4})`}} />
-                            <div className='gallery' style={{backgroundImage: `url(${image1})`}} />
+                            {images.map(image =>
+                                <div className='gallery' style={{backgroundImage: `url(${image})`}} />)}
                         </Swiper>
                     </div>
                 </div>
                 <div className={styles.description} ref={el => description = el}>
                     <Swiper {...descriptionSwiperParams}>
-                        {listTitle.map(title =>
-                            <div key={title}>
-                                <SliderDescription title={title} activeSection={activeSection} />
+                        {descriptionLit.map(description =>
+                            <div key={description}>
+                                <SliderDescription activeSection={activeSection} description={description} />
                             </div>)}
                     </Swiper>
                 </div>

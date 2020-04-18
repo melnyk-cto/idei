@@ -21,6 +21,11 @@
     letter-spacing: 0.06em;
     margin-bottom:  2rem;
     width:          100%;
+    li {
+      font-size:   1rem;
+      line-height: 1.5rem;
+
+    }
   }
   .link {
     text-align: center;
@@ -79,7 +84,7 @@
 @media screen and (min-width: 1440px) {
   .description {
     font-size: 1.125rem;
-    padding:   4.4rem 2.5rem 2rem 7.4rem;
+    padding:   2.4rem 1.5rem 1rem 8.4rem;
     ul {
       line-height: 1.85;
     }
