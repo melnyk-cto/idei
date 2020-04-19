@@ -1,5 +1,5 @@
 // core
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 // library
 import Swiper from "react-id-swiper";
@@ -67,7 +67,7 @@ export const SmallSlider = ({activeSection}) => {
     const [gallerySwiper, getGallerySwiper] = useState(null);
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
     const [descriptionSwiper, getdDescriptionSwiper] = useState(null);
-
+    const [currentIndex, updateCurrentIndex] = useState(null);
 
     const thumbnailSwiperParams = {
         getSwiper: getThumbnailSwiper,
@@ -106,16 +106,26 @@ export const SmallSlider = ({activeSection}) => {
 
     useEffect(() => {
         if (
-            gallerySwiper !== null && gallerySwiper.controller &&
             thumbnailSwiper !== null && thumbnailSwiper.controller &&
             descriptionSwiper !== null && descriptionSwiper.controller
         ) {
-            gallerySwiper.controller.control = thumbnailSwiper;
             descriptionSwiper.controller.control = thumbnailSwiper;
-            thumbnailSwiper.controller.control = [descriptionSwiper, gallerySwiper];
+            thumbnailSwiper.controller.control = [descriptionSwiper];
         }
-    }, [gallerySwiper, thumbnailSwiper, descriptionSwiper]);
+    }, [thumbnailSwiper, descriptionSwiper]);
 
+    // get active slide
+    const updateIndex = useCallback(() => {
+        updateCurrentIndex(thumbnailSwiper.activeIndex);
+    }, [thumbnailSwiper]);
+
+    // Add event listeners for Swiper after initializing and control gallerySwiper
+    useEffect(() => {
+        if (thumbnailSwiper !== null && gallerySwiper !== null) {
+            thumbnailSwiper.on("slideChange", updateIndex);
+            gallerySwiper.slideTo(currentIndex);
+        }
+    }, [thumbnailSwiper, gallerySwiper, updateIndex, currentIndex]);
 
     // animation
     let title = useRef(null);

@@ -1,6 +1,9 @@
 @import "../../../assets/scss/variables";
 
 .smallSlider {
+  .swiper-wrapper {
+    transition: all 0.6s cubic-bezier(.87, 0, .13, 1) !important;
+  }
   .thumbnail, .gallery {
     background-repeat:   no-repeat;
     background-position: center center;
