@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from 'react';
 
 // library
-import { Link } from "react-router-dom";
 import { TimelineLite, Expo } from 'gsap'
 
 // components
@@ -24,18 +23,18 @@ export const SliderDescription = ({activeSection, item}) => {
         if (width > 1200) {
             if (activeSection === 2) {
                 t1.to(secondList, duration, {
-                        opacity: 1,
-                        y: 0,
-                        ease: Expo.easeInOut,
-                        delay: duration / 4
-                    }, `-=${duration}`)
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeInOut,
+                    delay: duration / 4
+                }, `-=${duration}`)
                     .to(link, duration, {opacity: 1, x: 0, ease: Expo.easeInOut})
             } else {
                 t1.to(secondList, duration, {
-                        opacity: 0,
-                        y: 60,
-                        ease: Expo.easeInOut,
-                    }, `-=${duration}`)
+                    opacity: 0,
+                    y: 60,
+                    ease: Expo.easeInOut,
+                })
                     .to(link, duration, {opacity: 0, x: -120, ease: Expo.easeInOut})
 
             }
@@ -50,7 +49,7 @@ export const SliderDescription = ({activeSection, item}) => {
                 )}
             </ul>
             <div className={`${styles.sliderLink} link`} ref={el => link = el}>
-                <Link to=''>Ver Projecto</Link>
+                <a href={item.link} target='_blank'>Ver Provecto</a>
             </div>
         </div>
     );

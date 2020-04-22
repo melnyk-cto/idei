@@ -33,7 +33,7 @@ const data = [
         list: ['Altura libre de 2.80m', 'Preparación minisplit', 'Detectores de humo', 'Planta de emergencia',
             'Control de accesos', 'Seguridad 24/7', 'Departamentos de 60m2 a 91m2 con acabados', 'Cocina equipada',
             'Fachada de block de concreto celular aislante', 'Iluminación LED', 'Puerta principal'],
-        link: ''
+        link: 'http://kanat.mx/'
     },
     {
         id: 1,
@@ -43,7 +43,7 @@ const data = [
             'Baños equipados con lavaneta y espejos', 'Iluminación LED', 'Planta de emergencia', 'Control de accesos',
             'Seguridad 24/7', 'Departamentos de 82m2 a 107m2', 'IAARQ Diseño Arquitectónico', 'Salón de eventos',
             'Dog park', 'Juegos infantiles'],
-        link: ''
+        link: 'http://kima.idei.com.mx/'
     },
     {
         id: 2,
@@ -53,7 +53,7 @@ const data = [
             '24,300 m2 de áreas verdes, andadores y espejos de agua', 'RWDI (estudios de vientos)',
             'Thornton Tomasetti y Stark + Ortiz ( Ingeniería Estructural)', 'Eco SYNC Asesoría LEED',
             'Departamentos de 130m2 a 832 m2', 'Altura libre de 3.20m', 'Línea de agua purificada'],
-        link: ''
+        link: 'http://koi.mx/'
     },
     {
         id: 3,
@@ -63,7 +63,7 @@ const data = [
             'Oficinas de 58 a 2,474.9 m2', 'Departamentos de 55 a 82 m2', 'Ventanas Duovent',
             'Minisplits con instalaciones bajo plafón', 'Iluminación LED', 'Planta de emergencia', 'Control de accesos',
             'Seguridad 24/7', 'Baños equipados con lavaneta y espejos'],
-        link: ''
+        link: 'http://republica.idei.com.mx/'
     },
     {
         id: 4,
@@ -73,7 +73,7 @@ const data = [
             'Lobby', 'Concierge', 'Salas de choferes', 'Botón de emergencia de rápida respuesta',
             'Preparación para sistema inteligente', 'Certificación LEED plata', 'Iluminación LED',
             'Planta de emergencia', 'Control de accesos', 'Seguridad 24/7', 'Departamentos de 111m2 a 615m2'],
-        link: ''
+        link: 'http://saqqara.mx/'
     },
 ];
 export const SimpleSlider = ({activeSection}) => {
