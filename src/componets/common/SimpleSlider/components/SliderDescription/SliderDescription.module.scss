@@ -1,4 +1,9 @@
 .inner {
+  > img {
+    height:          3rem;
+    object-fit:      contain;
+    object-position: left;
+  }
   .firstList, .secondList {
     opacity: 1;
   }
@@ -11,7 +16,7 @@
 //// animations
 @media screen and (min-width: 1200px) {
   .inner {
-    padding: 3rem 1.5rem 2rem 4.5rem;
+    padding: 2rem 1.5rem 2rem 4.5rem;
     .firstList, .secondList {
       opacity: 0;
     }
@@ -19,7 +24,7 @@
       transform: translateY(60px);
     }
     .sliderLink {
-      opacity: 0;
+      opacity:   0;
       transform: translateX(-120px);
     }
   }

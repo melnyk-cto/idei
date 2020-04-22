@@ -55,8 +55,7 @@ ul.dashed > li:before {
   content:     "-";
   position:    absolute;
   left:        0;
-  top:         50%;
-  transform:   translateY(-50%);
+  top:         0;
   font-size:   1.25rem;
   font-weight: 100;
 }

@@ -10,9 +10,16 @@ import { SliderDescription } from "./components/SliderDescription/SliderDescript
 import { useWindowSize } from "../../../hooks";
 
 // image
-import recentImage1 from "../../../assets/images/home/recent-project-1.jpg";
-import recentImage2 from "../../../assets/images/home/recent-project-2.jpg";
-import recentImage3 from "../../../assets/images/home/recent-project-3.jpg";
+import kanat from "../../../assets/images/home/simple-slider/kanat.jpg";
+import logoKanat from "../../../assets/images/home/simple-slider/kanat.svg";
+import kima from "../../../assets/images/home/simple-slider/kima.jpg";
+import logoKima from "../../../assets/images/home/simple-slider/kima.svg";
+import koi from "../../../assets/images/home/simple-slider/koi.jpg";
+import logokoi from "../../../assets/images/home/simple-slider/koi.svg";
+import reppublica from "../../../assets/images/home/simple-slider/reppublica.jpg";
+import logoReppublica from "../../../assets/images/home/simple-slider/reppublica.svg";
+import saqqara from "../../../assets/images/home/simple-slider/saqqara.jpg";
+import logoSaqqara from "../../../assets/images/home/simple-slider/saqqara.svg";
 
 // styles
 import 'swiper/swiper.scss'
@@ -20,7 +27,55 @@ import './SimpleSlider.scss';
 import styles from "./SimpleSlider.module.scss";
 
 const duration = 2;
-const listTitle = [0, 1, 2, 3, 4];
+const data = [
+    {
+        id: 0, logo: logoKanat, image: kanat,
+        list: ['Altura libre de 2.80m', 'Preparación minisplit', 'Detectores de humo', 'Planta de emergencia',
+            'Control de accesos', 'Seguridad 24/7', 'Departamentos de 60m2 a 91m2 con acabados', 'Cocina equipada',
+            'Fachada de block de concreto celular aislante', 'Iluminación LED', 'Puerta principal'],
+        link: ''
+    },
+    {
+        id: 1,
+        logo: logoKima,
+        image: kima,
+        list: ['Altura libre 2.90m', 'Minisplits con instalaciones bajo plafón',
+            'Baños equipados con lavaneta y espejos', 'Iluminación LED', 'Planta de emergencia', 'Control de accesos',
+            'Seguridad 24/7', 'Departamentos de 82m2 a 107m2', 'IAARQ Diseño Arquitectónico', 'Salón de eventos',
+            'Dog park', 'Juegos infantiles'],
+        link: ''
+    },
+    {
+        id: 2,
+        logo: logokoi,
+        image: koi,
+        list: ['Certificación LEED Plata', 'Botón de emergencia de rápida respuesta', 'Preparación para sistema inteligente',
+            '24,300 m2 de áreas verdes, andadores y espejos de agua', 'RWDI (estudios de vientos)',
+            'Thornton Tomasetti y Stark + Ortiz ( Ingeniería Estructural)', 'Eco SYNC Asesoría LEED',
+            'Departamentos de 130m2 a 832 m2', 'Altura libre de 3.20m', 'Línea de agua purificada'],
+        link: ''
+    },
+    {
+        id: 3,
+        logo: logoReppublica,
+        image: reppublica,
+        list: ['Miró Rivera + IAARQ Diseño Arquitectónico', 'Comercio 2 plantas',
+            'Oficinas de 58 a 2,474.9 m2', 'Departamentos de 55 a 82 m2', 'Ventanas Duovent',
+            'Minisplits con instalaciones bajo plafón', 'Iluminación LED', 'Planta de emergencia', 'Control de accesos',
+            'Seguridad 24/7', 'Baños equipados con lavaneta y espejos'],
+        link: ''
+    },
+    {
+        id: 4,
+        logo: logoSaqqara,
+        image: saqqara,
+        list: ['Altura libre 3.15 m', 'Sistema de aire acondicionado distrital',
+            'Lobby', 'Concierge', 'Salas de choferes', 'Botón de emergencia de rápida respuesta',
+            'Preparación para sistema inteligente', 'Certificación LEED plata', 'Iluminación LED',
+            'Planta de emergencia', 'Control de accesos', 'Seguridad 24/7', 'Departamentos de 111m2 a 615m2'],
+        link: ''
+    },
+];
 export const SimpleSlider = ({activeSection}) => {
     const [width] = useWindowSize();
 
@@ -126,27 +181,23 @@ export const SimpleSlider = ({activeSection}) => {
             <h2 className={styles.title} ref={el => title = el}>PROYECTOS RECIENTES</h2>
             <div className='simpleSliderInner' ref={el => slides = el}>
                 <Swiper {...thumbnailSwiperParams} >
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage3})`}} />
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
+                    {data.map(item =>
+                        <div key={item.id} className='thumbnail' style={{backgroundImage: `url(${item.image})`}} />
+                    )}
                 </Swiper>
                 <div className='only-mobile'>
                     <Swiper  {...gallerySwiperParams}>
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
+                        {data.map(item =>
+                            <div key={item.id} className='gallery' style={{backgroundImage: `url(${item.image})`}} />
+                        )}
                     </Swiper>
                 </div>
             </div>
             <div className={styles.description} ref={el => description = el}>
                 <Swiper {...descriptionSwiperParams}>
-                    {listTitle.map(title =>
-                        <div key={title}>
-                            <SliderDescription activeSection={activeSection} />
+                    {data.map(item =>
+                        <div key={item.id}>
+                            <SliderDescription activeSection={activeSection} item={item} />
                         </div>)}
                 </Swiper>
             </div>
