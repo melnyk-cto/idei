@@ -41,9 +41,7 @@ export const SliderDescription = ({activeSection, item}) => {
     }, [activeSection, width, t1]);
     return (
         <>
-            <h2>
-                BALCONES DE LAS MITRAS
-            </h2>
+            <img src={item.logo} alt='' />
             <ul className={`${styles.secondList} dashed`} ref={el => secondList = el}>
                 {item.list.map(item =>
                     <li key={item}>{item}</li>

@@ -12,11 +12,17 @@ import { SliderDescription } from "./components/SliderDescription/SliderDescript
 // image
 import logo from "../../../assets/images/trazzo-logo.svg";
 import plata from "../../../assets/images/trazzo/paginationSlider/valle-plata.jpg";
+import logoPlata from "../../../assets/images/trazzo/paginationSlider/plata.png";
 import platino from "../../../assets/images/trazzo/paginationSlider/centrika-platino.jpg";
+import logoPlatino from "../../../assets/images/trazzo/paginationSlider/platino.png";
 import aysso from "../../../assets/images/trazzo/paginationSlider/aysso.jpg";
+import logoAysso from "../../../assets/images/trazzo/paginationSlider/aysso.png";
 import toronto from "../../../assets/images/trazzo/paginationSlider/estancias-toronto.jpg";
+import logoToronto from "../../../assets/images/trazzo/paginationSlider/toronto.png";
 import huinala from "../../../assets/images/trazzo/paginationSlider/centrica-huinala.jpg";
+import logoHuinala from "../../../assets/images/trazzo/paginationSlider/huinala.png";
 import mitras from "../../../assets/images/trazzo/paginationSlider/balcones-mitras.jpg";
+import logoMitras from "../../../assets/images/trazzo/paginationSlider/mitras.png";
 
 // styles
 import 'swiper/swiper.scss'
@@ -27,6 +33,7 @@ const data = [
     {
         id: 0,
         title: 'VALLE DE PLATA',
+        logo: logoPlata,
         image: plata,
         list: ['Casas de 3 Recamaras', 'Casas de 2 y 3 niveles', 'Casa Club', 'Alberca', 'Áreas verdes', 'Acceso Controlado '],
         link: 'http://estanciasvalledeplata.pagedemo.co/'
@@ -34,6 +41,7 @@ const data = [
     {
         id: 1,
         title: 'CÉNTRIKA PLATINUM',
+        logo: logoPlatino,
         image: platino,
         list: ['2 y 3 recámaras', '9 pisos', '2 torres', 'Gimnasio', 'Salón de eventos', 'Alberca', 'Área Pet Friendly', 'Estacionamiento Techado'],
         link: 'http://centrikaplatinum.pagedemo.co/'
@@ -41,6 +49,7 @@ const data = [
     {
         id: 2,
         title: 'AYSSO',
+        logo: logoAysso,
         image: aysso,
         list: ['Desarrollo urbanizado', 'Lotes desde 250 m2', 'Instalaciones subterráneas', 'Casa Club', 'Alberca', 'Cañada natural.', '30,000 m2 de áreas verdes.'],
         link: 'http://aysso.pagedemo.co/'
@@ -48,6 +57,7 @@ const data = [
     {
         id: 3,
         title: 'ESTANCIAS TORONTO',
+        logo: logoToronto,
         image: toronto,
         list: ['Casas de 3 recámaras', 'Casas de 2 y 3 niveles', 'Casa club con terraza', 'Alberca', 'Áreas verdes', 'Acceso controlado'],
         link: 'http://estanciastoronto.pagedemo.co/'
@@ -55,6 +65,7 @@ const data = [
     {
         id: 4,
         title: 'CÉNTRIKA HUINALÁ',
+        logo: logoHuinala,
         image: huinala,
         list: ['Casas de 3 recámaras', 'Casas de 2 niveles', 'Caseta de vigilancia', 'Parque', 'Juegos infantiles', 'Centro comercial'],
         link: 'http://centrikahuinala.pagedemo.co/'
@@ -62,6 +73,7 @@ const data = [
     {
         id: 5,
         title: 'BALCONES DE LAS MITRAS',
+        logo: logoMitras,
         image: mitras,
         list: ['Departamento\ts de 2 recámaras', 'Casas de 2 recámaras', 'Caseta de vigilancia ', 'Alberca', 'Servicios Subterráneos', 'Palapa', 'Lectura'],
         link: 'http://balconesdelasmitras.pagedemo.co/'
