@@ -107,6 +107,13 @@ p {
   text-align: center;
 }
 
+.green {
+  color:          #00A94F;
+}
+.red {
+  color: #cf232c;
+}
+
 @media screen and (min-width: 992px) {
   .only-mobile {
     display: none;

@@ -22,7 +22,7 @@ const menus = [
     {url: '/nosotros', label: 'NOSOTROS', image: logoGray},
     {url: '/vertical', label: 'VERTICAL', image: logoGray},
     {url: routes.trazzo, label: 'HORIZONTAL', image: trazzo},
-    {url: '/comercial', label: 'COMERCIAL', image: espacia},
+    {url: routes.comercial, label: 'COMERCIAL', image: espacia},
     {url: '/financiamiento', label: 'FINANCIAMIENTO', image: reeliza},
     {url: '/inversionistas', label: 'RELACION CON INVERSIONISTAS', image: investor},
 ];

@@ -5,7 +5,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // components
-import { Home, Trazzo } from "../pages";
+import { Comercial, Home, Trazzo } from "../pages";
 import { Header, Footer } from "../common";
 import { routes } from './routes';
 
@@ -21,6 +21,7 @@ export const App = () => {
                     <Redirect exact from='/' to={routes.home} />
                     <Route path={routes.home} component={Home} />
                     <Route path={routes.trazzo} component={Trazzo} />
+                    <Route path={routes.comercial} component={Comercial} />
                 </Switch>
             </main>
             <Footer />

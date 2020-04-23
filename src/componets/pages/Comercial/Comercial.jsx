@@ -5,23 +5,22 @@ import React, { useEffect, useRef, useState } from 'react';
 import { TimelineLite, Expo } from 'gsap'
 
 // components
-import { Link } from "react-router-dom";
 import { PaginationSlider } from "../../common/PaginationSlider/PaginationSlider";
 import { useWindowSize } from "../../../hooks";
 
 // images
-import republicaTrazzoPage from "../../../assets/images/trazzo/republica-trazzo-page.jpg";
-import recentProject from "../../../assets/images/trazzo/recent-project.jpg";
-import trazzoLogoGreen from "../../../assets/images/trazzo/trazzo-logo-green.svg";
+import republicaTrazzoPage from "../../../assets/images/comercial/comercial-h2.jpg";
+import recentProject from "../../../assets/images/comercial/comercial-h1.jpg";
+import trazzoLogoGreen from "../../../assets/images/comercial/comercial-logo.svg";
 
 // styles
-import styles from './Trazzo.module.scss';
+import styles from './../Trazzo/Trazzo.module.scss';
 
 let index = 0;
 let lastTime = 0;
 const animationDuration = 1500;
 const duration = 2;
-export const Trazzo = () => {
+export const Comercial = () => {
     const [width] = useWindowSize();
 
     let sections = useRef(null);
@@ -40,6 +39,8 @@ export const Trazzo = () => {
             index++;
         }
 
+
+        console.log(allSections.parentElement)
         if (allSections.parentElement === null) return false;
         const numberSections = allSections.parentElement.childNodes;
         numberSections.forEach((section, i) => {
@@ -122,20 +123,18 @@ export const Trazzo = () => {
                 <div className={styles.description} ref={el => description = el}>
                     <img src={trazzoLogoGreen} alt='trazzo-logo-green' />
                     <span className={styles.link}>
-                        <a href='http://www.trazzo.com.mx/' target='_blank'
-                           className='green'>www.trazzo.com.mx</a></span>
-                    <h3>DESARROLLOS HORIZONTALES</h3>
-                    <span>Nuestros valores se reflejan en el servicio</span>
+                        <a href='http://www.espacia.com.mx/' target='_blank' className='red'>www.espacia.com.mx</a></span>
+                    <h3>DESARROLLOS COMERCIAL</h3>
                     <p>
-                        <span>TRAZZO</span> - Somos una empresa vanguardista con el respaldo de IDEI, nuestra filial con
-                        46
-                        años de
-                        experiencia y liderazgo en proyectos de desarrollo inmobiliario en México y Estados Unidos.
-                        Su función es promover, desarrollar, comercializar y administrar proyectos residenciales y
-                        comerciales de excelente calidad, con los mejores diseños y materiales para brindar a sus
-                        usuarios y
-                        clientes el máximo confort. En Trazzo, el objetivo es que sus clientes vivan como se lo
-                        imaginan.
+                        <span>División de IDEI</span>, enfocada al segmento inmobiliario de espacios corporativos que
+                        maneja propiedades
+                        desde su venta, renta, administración y promoción.
+                    </p>
+                    <p>Con el compromiso de exceder las expectativas de nuestros clientes, inversionistas y
+                        colaboradores.</p>
+                    <p>La experiencia en el ramo de desarrollos verticales y corporativos inmobiliarios, nos permite
+                        brindar el mejor producto y una atención profesional que entiende y se adelanta a las
+                        necesidades en espacios para oficinas.
                     </p>
                 </div>
             </section>
@@ -147,3 +146,4 @@ export const Trazzo = () => {
         </>
     );
 };
+
