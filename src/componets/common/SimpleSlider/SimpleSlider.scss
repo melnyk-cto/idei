@@ -1,8 +1,14 @@
 @import "../../../assets/scss/variables";
 
+.simpleSlider {
+  .swiper-wrapper {
+    transition: 1.6s cubic-bezier(.87, 0, .13, 1) !important;
+  }
+}
+
 .simpleSliderInner {
   * {
-    transition: .6s cubic-bezier(.87, 0, .13, 1);
+    transition: 1.6s cubic-bezier(.87, 0, .13, 1) !important;
   }
   .thumbnail, .gallery {
     background-repeat:   no-repeat;

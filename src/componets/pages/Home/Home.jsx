@@ -81,7 +81,7 @@ export const Home = () => {
                 </div>}
             </div>
             <SimpleSection activeSection={activeSection} />
-            <section className={styles.simpleSlider} ref={el => sections = el}>
+            <section className={`${styles.simpleSlider} simpleSlider`} ref={el => sections = el}>
                 <SimpleSlider activeSection={activeSection} />
             </section>
             <section className={`${styles.simpleSlider} ${styles.modified}`}>

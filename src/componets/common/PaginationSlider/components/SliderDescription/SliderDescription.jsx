@@ -56,7 +56,7 @@ export const SliderDescription = ({activeSection}) => {
                 Monterrey
             </p>
             <div className={`${styles.sliderLink} link tc`} ref={el => link = el}>
-                <Link to='' target='_blank'>Ver Provecto</Link>
+                <Link to='' target='_blank'>Ver Proyecto</Link>
             </div>
         </>
     );
