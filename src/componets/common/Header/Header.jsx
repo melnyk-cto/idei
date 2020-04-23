@@ -1,6 +1,9 @@
 // core
 import React, { useState, useEffect } from 'react';
 
+// library
+import { NavLink } from "react-router-dom";
+
 // components
 import { useWindowSize } from "../../../hooks";
 import { routes } from "../../App/routes";
@@ -16,12 +19,12 @@ import reeliza from '../../../assets/images/reeliza-logo.svg'
 import investor from '../../../assets/images/inversor-logo.svg'
 
 const menus = [
-    {url: routes.home, label: 'NOSOTROS', image: logoGray},
-    {url: '/', label: 'VERTICAL', image: logoGray},
+    {url: '/nosotros', label: 'NOSOTROS', image: logoGray},
+    {url: '/vertical', label: 'VERTICAL', image: logoGray},
     {url: routes.trazzo, label: 'HORIZONTAL', image: trazzo},
-    {url: '/', label: 'COMERCIAL', image: espacia},
-    {url: '/', label: 'FINANCIAMIENTO', image: reeliza},
-    {url: '/', label: 'RELACION CON INVERSIONISTAS', image: investor},
+    {url: '/comercial', label: 'COMERCIAL', image: espacia},
+    {url: '/financiamiento', label: 'FINANCIAMIENTO', image: reeliza},
+    {url: '/inversionistas', label: 'RELACION CON INVERSIONISTAS', image: investor},
 ];
 export const Header = () => {
     const [active, setActive] = useState(false);
@@ -48,13 +51,13 @@ export const Header = () => {
                 <menu className={active ? [styles.menu + ' ' + styles.active] : styles.menu}>
                     <ul>
                         {menus.map(item => <li key={item.label}>
-                            <a href={item.url}>
+                            <NavLink to={item.url} activeClassName={styles.active}>
                                 {item.label}
-                            </a>
-                            <a href={item.url} className={styles.menuHover}>
+                            </NavLink>
+                            <NavLink to={item.url} className={styles.menuHover} activeClassName={styles.active}>
                                 <img src={item.image} alt='' />
                                 {item.label}
-                            </a>
+                            </NavLink>
                         </li>)}
                     </ul>
                 </menu>

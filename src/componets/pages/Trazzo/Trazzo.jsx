@@ -10,9 +10,9 @@ import { PaginationSlider } from "../../common/PaginationSlider/PaginationSlider
 import { useWindowSize } from "../../../hooks";
 
 // images
-import republicaTrazzoPage from "../../../assets/images/republica-trazzo-page.jpg";
-import recentProject from "../../../assets/images/recent-project.jpg";
-import trazzoLogoGreen from "../../../assets/images/trazzo-logo-green.svg";
+import republicaTrazzoPage from "../../../assets/images/trazzo/republica-trazzo-page.jpg";
+import recentProject from "../../../assets/images/trazzo/recent-project.jpg";
+import trazzoLogoGreen from "../../../assets/images/trazzo/trazzo-logo-green.svg";
 
 // styles
 import styles from './Trazzo.module.scss';
@@ -40,6 +40,7 @@ export const Trazzo = () => {
             index++;
         }
 
+        if (allSections.parentElement === null) return false;
         const numberSections = allSections.parentElement.childNodes;
         numberSections.forEach((section, i) => {
             if (i === index) section.scrollIntoView({behavior: 'smooth'});
@@ -48,7 +49,8 @@ export const Trazzo = () => {
         setActiveSection(index);
     };
 
-    useEffect(() => {
+    const onWheel = () => {
+        // if (!wheel) return false;
         setAllSections(sections);
         if (width > 1200) {
             // Tracking mouse wheel event
@@ -67,6 +69,10 @@ export const Trazzo = () => {
                 lastTime = currentTime;
             }, {passive: false});
         }
+    };
+
+    useEffect(() => {
+        onWheel();
     }, [width]);
 
 

@@ -107,6 +107,11 @@
             overflow:        visible;
             padding:         0 0 2rem 0;
             transition:      0.3s cubic-bezier(.87, 0, .13, 1);
+            &.active {
+              opacity: 1;
+              height:  100%;
+              padding: 1rem;
+            }
             img {
               margin-bottom: .5rem;
               width:         3rem;

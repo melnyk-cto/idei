@@ -30,6 +30,7 @@ export const Home = () => {
             index++;
         }
 
+        if (allSections.parentElement === null) return false;
         const numberSections = allSections.parentElement.childNodes;
         numberSections.forEach((section, i) => {
             if (i === index) section.scrollIntoView({behavior: 'smooth'});
@@ -38,7 +39,7 @@ export const Home = () => {
         setActiveSection(index);
     };
 
-    useEffect(() => {
+    const onWheel = () => {
         setAllSections(sections);
         if (width > 1200) {
             // Tracking mouse wheel event
@@ -57,6 +58,10 @@ export const Home = () => {
                 lastTime = currentTime;
             }, {passive: false});
         }
+    };
+
+    useEffect(() => {
+        onWheel();
     }, [width]);
 
 

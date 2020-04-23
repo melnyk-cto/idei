@@ -12,6 +12,7 @@ import { useWindowSize } from "../../../hooks";
 import recentImage1 from "../../../assets/images/home/recent-project-1.jpg";
 import recentImage2 from "../../../assets/images/home/recent-project-2.jpg";
 import recentImage3 from "../../../assets/images/home/recent-project-3.jpg";
+import logo from "../../../assets/images/trazzo-logo.svg";
 
 // styles
 import 'swiper/swiper.scss'
@@ -128,6 +129,7 @@ export const PaginationSlider = ({activeSection}) => {
                 )}
             </ul>
             <div className='sliderPagination' ref={el => slides = el}>
+                <img src={logo} alt='logo' />
                 <Swiper {...thumbnailSwiperParams}>
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
                     <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
