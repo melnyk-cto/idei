@@ -1,9 +1,6 @@
 @import "../../../../../assets/scss/variables";
 
 .description {
-  * {
-    transition: all 0.6s cubic-bezier(.87, 0, .13, 1) !important;
-  }
   max-width:  34rem;
   min-width:  18rem;
   width:      100%;
@@ -27,6 +24,9 @@
     width:          100%;
   }
 }
+.secondList, .sliderLink {
+  opacity: 1;
+}
 
 @media screen and (min-width: 992px) {
   .description {
@@ -47,7 +47,7 @@
 @media screen and (min-width: 1440px) {
   .description {
     font-size: 1.125rem;
-    padding:   2.6rem 2.5rem 1rem 2.6rem;
+    padding:   1.6rem 2.5rem 1rem 2.6rem;
     h2 {
       font-size:      1.5rem;
       letter-spacing: 1.5px;
@@ -71,9 +71,6 @@
     opacity:  0;
     height:   0;
     overflow: hidden;
-  }
-  .firstList, .secondList {
-    opacity: 0;
   }
   .secondList {
     transform: translateY(60px);

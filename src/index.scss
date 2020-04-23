@@ -55,7 +55,7 @@ ul.dashed > li:before {
   content:     "-";
   position:    absolute;
   left:        0;
-  top:         0;
+  top:         -2px;
   font-size:   1.25rem;
   font-weight: 100;
 }
@@ -144,7 +144,7 @@ p {
     line-height: 1.4;
   }
   .link {
-    margin-top:  14%;
+    margin-top:  10%;
     font-size:   1.5rem;
     line-height: 2.3125;
   }

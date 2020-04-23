@@ -7,23 +7,67 @@ import { TimelineLite, Expo } from 'gsap'
 
 // components
 import { useWindowSize } from "../../../hooks";
+import { SliderDescription } from "./components/SliderDescription/SliderDescription";
 
 // image
-import recentImage1 from "../../../assets/images/home/recent-project-1.jpg";
-import recentImage2 from "../../../assets/images/home/recent-project-2.jpg";
-import recentImage3 from "../../../assets/images/home/recent-project-3.jpg";
 import logo from "../../../assets/images/trazzo-logo.svg";
+import plata from "../../../assets/images/trazzo/paginationSlider/valle-plata.jpg";
+import platino from "../../../assets/images/trazzo/paginationSlider/centrika-platino.jpg";
+import aysso from "../../../assets/images/trazzo/paginationSlider/aysso.jpg";
+import toronto from "../../../assets/images/trazzo/paginationSlider/estancias-toronto.jpg";
+import huinala from "../../../assets/images/trazzo/paginationSlider/centrica-huinala.jpg";
+import mitras from "../../../assets/images/trazzo/paginationSlider/balcones-mitras.jpg";
 
 // styles
 import 'swiper/swiper.scss'
 import './PaginationSlider.scss';
 import styles from "./components/SliderDescription/SliderDescription.module.scss";
-import { SliderDescription } from "./components/SliderDescription/SliderDescription";
 
+const data = [
+    {
+        id: 0,
+        title: 'VALLE DE PLATA',
+        image: plata,
+        list: ['Casas de 3 Recamaras', 'Casas de 2 y 3 niveles', 'Casa Club', 'Alberca', 'Áreas verdes', 'Acceso Controlado '],
+        link: 'http://estanciasvalledeplata.pagedemo.co/'
+    },
+    {
+        id: 1,
+        title: 'CÉNTRIKA PLATINUM',
+        image: platino,
+        list: ['2 y 3 recámaras', '9 pisos', '2 torres', 'Gimnasio', 'Salón de eventos', 'Alberca', 'Área Pet Friendly', 'Estacionamiento Techado'],
+        link: 'http://centrikaplatinum.pagedemo.co/'
+    },
+    {
+        id: 2,
+        title: 'AYSSO',
+        image: aysso,
+        list: ['Desarrollo urbanizado', 'Lotes desde 250 m2', 'Instalaciones subterráneas', 'Casa Club', 'Alberca', 'Cañada natural.', '30,000 m2 de áreas verdes.'],
+        link: 'http://aysso.pagedemo.co/'
+    },
+    {
+        id: 3,
+        title: 'ESTANCIAS TORONTO',
+        image: toronto,
+        list: ['Casas de 3 recámaras', 'Casas de 2 y 3 niveles', 'Casa club con terraza', 'Alberca', 'Áreas verdes', 'Acceso controlado'],
+        link: 'http://estanciastoronto.pagedemo.co/'
+    },
+    {
+        id: 4,
+        title: 'CÉNTRIKA HUINALÁ',
+        image: huinala,
+        list: ['Casas de 3 recámaras', 'Casas de 2 niveles', 'Caseta de vigilancia', 'Parque', 'Juegos infantiles', 'Centro comercial'],
+        link: 'http://centrikahuinala.pagedemo.co/'
+    },
+    {
+        id: 5,
+        title: 'BALCONES DE LAS MITRAS',
+        image: mitras,
+        list: ['Departamento\ts de 2 recámaras', 'Casas de 2 recámaras', 'Caseta de vigilancia ', 'Alberca', 'Servicios Subterráneos', 'Palapa', 'Lectura'],
+        link: 'http://balconesdelasmitras.pagedemo.co/'
+    },
+];
 const duration = 2;
-const listTitle = [0, 1, 2, 3, 4];
-const names = ['AMORADA', 'BALCONES DE LAS MITRAS', 'LOS CASTAÑOS', 'CÉNTRIKA PLATINUM', 'TORRE CÉNTRIKA ELITE',
-    'ESTANCIAS TORONTO PRIVADAS DEL CANADÁ', 'ESTANCIAS MONTREAL PRIVADAS DEL CANADÁ', 'ESTANCIAS VALLE DE PLATA'];
 export const PaginationSlider = ({activeSection}) => {
     const [width] = useWindowSize();
 
@@ -39,10 +83,6 @@ export const PaginationSlider = ({activeSection}) => {
         slidesPerView: 3,
         touchRatio: 0.2,
         slideToClickedSlide: true,
-        autoplay: {
-            delay: 20500,
-            disableOnInteraction: false
-        },
         // Responsive breakpoints
         breakpoints: {
             // when window width is >= 992px
@@ -122,36 +162,32 @@ export const PaginationSlider = ({activeSection}) => {
     return (
         <>
             <ul className='pagination only-desktop'>
-                {names.map((name, index) =>
-                    <li key={name}
+                {data.map((item, index) =>
+                    <li key={item.id}
                         onClick={() => goToSlide(index)}
-                        className={index === active ? 'pagination-list active' : 'pagination-list'}>{name}</li>
+                        className={index === active ? 'pagination-list active' : 'pagination-list'}>{item.title}</li>
                 )}
             </ul>
             <div className='sliderPagination' ref={el => slides = el}>
                 <img src={logo} alt='logo' />
                 <Swiper {...thumbnailSwiperParams}>
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage3})`}} />
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage1})`}} />
-                    <div className='thumbnail' style={{backgroundImage: `url(${recentImage2})`}} />
+                    {data.map(item =>
+                        <div key={item.id} className='thumbnail' style={{backgroundImage: `url(${item.image})`}} />
+                    )}
                 </Swiper>
                 <div className='only-mobile'>
                     <Swiper  {...gallerySwiperParams}>
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage3})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage1})`}} />
-                        <div className='gallery' style={{backgroundImage: `url(${recentImage2})`}} />
+                        {data.map(item =>
+                            <div key={item.id} className='gallery' style={{backgroundImage: `url(${item.image})`}} />
+                        )}
                     </Swiper>
                 </div>
             </div>
-            <div className={styles.description} ref={el => description = el}>
+            <div className={`${styles.description} sliderPaginationDescription`} ref={el => description = el}>
                 <Swiper {...descriptionSwiperParams}>
-                    {listTitle.map(title =>
-                        <div key={title}>
-                            <SliderDescription activeSection={activeSection} />
+                    {data.map(item =>
+                        <div key={item.id}>
+                            <SliderDescription activeSection={activeSection} item={item} />
                         </div>)}
                 </Swiper>
             </div>
