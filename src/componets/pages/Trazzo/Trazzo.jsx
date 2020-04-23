@@ -5,7 +5,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { TimelineLite, Expo } from 'gsap'
 
 // components
-import { Link } from "react-router-dom";
 import { PaginationSlider } from "../../common/PaginationSlider/PaginationSlider";
 import { useWindowSize } from "../../../hooks";
 
@@ -122,7 +121,9 @@ export const Trazzo = () => {
                 <div className={styles.description} ref={el => description = el}>
                     <img src={trazzoLogoGreen} alt='trazzo-logo-green' />
                     <span className={styles.link}>
-                        <a href='http://www.trazzo.com.mx/' target='_blank'
+                        <a href='http://www.trazzo.com.mx/'
+                           target='_blank'
+                           rel="noopener noreferrer"
                            className='green'>www.trazzo.com.mx</a></span>
                     <h3>DESARROLLOS HORIZONTALES</h3>
                     <span>Nuestros valores se reflejan en el servicio</span>

@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { TimelineLite, Expo } from 'gsap'
 
 // components
-import { PaginationSlider } from "../../common/PaginationSlider/PaginationSlider";
+import { CommercialSlider } from "./CommercialSlider/CommercialSlider";
 import { useWindowSize } from "../../../hooks";
 
 // images
@@ -15,12 +15,13 @@ import trazzoLogoGreen from "../../../assets/images/comercial/comercial-logo.svg
 
 // styles
 import styles from './../Trazzo/Trazzo.module.scss';
+import './Commercial.scss';
 
 let index = 0;
 let lastTime = 0;
 const animationDuration = 1500;
 const duration = 2;
-export const Comercial = () => {
+export const Commercial = () => {
     const [width] = useWindowSize();
 
     let sections = useRef(null);
@@ -39,8 +40,6 @@ export const Comercial = () => {
             index++;
         }
 
-
-        console.log(allSections.parentElement)
         if (allSections.parentElement === null) return false;
         const numberSections = allSections.parentElement.childNodes;
         numberSections.forEach((section, i) => {
@@ -123,8 +122,11 @@ export const Comercial = () => {
                 <div className={styles.description} ref={el => description = el}>
                     <img src={trazzoLogoGreen} alt='trazzo-logo-green' />
                     <span className={styles.link}>
-                        <a href='http://www.espacia.com.mx/' target='_blank' className='red'>www.espacia.com.mx</a></span>
-                    <h3>DESARROLLOS COMERCIAL</h3>
+                        <a href='http://www.espacia.com.mx/'
+                           target='_blank'
+                           rel="noopener noreferrer"
+                           className='red'>www.espacia.com.mx</a></span>
+                    <h3>COMERCIAL - OFICINAS</h3>
                     <p>
                         <span>División de IDEI</span>, enfocada al segmento inmobiliario de espacios corporativos que
                         maneja propiedades
@@ -138,8 +140,8 @@ export const Comercial = () => {
                     </p>
                 </div>
             </section>
-            <section className={styles.amorada} ref={el => sections = el}>
-                <PaginationSlider activeSection={activeSection} />
+            <section className={`${styles.amorada} commercial`} ref={el => sections = el}>
+                <CommercialSlider activeSection={activeSection} />
             </section>
             {/*control button*/}
             <button type='button' className='button' onClick={() => goToSection()} />
