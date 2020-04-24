@@ -1,5 +1,6 @@
 export const routes = Object.freeze({
     home: '/idei',
     trazzo: '/trazzo',
-    comercial: '/comercial',
+    commercial: '/commercial',
+    financing: '/financing',
 });
