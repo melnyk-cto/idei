@@ -3,4 +3,5 @@ export const routes = Object.freeze({
     trazzo: '/trazzo',
     commercial: '/commercial',
     financing: '/financing',
+    investors: '/investors',
 });

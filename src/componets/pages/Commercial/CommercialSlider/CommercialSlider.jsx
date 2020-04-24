@@ -11,13 +11,14 @@ import { SliderDescription } from "./components/SliderDescription/SliderDescript
 
 // image
 import logo from "../../../../assets/images/comercial/comercial-logo.svg";
-import plata from "../../../../assets/images/trazzo/paginationSlider/valle-plata.jpg";
-import platino from "../../../../assets/images/trazzo/paginationSlider/centrika-platino.jpg";
-import aysso from "../../../../assets/images/trazzo/paginationSlider/aysso.jpg";
-import toronto from "../../../../assets/images/trazzo/paginationSlider/estancias-toronto.jpg";
-import logoToronto from "../../../../assets/images/trazzo/paginationSlider/toronto.png";
-import huinala from "../../../../assets/images/trazzo/paginationSlider/centrica-huinala.jpg";
-import mitras from "../../../../assets/images/trazzo/paginationSlider/balcones-mitras.jpg";
+import vao2 from "../../../../assets/images/comercial/slider/vao2.jpg";
+import koi from "../../../../assets/images/comercial/slider/koi.jpg";
+import auriga from "../../../../assets/images/comercial/slider/auriga.jpg";
+import citica from "../../../../assets/images/comercial/slider/citica.jpg";
+import republica from "../../../../assets/images/comercial/slider/republica.jpg";
+import centrika from "../../../../assets/images/comercial/slider/centrika.jpg";
+import kio from "../../../../assets/images/comercial/slider/kio.jpg";
+import torreAmerica from "../../../../assets/images/comercial/slider/torre-america.jpg";
 
 // styles
 import 'swiper/swiper.scss'
@@ -29,7 +30,7 @@ const data = [
         id: 0,
         title: 'VAO 2',
         subTitle: '',
-        image: plata,
+        image: vao2,
         characteristics: ['Ubicación privilegiada, corredor Valle Oriente accesos viales y trasporte',
             'Lujo, arte y vanguardia en áreas comunes', '18 niveles de Oficinas',
             'Respaldo eléctrico 100%, plantas de emergencia para respaldar funcionamiento al 100% en áreas comunes y privadas',
@@ -44,7 +45,7 @@ const data = [
         id: 1,
         title: 'KOI Oficinas',
         subTitle: '',
-        image: platino,
+        image: koi,
         characteristics: ['Edificio más alto de México', 'Ubicación privilegiada, Corredor Valle Oriente accesos viales y trasporte',
             'Lujo, Arte y Vanguardia en áreas comunes', 'Certificación LEED Plata', '20 pisos de Oficinas más 4 PHs con vistas panorámicas',
             'Respaldo Eléctrico 100%, plantas de emergencia para respaldar funcionamiento al 100% en áreas comunes y privadas',
@@ -59,7 +60,7 @@ const data = [
         title: 'AURIGA Oficinas',
         subTitle: '(próximamente, otoño 2020)',
         // logo: logoAysso,
-        image: aysso,
+        image: auriga,
         characteristics: ['Ubicación privilegiada, corredor Valle Oriente accesos viales y trasporte', 'Lujo, arte y vanguardia en áreas comunes',
             '8 niveles de oficinas', 'Cogeneración: el proyecto generará su propia energía', 'Respaldo eléctrico por CFE en caso de emergencia',
             'Procedimiento de seguridad con tarjetas de acceso', '3 elevadores más 1 de carga'],
@@ -71,8 +72,7 @@ const data = [
         id: 3,
         title: 'CITICA Oficinas',
         subTitle: '',
-        logo: logoToronto,
-        image: toronto,
+        image: citica,
         characteristics: ['Ubicación privilegiada en 2 de las avenidas con mayor flujo en el corazón de Monterrey',
             'Fácil acceso, a minutos de San Pedro, Garza Garcia', 'Procedimiento de seguridad con tarjetas de acceso ',
             '7 pisos de oficinas', '9 niveles inferiores de estacionamiento techado', '3 elevadores más 1 de carga'],
@@ -83,7 +83,7 @@ const data = [
         id: 4,
         title: 'República Oficinas',
         subTitle: '(próximamente, otoño 2021)',
-        image: huinala,
+        image: republica,
         characteristics: ['Ubicación privilegiada en 2 de las avenidas con mayor flujo en el corazón de Monterrey',
             'Procedimiento de seguridad con tarjetas de acceso', '6 pisos de oficinas', '7 niveles inferiores de estacionamiento techado',
             '3 elevadores más 1 de carga'],
@@ -96,7 +96,7 @@ const data = [
         id: 5,
         title: 'Centrika Oficinas',
         subTitle: '',
-        image: mitras,
+        image: centrika,
         characteristics: ['Ubicado en el corazón del área Metropolitana de Monterrey', 'Fácil acceso, a una cuadra de la ecovia y a 200 m de la estación de metro Anaya',
             'Procedimiento de seguridad con tarjetas de acceso', '3 pisos de oficinas con amplias plantas',
             '2 niveles inferiores de estacionamiento techado', '3 elevadores'],
@@ -108,7 +108,7 @@ const data = [
         id: 6,
         title: 'KIO',
         subTitle: '',
-        image: mitras,
+        image: kio,
         characteristics: ['Ubicación corporativa y comercial sobre Gomez Morín', 'Edificio Icono de Monterrey, por su forma semi circular',
             '8 pisos de oficinas', 'Procedimiento de seguridad con tarjetas de acceso', '3 elevadores más 1 de carga'],
         amenities: ['En un radio de 150 mts., distancia que se puede recorrer a pie, se encuentran: Palacio de Hierro, Cines, Food Court, Restaurantes, HEB, Bancos, Tintorería, Plaza 404, Starbucks, etc.',
@@ -119,7 +119,7 @@ const data = [
         id: 7,
         title: 'TORRE COMERCIAL AMÉRICA',
         subTitle: '',
-        image: mitras,
+        image: torreAmerica,
         characteristics: ['Ubicación corporativa y comercial en San Pedro', 'Edificio corporativo icono de Monterrey',
             '30 pisos de oficinas', 'Procedimiento de seguridad con tarjetas de acceso', '7 elevadores más 1 de carga'],
         amenities: ['En un radio de 50 mts, que se pueden recorrer a pie se encuentra Plaza Fiesta San Agustin, Main Entrance, Hotel Quinta Real, Hotel Safi, Metropolitan, Hospital Zambrano Hellion.',

@@ -5,7 +5,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // components
-import { Commercial, Home, Trazzo, Financing } from "../pages";
+import { Commercial, Home, Trazzo, Financing, Investors } from "../pages";
 import { Header, Footer } from "../common";
 import { routes } from './routes';
 
@@ -23,6 +23,7 @@ export const App = () => {
                     <Route path={routes.trazzo} component={Trazzo} />
                     <Route path={routes.commercial} component={Commercial} />
                     <Route path={routes.financing} component={Financing} />
+                    <Route path={routes.investors} component={Investors} />
                 </Switch>
             </main>
             <Footer />

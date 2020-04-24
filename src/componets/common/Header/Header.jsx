@@ -24,7 +24,7 @@ const menus = [
     {url: routes.trazzo, label: 'HORIZONTAL', image: trazzo},
     {url: routes.commercial, label: 'COMERCIAL', image: espacia},
     {url: routes.financing, label: 'FINANCIAMIENTO', image: reeliza},
-    {url: '/inversionistas', label: 'RELACION CON INVERSIONISTAS', image: investor},
+    {url: routes.investors, label: 'RELACION CON INVERSIONISTAS', image: investor},
 ];
 export const Header = () => {
     const [active, setActive] = useState(false);

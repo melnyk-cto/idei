@@ -8,17 +8,16 @@ import { TimelineLite, Expo } from 'gsap'
 import { useWindowSize } from "../../../hooks";
 
 // images
-import headerImage from "../../../assets/images/financing/realiza-header.png";
-import financing from "../../../assets/images/financing/reeliza-logo.svg";
+import headerImage from "../../../assets/images/investors/investors-header.jpg";
 
 // styles
-import styles from './Financing.module.scss';
+import styles from './Investors.module.scss';
 
 let index = 0;
 let lastTime = 0;
 const animationDuration = 1500;
 const duration = 2;
-export const Financing = () => {
+export const Investors = () => {
     const [width] = useWindowSize();
 
     let sections = useRef(null);
@@ -108,22 +107,14 @@ export const Financing = () => {
                     <img src={headerImage} alt='republica' ref={el => image = el} />
                 </div>
                 <div className={styles.description} ref={el => description = el}>
-                    <img src={financing} alt='logo' />
-                    <span className={styles.link}>
-                        <a href='http://www.realizatupatrimonio.com.mx'
-                           target='_blank'
-                           rel="noopener noreferrer"
-                           className='yellow'>www.realizatupatrimonio.com.mx</a></span>
-                    <h3>FINANCIAMIENTO - REALIZA</h3>
-                    <p>
-                        <span>En Realiza</span> financiamos soluciones para tus necesidades. Te ofrecemos el esquema más
-                        atractivo del mercado, con productos financieros destinados a proyectos de vivienda en sector
-                        horizontal y vertical, pertenecientes a Internacional de Inversiones.
-                    </p>
-                    <p>
-                        Si tienes o has tenido algún problema de buró de crédito, acércate con nosotros y buscamos
-                        alguna alternativa para ti.
-                    </p>
+                    <h3>EMISIÓN DE CBFIS IDEI 20</h3>
+                    <p className='mb-0'><span>DOCUMENTOS DESCARGABLES:</span></p>
+                    <a href='http://idei.mx/inversionistas/ProspectoPreliminar.pdf' className={styles.document}
+                       target='_blankxZ'>Prospecto de colocación(preliminar)</a>
+                    <a href='http://idei.mx/inversionistas/DICI.pdf' className={styles.document}
+                       target='_blankxZ'>DICI(preliminar)</a>
+                    <a href='http://idei.mx/inversionistas/Presentaci%C3%B3n_a_inversionistas.pdf'
+                       className={styles.document} target='_blankxZ'>Presentación a inversionistas</a>
                 </div>
             </section>
             {/*control button*/}
