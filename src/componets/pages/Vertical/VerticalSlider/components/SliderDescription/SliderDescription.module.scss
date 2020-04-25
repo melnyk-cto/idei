@@ -1,0 +1,82 @@
+@import "../../../../../../assets/scss/variables";
+
+.description {
+  max-width:  34rem;
+  min-width:  18rem;
+  width:      100%;
+  margin:     0 auto;
+  background: $metal;
+  padding:    3rem 1.5rem 2rem 2.5625rem;
+  color:      #f8f9fb;
+  font-size:  0.8125rem;
+  img {
+    max-height:    5rem;
+    max-width:     7rem;
+    width:         auto;
+    margin-bottom: 1.5rem;
+  }
+  ul {
+    line-height:    1.25rem;
+    letter-spacing: 0.06em;
+    margin-bottom:  2rem;
+    width:          100%;
+  }
+  h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    span {
+      display:     block;
+      font-size:   1rem;
+      font-weight: normal;
+    }
+  }
+}
+
+.secondList, .sliderLink {
+  opacity: 1;
+}
+
+.subTitle {
+  display:   block;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+  .description {
+    width:   44%;
+    padding: 3rem 1.5rem 2rem 4.5rem;
+    height:  auto;
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .description {
+    font-size: 0.9rem;
+    padding:   2rem 2.5rem 2rem 2.6rem;
+    ul {
+      line-height:   1.85;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+
+// animations
+@media screen and (min-width: 1200px) {
+  .description {
+    opacity:  0;
+    height:   0;
+    overflow: hidden;
+  }
+  .secondList {
+    transform: translateY(60px);
+  }
+  .sliderLink {
+    opacity:   0;
+    transform: translateX(-120px);
+  }
+}
+
