@@ -1,7 +1,8 @@
 export const routes = Object.freeze({
-    home: '/idei',
-    trazzo: '/trazzo',
-    commercial: '/commercial',
-    financing: '/financing',
+    us: '/nosotros',
+    vertical: '/vertical',
+    trazzo: '/horizontal',
+    commercial: '/comercial',
+    financing: '/financiamiento',
     investors: '/investors',
 });

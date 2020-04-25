@@ -19,8 +19,8 @@ import reeliza from '../../../assets/images/reeliza-logo.svg'
 import investor from '../../../assets/images/inversor-logo.svg'
 
 const menus = [
-    {url: '/nosotros', label: 'NOSOTROS', image: logoGray},
-    {url: '/vertical', label: 'VERTICAL', image: logoGray},
+    {url: routes.us, label: 'NOSOTROS', image: logoGray},
+    {url: routes.vertical, label: 'VERTICAL', image: logoGray},
     {url: routes.trazzo, label: 'HORIZONTAL', image: trazzo},
     {url: routes.commercial, label: 'COMERCIAL', image: espacia},
     {url: routes.financing, label: 'FINANCIAMIENTO', image: reeliza},
