@@ -54,7 +54,8 @@ export const Header = () => {
                             <NavLink to={item.url} activeClassName={styles.active}>
                                 {item.label}
                             </NavLink>
-                            <NavLink to={item.url} className={styles.menuHover} activeClassName={styles.active}>
+                            <NavLink to={item.url} className={styles.menuHover} activeClassName={styles.active}
+                                     onClick={() => setActive(!active)}>
                                 <img src={item.image} alt='' />
                                 {item.label}
                             </NavLink>

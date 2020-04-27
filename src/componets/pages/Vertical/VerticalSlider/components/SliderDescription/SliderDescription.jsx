@@ -64,16 +64,16 @@ export const SliderDescription = ({activeSection, item}) => {
             <div>
                 <h3>Características</h3>
                 <ul className={`${styles.secondList} dashed`} ref={el => firstList = el}>
-                    {item.characteristics.map(item =>
-                        <li key={item}>{item}</li>
+                    {item.characteristics.map((item, index) =>
+                        <li key={index}>{item}</li>
                     )}
                 </ul>
             </div>
             <div>
                 <h3>Amenidades:</h3>
                 <ul className={`${styles.secondList} dashed`} ref={el => secondList = el}>
-                    {item.amenities.map(item =>
-                        <li key={item}>{item}</li>
+                    {item.amenities.map((item, index) =>
+                        <li key={index}>{item}</li>
                     )}
                 </ul>
             </div>

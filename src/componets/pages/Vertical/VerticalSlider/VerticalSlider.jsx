@@ -56,7 +56,7 @@ const data = [
         location: ['San Pedro Garza García N.L.'],
     },
     {
-        id: 2,
+        id: 3,
         title: 'KIMA',
         subTitle: '(Tu hogar en el universo)',
         image: kio,
@@ -67,7 +67,7 @@ const data = [
         location: ['Santa Catarina N.L.'],
     },
     {
-        id: 3,
+        id: 4,
         title: 'KANAT',
         subTitle: '(Lo mejor es tu hogar)',
         image: vao2,
@@ -78,7 +78,7 @@ const data = [
         location: ['Santa Catarina N.L.'],
     },
     {
-        id: 4,
+        id: 5,
         title: 'REPÚBLICA',
         subTitle: '(El nuevo punto de unión)',
         image: republica,
@@ -90,7 +90,7 @@ const data = [
         location: ['Monterrey N.L.'],
     },
     {
-        id: 5,
+        id: 6,
         title: 'NOVUS',
         subTitle: '(Mi nuevo Fundidora)',
         image: vao2,
@@ -102,7 +102,7 @@ const data = [
         location: ['Monterrey N.L.'],
     },
     {
-        id: 6,
+        id: 7,
         title: 'UNA',
         subTitle: '',
         image: vao2,
@@ -112,7 +112,7 @@ const data = [
         location: ['Sports Bar'],
     },
     {
-        id: 7,
+        id: 8,
         title: 'VALLE ORIENTE',
         subTitle: '',
         image: vao2,
@@ -121,7 +121,7 @@ const data = [
         location: ['San Pedro Garza García N.L.'],
     },
     {
-        id: 8,
+        id: 9,
         title: 'ÁVALON',
         subTitle: '',
         image: vao2,

@@ -110,7 +110,6 @@
             &.active {
               opacity: 1;
               height:  100%;
-              padding: 1rem;
             }
             img {
               margin-bottom: .5rem;
@@ -224,6 +223,9 @@
               transform:  translateY(-50%);
               background: $metal;
               color:      $white;
+              &.active {
+                padding: 1rem;
+              }
               img {
                 min-width:  100px;
                 max-width:  100px;
