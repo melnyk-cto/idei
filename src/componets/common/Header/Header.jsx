@@ -1,9 +1,6 @@
 // core
 import React, { useState, useEffect } from 'react';
 
-// library
-import { NavLink } from "react-router-dom";
-
 // components
 import { useWindowSize } from "../../../hooks";
 import { routes } from "../../App/routes";
@@ -27,20 +24,20 @@ const menus = [
     {url: routes.investors, label: 'RELACION CON INVERSIONISTAS', image: investor},
 ];
 export const Header = () => {
-    const [active, setActive] = useState(false);
+    const [activeMobile, setActiveMobile] = useState(false);
     const [width] = useWindowSize();
 
     const addClass = () => {
-        setActive(!active);
+        setActiveMobile(!activeMobile);
     };
 
     useEffect(() => {
-        if (width <= 1640 && active) {
+        if (width <= 1640 && activeMobile) {
             document.body.classList.add('no-scroll');
         } else {
             document.body.classList.remove('no-scroll');
         }
-    }, [width, active]);
+    }, [width, activeMobile]);
 
     return (
         <header className={styles.header}>
@@ -48,21 +45,23 @@ export const Header = () => {
                 <div className={styles.logo}>
                     <a href='/'> <img src={logo} alt='logo' /></a>
                 </div>
-                <menu className={active ? [styles.menu + ' ' + styles.active] : styles.menu}>
+                <menu className={activeMobile ? [styles.menu + ' ' + styles.active] : styles.menu}>
                     <ul>
                         {menus.map(item => <li key={item.label}>
-                            <NavLink to={item.url} activeClassName={styles.active}>
+                            <a href={item.url} className={styles.active}>
                                 {item.label}
-                            </NavLink>
-                            <NavLink to={item.url} className={styles.menuHover} activeClassName={styles.active}
-                                     onClick={() => setActive(!active)}>
+                            </a>
+                            <a href={item.url}
+                               className={`${styles.menuHover} ${window.location.pathname === item.url ? styles.active : ''}`}
+                               onClick={() => setActiveMobile(!activeMobile)}>
                                 <img src={item.image} alt='' />
                                 {item.label}
-                            </NavLink>
+                            </a>
                         </li>)}
                     </ul>
                 </menu>
-                <button type='button' className={active ? [styles.burgerMenu + ' ' + styles.active] : styles.burgerMenu}
+                <button type='button'
+                        className={activeMobile ? [styles.burgerMenu + ' ' + styles.active] : styles.burgerMenu}
                         onClick={() => addClass()}>
                     <span className={styles.burgerMenuLines} />
                 </button>

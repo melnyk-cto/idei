@@ -96,10 +96,6 @@ export const SimpleSlider = ({activeSection}) => {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
         },
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false
-        },
         // Responsive breakpoints
         breakpoints: {
             // when window width is >= 992px
