@@ -7,7 +7,7 @@ import { TimelineLite, Expo } from 'gsap'
 
 // components
 import { SliderDescription } from "./components/SliderDescription/SliderDescription";
-import { useWindowSize } from "../../../hooks";
+import { useScrollPosition, useWindowSize } from "../../../hooks";
 
 // image
 import kanat from "../../../assets/images/home/simple-slider/kanat.jpg";
@@ -76,8 +76,9 @@ const data = [
         link: 'http://saqqara.mx/'
     },
 ];
-export const SimpleSlider = ({activeSection}) => {
+export const SimpleSlider = ({position}) => {
     const [width] = useWindowSize();
+    const [scroll] = useScrollPosition();
 
     const [gallerySwiper, getGallerySwiper] = useState(null);
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
@@ -153,7 +154,7 @@ export const SimpleSlider = ({activeSection}) => {
 
     useEffect(() => {
         if (width > 1200) {
-            if (activeSection === 2) {
+            if (scroll > (position.offsetTop - 200)) {
                 t1.to(title, duration, {opacity: 1, ease: Expo.easeInOut})
                     .to(slides, duration, {opacity: 1, ease: Expo.easeInOut}, `-=${duration}`);
                 if (width < 1400) {
@@ -171,19 +172,9 @@ export const SimpleSlider = ({activeSection}) => {
                         ease: Expo.easeInOut
                     }, `-=${duration}`)
                 }
-            } else {
-                t1.to(title, duration, {opacity: 0, ease: Expo.easeInOut})
-                    .to(slides, duration, {opacity: 0, ease: Expo.easeInOut}, `-=${duration}`)
-                    .to(description, duration, {
-                        opacity: 0,
-                        minHeight: 0,
-                        height: 0,
-                        ease: Expo.easeInOut
-                    }, `-=${duration}`)
-
             }
         }
-    }, [activeSection, width, t1]);
+    }, [scroll, position.offsetTop, width, t1]);
     return (
         <>
             <h2 className={styles.title} ref={el => title = el}>PROYECTOS RECIENTES</h2>
@@ -205,7 +196,7 @@ export const SimpleSlider = ({activeSection}) => {
                 <Swiper {...descriptionSwiperParams}>
                     {data.map(item =>
                         <div key={item.id}>
-                            <SliderDescription activeSection={activeSection} item={item} />
+                            <SliderDescription position={position} item={item} />
                         </div>)}
                 </Swiper>
             </div>

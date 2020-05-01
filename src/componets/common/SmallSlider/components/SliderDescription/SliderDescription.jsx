@@ -6,12 +6,13 @@ import { TimelineLite, Expo } from 'gsap'
 
 // assets
 import styles from './SliderDescription.module.scss'
-import { useWindowSize } from "../../../../../hooks";
+import { useScrollPosition, useWindowSize } from "../../../../../hooks";
 
 
 const duration = 2;
-export const SliderDescription = ({activeSection ,description}) => {
+export const SliderDescription = ({position, description}) => {
     const [width] = useWindowSize();
+    const [scroll] = useScrollPosition();
 
     // animation
     let title = useRef(null);
@@ -20,20 +21,17 @@ export const SliderDescription = ({activeSection ,description}) => {
 
     useEffect(() => {
         if (width > 1200) {
-            if (activeSection === 3) {
+            if (scroll > (position.offsetTop - 200)) {
                 t1.to(title, duration, {opacity: 1, y: 0, ease: Expo.easeInOut})
                     .to(listItem, duration, {opacity: 1, ease: Expo.easeInOut, delay: duration / 4}, `-=${duration}`)
-            } else {
-                t1.to(title, duration, {opacity: 0, y: 50, ease: Expo.easeInOut})
-                    .to(listItem, duration, {opacity: 0, ease: Expo.easeInOut}, `-=${duration}`)
             }
         }
-    }, [activeSection, width, t1]);
+    }, [scroll, position.offsetTop, width, t1]);
 
     return (
         <div className={styles.inner}>
             <h2 ref={el => title = el}>
-                {description.slice(0,1)}
+                {description.slice(0, 1)}
             </h2>
             <ul ref={el => listItem = el}>{description.slice(1).map((residential) => <li
                 key={residential}>{residential}</li>)}

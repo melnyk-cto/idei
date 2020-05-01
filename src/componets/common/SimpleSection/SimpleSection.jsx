@@ -10,11 +10,13 @@ import tifSaqqara from '../../../assets/images/tif-saqqara.jpg';
 
 // styles
 import styles from './SimpleSection.module.scss';
-import { useWindowSize } from "../../../hooks";
+import { useScrollPosition, useWindowSize } from "../../../hooks";
 
 const duration = 2;
-export const SimpleSection = ({activeSection}) => {
+export const SimpleSection = () => {
     const [width] = useWindowSize();
+    const [scroll] = useScrollPosition();
+
 
     // animation
     gsap.registerPlugin();
@@ -30,7 +32,7 @@ export const SimpleSection = ({activeSection}) => {
 
     useEffect(() => {
         if (width > 1200) {
-            if (activeSection === 1) {
+            if (scroll > (logoImage.offsetTop - 200)) {
                 t1.to(smallImage, duration, {opacity: 1, ease: Expo.easeInOut})
                     .to(image, duration, {height: '98%', ease: Expo.easeInOut}, `-=${duration}`)
                     .to(logoImage, duration, {backgroundPositionX: '0', ease: Expo.easeInOut}, `-=${duration}`)
@@ -43,22 +45,9 @@ export const SimpleSection = ({activeSection}) => {
                         delay: duration / 4
                     }, `-=${duration}`)
                     .to(overImgText, duration, {opacity: 1, y: 0, ease: Expo.easeInOut}, `-=${duration}`)
-            } else {
-                t1.to(smallImage, duration, {opacity: 0, ease: Expo.easeInOut})
-                    .to(image, duration, {height: '0%', ease: Expo.easeInOut}, `-=${duration}`)
-                    .to(logoImage, duration, {backgroundPositionX: -400, ease: Expo.easeInOut}, `-=${duration}`)
-                    .to(overImg, duration, {x: 400, ease: Expo.easeInOut}, `-=${duration}`)
-                    .to(description, duration, {opacity: 0, y: 60, ease: Expo.easeInOut}, `-=${duration}`)
-                    .to(overImgTitle, duration, {
-                        opacity: 0,
-                        y: 30,
-                        ease: Expo.easeInOut,
-                        delay: duration / 4
-                    }, `-=${duration}`)
-                    .to(overImgText, duration, {opacity: 0, y: 30, ease: Expo.easeInOut}, `-=${duration}`)
             }
         }
-    }, [width, activeSection, t1]);
+    }, [scroll, logoImage.offsetTop, width, t1]);
 
     return (
         <section className={styles.wrapper} ref={el => logoImage = el}>

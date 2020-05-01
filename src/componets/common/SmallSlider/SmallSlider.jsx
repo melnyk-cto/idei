@@ -7,7 +7,7 @@ import { TimelineLite, Expo } from 'gsap'
 
 // components
 import { SliderDescription } from "./components/SliderDescription/SliderDescription";
-import { useWindowSize } from "../../../hooks";
+import { useScrollPosition, useWindowSize } from "../../../hooks";
 
 // assets
 import 'swiper/swiper.scss'
@@ -61,8 +61,9 @@ const descriptionLit = [
     ],
 ];
 
-export const SmallSlider = ({activeSection}) => {
+export const SmallSlider = ({position}) => {
     const [width] = useWindowSize();
+    const [scroll] = useScrollPosition();
 
     const [gallerySwiper, getGallerySwiper] = useState(null);
     const [thumbnailSwiper, getThumbnailSwiper] = useState(null);
@@ -134,7 +135,7 @@ export const SmallSlider = ({activeSection}) => {
 
     useEffect(() => {
         if (width > 1200) {
-            if (activeSection === 3) {
+            if (scroll > (position.offsetTop - 200)) {
                 t1.to(title, duration, {opacity: 1, ease: Expo.easeInOut})
                     .to(subTitle1, duration, {opacity: 1, ease: Expo.easeInOut}, `-=${duration}`)
                     .to(subTitle2, duration, {opacity: 1, ease: Expo.easeInOut}, `-=${duration}`)
@@ -157,29 +158,9 @@ export const SmallSlider = ({activeSection}) => {
                         delay: duration / 4
                     }, `-=${duration * 1.5}`);
 
-            } else {
-                t1.to(title, duration, {opacity: 0, ease: Expo.easeInOut})
-                    .to(subTitle1, duration, {opacity: 0, ease: Expo.easeInOut}, `-=${duration}`)
-                    .to(subTitle2, duration, {opacity: 0, ease: Expo.easeInOut}, `-=${duration}`)
-                    .to(slides, duration, {
-                        opacity: 0,
-                        x: 200,
-                        ease: Expo.easeInOut,
-                    }, `-=${duration}`)
-                    .to(description, duration, {
-                        opacity: 0,
-                        minHeight: 0,
-                        height: 0,
-                        ease: Expo.easeInOut
-                    }, `-=${duration}`)
-                    .to(image, duration, {
-                        opacity: 0,
-                        height: 0,
-                        ease: Expo.easeInOut,
-                    }, `-=${duration}`);
             }
         }
-    }, [activeSection, width, t1]);
+    }, [scroll, position.offsetTop, width, t1]);
 
     return (
         <>
@@ -210,7 +191,7 @@ export const SmallSlider = ({activeSection}) => {
                     <Swiper {...descriptionSwiperParams}>
                         {descriptionLit.map(description =>
                             <div key={description}>
-                                <SliderDescription activeSection={activeSection} description={description} />
+                                <SliderDescription position={position} description={description} />
                             </div>)}
                     </Swiper>
                 </div>

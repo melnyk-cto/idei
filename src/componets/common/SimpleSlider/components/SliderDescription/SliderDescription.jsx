@@ -5,14 +5,16 @@ import React, { useEffect, useRef } from 'react';
 import { TimelineLite, Expo } from 'gsap'
 
 // components
-import { useWindowSize } from "../../../../../hooks";
+import { useScrollPosition, useWindowSize } from "../../../../../hooks";
 
 // assets
 import styles from './SliderDescription.module.scss';
 
 const duration = 2;
-export const SliderDescription = ({activeSection, item}) => {
+export const SliderDescription = ({position, item}) => {
     const [width] = useWindowSize();
+
+    const [scroll] = useScrollPosition();
 
     // animation
     let secondList = useRef(null);
@@ -20,26 +22,16 @@ export const SliderDescription = ({activeSection, item}) => {
     const t1 = new TimelineLite();
 
     useEffect(() => {
-        if (width > 1200) {
-            if (activeSection === 2) {
-                t1.to(secondList, duration, {
-                    opacity: 1,
-                    y: 0,
-                    ease: Expo.easeInOut,
-                    delay: duration / 4
-                }, `-=${duration}`)
-                    .to(link, duration, {opacity: 1, x: 0, ease: Expo.easeInOut})
-            } else {
-                t1.to(secondList, duration, {
-                    opacity: 0,
-                    y: 60,
-                    ease: Expo.easeInOut,
-                })
-                    .to(link, duration, {opacity: 0, x: -120, ease: Expo.easeInOut})
-
-            }
+        if (scroll > (position.offsetTop - 200)) {
+            t1.to(secondList, duration, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeInOut,
+                delay: duration / 4
+            }, `-=${duration}`)
+                .to(link, duration, {opacity: 1, x: 0, ease: Expo.easeInOut})
         }
-    }, [activeSection, width, t1]);
+    }, [scroll, position.offsetTop, width, t1]);
     return (
         <div className={styles.inner}>
             <img src={item.logo} alt='' />
@@ -49,7 +41,7 @@ export const SliderDescription = ({activeSection, item}) => {
                 )}
             </ul>
             <div className={`${styles.sliderLink} link`} ref={el => link = el}>
-                <a href={item.link} target='_blank' rel="noopener noreferrer" >Ver Proyecto</a>
+                <a href={item.link} target='_blank' rel="noopener noreferrer">Ver Proyecto</a>
             </div>
         </div>
     );
